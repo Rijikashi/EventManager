@@ -1,4 +1,3 @@
 class Event < ApplicationRecord
-  has_many :attendees
-  has_many :users, through: :attendees
+  has_and_belongs_to_many :users
 end
