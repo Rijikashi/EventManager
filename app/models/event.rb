@@ -1,3 +1,9 @@
 class Event < ApplicationRecord
-  has_and_belongs_to_many :users
+  has_many :hosts
+  has_many :users, :through => :hosts
+
+  has_many :attendaees, dependent: :destroy
+  has_many :users, :through => :attendees
+  
+  validates :event_name, presence:true
 end
