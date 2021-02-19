@@ -3,19 +3,18 @@ class EventsController < ApplicationController
     latitude = params[:latitude].to_f
     longitude = params[:longitude].to_f
     distance = params[:distance].to_f
-    #nearbyQuery = Event.where("latitude > :latitude - :distance and latitude < :latitude + :distance and longitude < :longitude + :distance and longitude > :longitude - :distance", {longitude: params[:longitude], latitude: params[:latitude], distance: params[:distance]})
     nearbyQuery = Event.where({latitude: (latitude-distance/2)..(latitude+distance/2), longitude: (longitude-distance/2)..(longitude+distance/2)})
-    render json: nearbyQuery.to_json
+    render :json => nearbyQuery
   end
 
   def search
-    containsQuery = Event.where('event_name LIKE ?', params[:query_name])
-    render json: containsQuery.to_json
+    containsQuery = Event.where('event_name LIKE ?', "%#{params[:query_name]}%")
+    render :json => containsQuery
   end
 
   def index
     events = Event.all
-    render json: events.to_json
+    render json: events
   end
 
   def show
