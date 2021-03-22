@@ -8,6 +8,10 @@ class EventsController < ApplicationController
     render :json => nearbyEvents
   end
 
+  def getKey
+    key = ENV['GOOGLE_MAPS_API_KEY']
+    render :json => key
+  end
   def search
     searchResults = Event.where('event_name LIKE ?', "%#{params[:query_name]}%")
     render :json => searchResults
