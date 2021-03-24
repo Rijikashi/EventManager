@@ -10,8 +10,10 @@ class EventsController < ApplicationController
 
   def getKey
     key = ENV['GOOGLE_MAPS_API_KEY']
-    render :json => key
+    jsonKEY = ActiveSupport::JSON.encode({key: key})
+    render :json => jsonKEY
   end
+
   def search
     searchResults = Event.where('event_name LIKE ?', "%#{params[:query_name]}%")
     render :json => searchResults

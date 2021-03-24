@@ -1,8 +1,8 @@
 const Header = () => {
   return (
-    <div>
-      Hi from Header
-    </div>
+    <h1>
+      Event Finder
+    </h1>
   )
 
 }

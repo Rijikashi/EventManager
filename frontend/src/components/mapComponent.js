@@ -1,29 +1,21 @@
 import { useState, useEffect } from 'react'
-import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api'
+import { GoogleMap, LoadScript} from '@react-google-maps/api'
+import MarkerInfo from "./markerInfo.js"
+import NewEvent from "./newEvent.js"
+const containerStyle = {
+  width: '500px',
+  height: '500px'
+};
 
-const MapComponent = () => {
+const MapComponent = ({apiKey}) => {
   const [center, setCenter] = useState(
     {
       lat: 0,
       lng: 0
     }
   )
-  const [apiKey, setApiKey] = useState ("")
-
-  const keyRequest = () => {
-    let jsonurl = "http://localhost:3001/apiKey"
-    //"http://localhost:3001/events/search/TestingLocation"
-    fetch(jsonurl)
-    .then(res => res.json())
-    .then(
-      (result) => {
-        setApiKey(result);
-      },
-      (error) => {
-
-      }
-    )
-  }
+  const [items, setItems] = useState([])
+  const [eventQueried, setEventQueried] = useState(false)
 
   useEffect ( () => {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -33,13 +25,39 @@ const MapComponent = () => {
     }
     setCenter(tempCenter)
   });
-    keyRequest()
+
   }, [])
 
+
+  //need to change so it queries surrounding area
+  const eventQuery = async () => {
+    const res = await fetch("http://localhost:3001/events/search/TestingLocation")
+    const data = await res.json()
+    setItems(data)
+    setEventQueried(true)
+  }
+
   return (
-    <div>
-      Hi from maps!
-    </div>
+    <LoadScript
+      googleMapsApiKey= {apiKey}
+    >
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={10}
+      >
+      { eventQueried ? (items.map((item) => {
+        return <MarkerInfo key = {item["id"]} marker = {item}/>
+      })) : (<></>)
+      }
+ // ADD stuff here
+      </GoogleMap>
+
+      <button onClick = {eventQuery}>
+        Search nearby events
+      </button>
+      <NewEvent />
+    </LoadScript>
   )
 }
 export default MapComponent

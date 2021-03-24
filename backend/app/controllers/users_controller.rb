@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
   include UserHelper
 
+  def authentication
+    username = params[:username]
+    password = params[:password]
+    password = password[1,password.length-1]
+    user = User.where("name = ? AND password = ?", params[:username], password)
+    if user.empty?
+      render json: {error: "Please try again"},status:400
+    else
+      render :json => user
+    end
+  end
+
   def index
     users = User.all
     if users

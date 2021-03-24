@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_12_032558) do
+ActiveRecord::Schema.define(version: 2021_03_23_214420) do
 
   create_table "attendees", force: :cascade do |t|
     t.integer "user_id"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_032558) do
     t.datetime "updated_at", null: false
     t.integer "age"
     t.integer "credibility"
+    t.string "password"
   end
 
 end
