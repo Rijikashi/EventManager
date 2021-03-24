@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import NewUserForm from './newUserForm.js'
 
 const LoginWindow = ({loginFunc}) => {
 
@@ -28,10 +29,8 @@ const LoginWindow = ({loginFunc}) => {
   useEffect( () => {
     console.log(userObj)
     if(userObj.length === 0){
-      console.log("blanks")
     }
     else{
-      console.log("ran this???")
       loginFunc(userObj)
     }
   }, [userObj])
@@ -58,6 +57,7 @@ const LoginWindow = ({loginFunc}) => {
         </div>
        <input type='submit' value='Login' className='btn btn-block' />
       </form>
+      <NewUserForm />
     </div>
   )
 }

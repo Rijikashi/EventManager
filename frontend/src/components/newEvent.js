@@ -1,4 +1,5 @@
 import Modal from 'react-modal';
+import NewEventForm from './newEventForm.js'
 import {useState, useEffect} from 'react'
 
 const customStyles = {
@@ -31,9 +32,7 @@ const NewEvent = ( ) => {
        style={customStyles}
        contentLabel="Example Modal"
        >
-        <div>
-          Hello in Modal
-        </div>
+        <NewEventForm />
        </Modal>
     </div>
   )
