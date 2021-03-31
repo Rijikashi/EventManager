@@ -13,7 +13,7 @@ const customStyles = {
 };
 Modal.setAppElement('#root')
 
-const NewUserForm = () => {
+const NewUserForm = ({createAccountSuccessTrue}) => {
   const [newUser, setNewUser] = useState(false)
 
   const [username, setUsername] = useState("")
@@ -24,9 +24,21 @@ const NewUserForm = () => {
     setNewUser(!newUser)
   }
 
+  const postNewUser = async () => {
+    const res = await fetch("http://localhost:3001/users/createNewUser/"
+    + username + "/" +password + "/"+age, {
+      method: 'POST'
+    })
+    const data = await res.json()
+    setUsername("")
+    setPassword("")
+    setAge(0)
+  }
   const onSubmit = (e) => {
     e.preventDefault()
     toggleNewUser()
+    postNewUser()
+    createAccountSuccessTrue()
     console.log("hello!!!")
   }
   return (
@@ -38,7 +50,7 @@ const NewUserForm = () => {
        isOpen={newUser}
        onRequestClose={toggleNewUser}
        style={customStyles}
-       contentLabel="Example Modal"
+       contentLabel="New User Modal"
        >
        <form onSubmit = {onSubmit}>
          <div className='form-control'>

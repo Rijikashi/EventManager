@@ -1,11 +1,19 @@
 class EventsController < ApplicationController
   include EventHelper
+  skip_before_action :verify_authenticity_token
+
   def findNearby
-    latitude = params[:latitude].to_f
-    longitude = params[:longitude].to_f
-    distance = params[:distance].to_f
-    nearbyEvents = Event.where({latitude: (latitude-distance/2)..(latitude+distance/2), longitude: (longitude-distance/2)..(longitude+distance/2)})
+    nearbyEvents = Event.where({latitude: params[:latitude_lower]..params[:latitude_upper], longitude: params[:longitude_lower]..params[:longitude_upper]})
     render :json => nearbyEvents
+  end
+
+  def createNewEvent
+    event = Event.new(event_name: params[:eventName], time: params[:time], location: params[:locationName], latitude: params[:latitude], longitude: params[:longitude])
+    if event.save
+      render :json => event
+    else
+      render json: {error: "Unable to create event"}, status:400
+    end
   end
 
   def getKey

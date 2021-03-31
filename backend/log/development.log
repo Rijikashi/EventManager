@@ -8532,3 +8532,2383 @@ Processing by EventsController#getKey as JSON
 Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:14:45 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users?username=Fred&password=[FILTERED]&age=19" for ::1 at 2021-03-24 11:15:20 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"19"}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.4) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:23:46 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/Fred/ilovejojo/19" for ::1 at 2021-03-24 11:24:01 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"19"}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.4) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:24:56 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/Fred/ilovejojo/19" for ::1 at 2021-03-24 11:25:02 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"19"}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.4) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:26:55 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/Fred/asdfasdf/19" for ::1 at 2021-03-24 11:27:01 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"19"}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.4) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users/createNewUser/Fred/asdfasdf/19" for ::1 at 2021-03-24 11:27:21 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"19"}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.4) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-24 11:27:27 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 38ms (Views: 9.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:43:00 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/Fred/asdfasdf/19" for ::1 at 2021-03-24 11:43:05 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"19"}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.4) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:44:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/createNewUser/Fred/asdfasdf/17"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:44:59 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:44:59.117558"], ["updated_at", "2021-03-24 18:44:59.117558"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+No template found for UsersController#createNewUser, rendering head :no_content
+Completed 204 No Content in 33ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:44:59 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:44:59.954316"], ["updated_at", "2021-03-24 18:44:59.954316"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+No template found for UsersController#createNewUser, rendering head :no_content
+Completed 204 No Content in 10ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:45:00 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:45:00.335177"], ["updated_at", "2021-03-24 18:45:00.335177"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+No template found for UsersController#createNewUser, rendering head :no_content
+Completed 204 No Content in 27ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:45:00 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:45:00.578059"], ["updated_at", "2021-03-24 18:45:00.578059"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+No template found for UsersController#createNewUser, rendering head :no_content
+Completed 204 No Content in 12ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:45:00 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:45:00.774744"], ["updated_at", "2021-03-24 18:45:00.774744"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+No template found for UsersController#createNewUser, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:45:05 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:45:05.646634"], ["updated_at", "2021-03-24 18:45:05.646634"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+No template found for UsersController#createNewUser, rendering head :no_content
+Completed 204 No Content in 21ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:45:13 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:45:13.904436"], ["updated_at", "2021-03-24 18:45:13.904436"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+No template found for UsersController#createNewUser, rendering head :no_content
+Completed 204 No Content in 40ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:45:16 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:45:16.891983"], ["updated_at", "2021-03-24 18:45:16.891983"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+No template found for UsersController#createNewUser, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/createNewUser/Fred/asdfasdf/17" for ::1 at 2021-03-24 11:45:52 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Fred", "password"=>"[FILTERED]", "age"=>"17"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fred"], ["created_at", "2021-03-24 18:45:52.163851"], ["updated_at", "2021-03-24 18:45:52.163851"], ["age", 17], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+Completed 200 OK in 36ms (Views: 0.6ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:46:22 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/Isaac/iloveblackpink/18" for ::1 at 2021-03-24 11:46:33 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/createNewUser/Isaac/iloveblackpink/18"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:46:43 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:46:54 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/createNewUser/Isaac/iloveblackpink/18" for ::1 at 2021-03-24 11:47:02 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Isaac", "password"=>"[FILTERED]", "age"=>"18"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Isaac"], ["created_at", "2021-03-24 18:47:02.685415"], ["updated_at", "2021-03-24 18:47:02.685415"], ["age", 18], ["credibility", 7], ["password", "iloveblackpink"]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 4.9ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:49:31 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:53:54 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/createNewUser/asdf/asdfasdf/200" for ::1 at 2021-03-24 11:54:06 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"asdf", "password"=>"[FILTERED]", "age"=>"200"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["created_at", "2021-03-24 18:54:06.451349"], ["updated_at", "2021-03-24 18:54:06.451349"], ["age", 200], ["credibility", 7], ["password", "asdfasdf"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 43ms (Views: 0.7ms | ActiveRecord: 4.6ms)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:55:01 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/fff/ffff/222" for ::1 at 2021-03-24 11:55:06 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"fff", "password"=>"[FILTERED]", "age"=>"222"}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.4) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/getApiKey" for ::1 at 2021-03-24 11:58:21 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/fff/ffff/2020" for ::1 at 2021-03-24 11:58:26 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"fff", "password"=>"[FILTERED]", "age"=>"2020"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "fff"], ["created_at", "2021-03-24 18:58:26.591970"], ["updated_at", "2021-03-24 18:58:26.591970"], ["age", 2020], ["credibility", 7], ["password", "ffff"]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19
+Completed 200 OK in 60ms (Views: 0.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-24 12:01:29 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/users/createNewUser/aaa/aaaa/13" for ::1 at 2021-03-24 12:01:45 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"aaa", "password"=>"[FILTERED]", "age"=>"13"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "aaa"], ["created_at", "2021-03-24 19:01:45.585068"], ["updated_at", "2021-03-24 19:01:45.585068"], ["age", 13], ["credibility", 7], ["password", "aaaa"]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 3.7ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/getApiKey" for ::1 at 2021-03-24 12:18:19 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/testing/testing1/15" for ::1 at 2021-03-24 12:18:44 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"testing", "password"=>"[FILTERED]", "age"=>"15"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "testing"], ["created_at", "2021-03-24 19:18:44.016742"], ["updated_at", "2021-03-24 19:18:44.016742"], ["age", 15], ["credibility", 7], ["password", "testing1"]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-24 12:20:17 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/getApiKey" for ::1 at 2021-03-26 15:13:51 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 15:39:29 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 26ms (Views: 9.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 15:40:22 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 15:49:48 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:01:52 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:02:04 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:04:49 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:05:20 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:05:26 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:11:46 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:12:21 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:12:29 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:13:27 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:13:34 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 12ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:17:25 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:17:42 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:17:54 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:17:55 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:17:58 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:30:09 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:30:19 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:54:09 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:54:13 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 28ms (Views: 22.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 16:59:15 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 16:59:19 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 17:06:41 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-26 17:07:02 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-26 17:07:06 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events/TestFromReact/6:00pm/lul/34.43256319251875/-119.84679287042236" for ::1 at 2021-03-26 17:24:21 -0700
+  
+SyntaxError (/Users/isaacfu/CodingProjects/EventManager/backend/config/routes.rb:14: syntax error, unexpected ':', expecting =>
+...nts#createNewEvent', defaults : {format: 'json'}, as: :creat...
+...                              ^
+/Users/isaacfu/CodingProjects/EventManager/backend/config/routes.rb:14: syntax error, unexpected ',', expecting end
+...', defaults : {format: 'json'}, as: :createNewEvent
+...                              ^
+/Users/isaacfu/CodingProjects/EventManager/backend/config/routes.rb:16: syntax error, unexpected end, expecting end-of-input):
+  
+config/routes.rb:14: syntax error, unexpected ':', expecting =>
+config/routes.rb:14: syntax error, unexpected ',', expecting end
+config/routes.rb:16: syntax error, unexpected end, expecting end-of-input
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-27 14:51:14 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 38ms (Views: 15.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 14:51:28 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-27 14:51:33 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/search/TestingLocation" for ::1 at 2021-03-27 14:51:51 -0700
+Processing by EventsController#search as JSON
+  Parameters: {"query_name"=>"TestingLocation"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_name LIKE '%TestingLocation%')[0m
+  ↳ app/controllers/events_controller.rb:29
+Completed 200 OK in 31ms (Views: 9.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events/TestingReact/Sun%20Mar%2028%202021%2015:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/130%20Willow%20Springs/34.43386993963076/-119.85185112911375" for ::1 at 2021-03-27 14:53:04 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/events/TestingReact/Sun%20Mar%2028%202021%2015:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/130%20Willow%20Springs/34.43386993963076/-119.85185112911375"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/TestingLocationURL/asdf/130willowsprings/30/130" for ::1 at 2021-03-27 14:56:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/TestingLocationURL/asdf/130willowsprings/30/130"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/TestingLocationURL/asdf/130willowsprings/30/130" for ::1 at 2021-03-27 14:57:01 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"TestingLocationURL", "time"=>"asdf", "locationName"=>"130willowsprings", "latiude"=>"30", "longitude"=>"130"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "TestingLocationURL"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 21:57:01.609226"], ["updated_at", "2021-03-27 21:57:01.609226"], ["location", "130willowsprings"], ["latitude", 30.0], ["longitude", 130.0]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 28ms (Views: 1.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/events/TestingLocationURL/asdf/130willowsprings/30/130" for ::1 at 2021-03-27 14:57:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/events/TestingLocationURL/asdf/130willowsprings/30/130"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/events/TestingFromReact/Sun%20Mar%2028%202021%2000:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/Willow%20Springs/34.43287885440775/-119.85193695980223" for ::1 at 2021-03-27 14:57:46 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/events/TestingFromReact/Sun%20Mar%2028%202021%2000:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/Willow%20Springs/34.43287885440775/-119.85193695980223"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/events/asdf/time/location/34.42990552822133/-119.85579934078368" for ::1 at 2021-03-27 14:59:52 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/events/asdf/time/location/34.42990552822133/-119.85579934078368"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/dd/time/location/34.43224172198663/-119.85185112911375" for ::1 at 2021-03-27 15:00:26 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/events/dd/time/location/34.43224172198663/-119.85185112911375"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/TestingLocationURL/asdf/130willowsprings/30/130" for ::1 at 2021-03-27 15:00:34 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"TestingLocationURL", "time"=>"asdf", "locationName"=>"130willowsprings", "latiude"=>"30", "longitude"=>"130"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "TestingLocationURL"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:00:34.407511"], ["updated_at", "2021-03-27 22:00:34.407511"], ["location", "130willowsprings"], ["latitude", 30.0], ["longitude", 130.0]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events/TestingLocationURL/asdf/130willowsprings/30/130" for ::1 at 2021-03-27 15:01:48 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"TestingLocationURL", "time"=>"asdf", "locationName"=>"130willowsprings", "latiude"=>"30", "longitude"=>"130"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "TestingLocationURL"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:01:48.302380"], ["updated_at", "2021-03-27 22:01:48.302380"], ["location", "130willowsprings"], ["latitude", 30.0], ["longitude", 130.0]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/events/ff/asdf/130willowsprings/30/130" for ::1 at 2021-03-27 15:02:34 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ff", "time"=>"asdf", "locationName"=>"130willowsprings", "latiude"=>"30", "longitude"=>"130"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "ff"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:02:34.954393"], ["updated_at", "2021-03-27 22:02:34.954393"], ["location", "130willowsprings"], ["latitude", 30.0], ["longitude", 130.0]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/events/ff/asdf/130willowsprings/34.432312514717715/-119.85219445186766" for ::1 at 2021-03-27 15:03:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/events/ff/asdf/130willowsprings/34.432312514717715/-119.85219445186766"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/TestingFromReact/Sun%20Mar%2028%202021%2000:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/WillowSprings/34.433303606656764/-119.85047783809813" for ::1 at 2021-03-27 15:09:49 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/events/TestingFromReact/Sun%20Mar%2028%202021%2000:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/WillowSprings/34.433303606656764/-119.85047783809813"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/TestingFromReact/asdf/WillowSprings/34.43323281476516/-119.8505636687866" for ::1 at 2021-03-27 15:10:27 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/events/TestingFromReact/asdf/WillowSprings/34.43323281476516/-119.8505636687866"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/TestingLocationURL/asdf/130willowsprings/30/130" for ::1 at 2021-03-27 15:12:34 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"TestingLocationURL", "time"=>"asdf", "locationName"=>"130willowsprings", "latiude"=>"30", "longitude"=>"130"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "TestingLocationURL"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:12:34.229353"], ["updated_at", "2021-03-27 22:12:34.229353"], ["location", "130willowsprings"], ["latitude", 30.0], ["longitude", 130.0]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/events/TestingLocationURL/asdf/130willowsprings/30.3/130" for ::1 at 2021-03-27 15:12:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/events/TestingLocationURL/asdf/130willowsprings/30.3/130"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/TestingLocationURL/asdf/130willowsprings/30.3/130" for ::1 at 2021-03-27 15:12:55 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"TestingLocationURL", "time"=>"asdf", "locationName"=>"130willowsprings", "latitude"=>"30.3", "longitude"=>"130"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "TestingLocationURL"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:12:55.831167"], ["updated_at", "2021-03-27 22:12:55.831167"], ["location", "130willowsprings"], ["longitude", 130.0]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 30ms (Views: 1.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/events/TestingLocationURL/asdf/130willowsprings/30.3/130.3" for ::1 at 2021-03-27 15:13:00 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"TestingLocationURL", "time"=>"asdf", "locationName"=>"130willowsprings", "latitude"=>"30.3", "longitude"=>"130.3"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "TestingLocationURL"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:13:00.073412"], ["updated_at", "2021-03-27 22:13:00.073412"], ["location", "130willowsprings"], ["longitude", 130.3]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/events/TestingFromReact/asdf/hhff/34.43337439848839/-119.85116448360594" for ::1 at 2021-03-27 15:13:28 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"TestingFromReact", "time"=>"asdf", "locationName"=>"hhff", "latitude"=>"34.43337439848839", "longitude"=>"-119.85116448360594"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (1.6ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "TestingFromReact"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:13:28.491250"], ["updated_at", "2021-03-27 22:13:28.491250"], ["location", "hhff"], ["longitude", -119.85116448360594]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/events/testingTime/Sun%20Mar%2028%202021%2000:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/fff/34.43294964659916/-119.85176529842528" for ::1 at 2021-03-27 15:16:04 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"testingTime", "time"=>"Sun Mar 28 2021 00:00:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"fff", "latitude"=>"34.43294964659916", "longitude"=>"-119.85176529842528"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "testingTime"], ["time", "2021-03-28"], ["created_at", "2021-03-27 22:16:04.324024"], ["updated_at", "2021-03-27 22:16:04.324024"], ["location", "fff"], ["longitude", -119.85176529842528]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events/search/TestingLocation" for ::1 at 2021-03-27 15:16:20 -0700
+Processing by EventsController#search as JSON
+  Parameters: {"query_name"=>"TestingLocation"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_name LIKE '%TestingLocation%')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/events/testingTime2/Sun%20Mar%2028%202021%2003:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/fff/34.433586773623496/-119.8516794677368" for ::1 at 2021-03-27 15:17:03 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"testingTime2", "time"=>"Sun Mar 28 2021 03:00:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"fff", "latitude"=>"34.433586773623496", "longitude"=>"-119.8516794677368"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (2.7ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "testingTime2"], ["time", "2021-03-28"], ["created_at", "2021-03-27 22:17:03.343116"], ["updated_at", "2021-03-27 22:17:03.343116"], ["location", "fff"], ["longitude", -119.8516794677368]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/events/ff/Sun%20Mar%2028%202021%2000:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/fff/34.4324541/-119.85009159999998" for ::1 at 2021-03-27 15:17:57 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ff", "time"=>"Sun Mar 28 2021 00:00:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"fff", "latitude"=>"34.4324541", "longitude"=>"-119.85009159999998"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "ff"], ["time", "2021-03-28"], ["created_at", "2021-03-27 22:17:57.220146"], ["updated_at", "2021-03-27 22:17:57.220146"], ["location", "fff"], ["longitude", -119.85009159999998]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/events/Test/Sat%20Mar%2027%202021%2017:20:00%20GMT-0700%20(Pacific%20Daylight%20Time)/testing/34.43351598197175/-119.85159363704832" for ::1 at 2021-03-27 15:19:43 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"Test", "time"=>"Sat Mar 27 2021 17:20:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"testing", "latitude"=>"34.43351598197175", "longitude"=>"-119.85159363704832"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "Test"], ["time", "2021-03-27"], ["created_at", "2021-03-27 22:19:43.335977"], ["updated_at", "2021-03-27 22:19:43.335977"], ["location", "testing"], ["longitude", -119.85159363704832]]
+  ↳ app/controllers/events_controller.rb:17
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:17
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 11.1ms)
+
+
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/events/ff/Sat%20Mar%2027%202021%2015:24:38%20GMT-0700%20(Pacific%20Daylight%20Time)/ff/34.43291425051094/-119.85039200740965" for ::1 at 2021-03-27 15:27:50 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ff", "time"=>"Sat Mar 27 2021 15:24:38 GMT-0700 (Pacific Daylight Time)", "locationName"=>"ff", "latitude"=>"34.43291425051094", "longitude"=>"-119.85039200740965"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `change' for "Sat Mar 27 2021 15:24:38 GMT-0700 (Pacific Daylight Time)":String):
+  
+app/controllers/events_controller.rb:15:in `createNewEvent'
+Started POST "/events/ff/Sat%20Mar%2027%202021%2015:28:05%20GMT-0700%20(Pacific%20Daylight%20Time)/ff/34.43128601424799/-119.85082116085204" for ::1 at 2021-03-27 15:28:09 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ff", "time"=>"Sat Mar 27 2021 15:28:05 GMT-0700 (Pacific Daylight Time)", "locationName"=>"ff", "latitude"=>"34.43128601424799", "longitude"=>"-119.85082116085204"}
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `Date' for #<EventsController:0x00007ff0f3a05dc0>
+Did you mean?  update):
+  
+app/controllers/events_controller.rb:14:in `createNewEvent'
+Started POST "/events/ff/Sat%20Mar%2027%202021%2015:29:09%20GMT-0700%20(Pacific%20Daylight%20Time)/ff/34.43220632559859/-119.85150780635985" for ::1 at 2021-03-27 15:29:13 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ff", "time"=>"Sat Mar 27 2021 15:29:09 GMT-0700 (Pacific Daylight Time)", "locationName"=>"ff", "latitude"=>"34.43220632559859", "longitude"=>"-119.85150780635985"}
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `DateTime' for #<EventsController:0x00007ff0f178c2a8>):
+  
+app/controllers/events_controller.rb:14:in `createNewEvent'
+Started POST "/events/ff/Sat%20Mar%2027%202021%2015:29:39%20GMT-0700%20(Pacific%20Daylight%20Time)/ff/34.43284345828955/-119.85236611324461" for ::1 at 2021-03-27 15:29:44 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ff", "time"=>"Sat Mar 27 2021 15:29:39 GMT-0700 (Pacific Daylight Time)", "locationName"=>"ff", "latitude"=>"34.43284345828955", "longitude"=>"-119.85236611324461"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `change' for "Sat Mar 27 2021 15:29:39 GMT-0700 (Pacific Daylight Time)":String):
+  
+app/controllers/events_controller.rb:16:in `createNewEvent'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendees"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE  INDEX "index_attendees_on_event_id" ON "attendees" ("event_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE  INDEX "index_attendees_on_user_id" ON "attendees" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "event_name" varchar, "time" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "location" varchar, "description" text, "restrictionAge" integer, "latitude" float, "longitude" float)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "hosts"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "hosts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE  INDEX "index_hosts_on_event_id" ON "hosts" ("event_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE  INDEX "index_hosts_on_user_id" ON "hosts" ("user_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:45
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "age" integer, "credibility" integer, "password" varchar)[0m
+  ↳ db/schema.rb:45
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210323214420)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (20.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210207193341),
+(20210204021228),
+(20210129013316),
+(20210204014829),
+(20210129013238),
+(20210204021404),
+(20210212032546),
+(20210207202138),
+(20210204021327),
+(20210204021301),
+(20210212032558);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-27 22:32:07.784136"], ["updated_at", "2021-03-27 22:32:07.784136"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendees"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX "index_attendees_on_event_id" ON "attendees" ("event_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX "index_attendees_on_user_id" ON "attendees" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "events"[0m
+  ↳ db/schema.rb:24
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "event_name" varchar, "time" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "location" varchar, "description" text, "restrictionAge" integer, "latitude" float, "longitude" float)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "hosts"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "hosts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX "index_hosts_on_event_id" ON "hosts" ("event_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX "index_hosts_on_user_id" ON "hosts" ("user_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:45
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "age" integer, "credibility" integer, "password" varchar)[0m
+  ↳ db/schema.rb:45
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210323214420)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210207193341),
+(20210204021228),
+(20210129013316),
+(20210204014829),
+(20210129013238),
+(20210204021404),
+(20210212032546),
+(20210207202138),
+(20210204021327),
+(20210204021301),
+(20210212032558);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-27 22:32:07.873049"], ["updated_at", "2021-03-27 22:32:07.873049"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (2.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-03-27 22:32:07.892657"], ["key", "environment"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "a"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:32:07.953163"], ["updated_at", "2021-03-27 22:32:07.953163"], ["location", "a_place"], ["latitude", 45.0], ["longitude", 45.0]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "aaaa"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:32:07.968411"], ["updated_at", "2021-03-27 22:32:07.968411"], ["location", "a_place"], ["latitude", 45.0], ["longitude", 45.0]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "bbbb"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:32:07.972099"], ["updated_at", "2021-03-27 22:32:07.972099"], ["location", "b_place"], ["latitude", 65.0], ["longitude", 65.0]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "cccc"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:32:07.976783"], ["updated_at", "2021-03-27 22:32:07.976783"], ["location", "c_place"], ["latitude", 0.0], ["longitude", 45.0]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "dddd"], ["time", "-4712-02-08"], ["created_at", "2021-03-27 22:32:07.981606"], ["updated_at", "2021-03-27 22:32:07.981606"], ["location", "d_place"], ["latitude", 45.0], ["longitude", 0.0]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (6.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "credibility") VALUES (?, ?, ?, ?)[0m  [["name", "BobTest"], ["created_at", "2021-03-27 22:32:08.010176"], ["updated_at", "2021-03-27 22:32:08.010176"], ["credibility", 10]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to CreateUsers (20210129013238)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210129013238_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210129013238"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to CreateEvents (20210129013316)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "event_name" varchar, "time" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210129013316_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210129013316"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to AddAgeToUsers (20210204014829)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "users" ADD "age" integer[0m
+  ↳ db/migrate/20210204014829_add_age_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204014829"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to AddCredibilityToUsers (20210204021228)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "credibility" integer[0m
+  ↳ db/migrate/20210204021228_add_credibility_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204021228"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to AddLocationToEvents (20210204021301)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "events" ADD "location" varchar[0m
+  ↳ db/migrate/20210204021301_add_location_to_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204021301"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to AddDescriptionToEvents (20210204021327)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "events" ADD "description" text[0m
+  ↳ db/migrate/20210204021327_add_description_to_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204021327"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to AddRestrictionAgeToEvents (20210204021404)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "events" ADD "restrictionAge" integer[0m
+  ↳ db/migrate/20210204021404_add_restriction_age_to_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (15.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210204021404"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to CreateAttendees (20210207193341)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210207193341_create_attendees.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_attendees_on_user_id" ON "attendees" ("user_id")[0m
+  ↳ db/migrate/20210207193341_create_attendees.rb:3
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX "index_attendees_on_event_id" ON "attendees" ("event_id")[0m
+  ↳ db/migrate/20210207193341_create_attendees.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210207193341"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to CreateHosts (20210207202138)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "hosts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210207202138_create_hosts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_hosts_on_user_id" ON "hosts" ("user_id")[0m
+  ↳ db/migrate/20210207202138_create_hosts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_hosts_on_event_id" ON "hosts" ("event_id")[0m
+  ↳ db/migrate/20210207202138_create_hosts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210207202138"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to AddLatitudeToEvents (20210212032546)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "events" ADD "latitude" float[0m
+  ↳ db/migrate/20210212032546_add_latitude_to_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210212032546"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to AddLongitudeToEvents (20210212032558)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "events" ADD "longitude" float[0m
+  ↳ db/migrate/20210212032558_add_longitude_to_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210212032558"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+Migrating to AddPasswordToUser (20210323214420)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "password" varchar[0m
+  ↳ db/migrate/20210323214420_add_password_to_user.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210323214420"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-27 22:33:14.906688"], ["updated_at", "2021-03-27 22:33:14.906688"]]
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/bin/rake:23
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/getApiKey" for ::1 at 2021-03-27 15:33:49 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-27 15:33:54 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+Completed 400 Bad Request in 12ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/createNewUser/a/b/20" for ::1 at 2021-03-27 15:34:03 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]", "age"=>"20"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["created_at", "2021-03-27 22:34:03.848391"], ["updated_at", "2021-03-27 22:34:03.848391"], ["age", 20], ["credibility", 7], ["password", "b"]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+Completed 200 OK in 23ms (Views: 0.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-27 15:34:09 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/search/TestingLocation" for ::1 at 2021-03-27 15:34:18 -0700
+Processing by EventsController#search as JSON
+  Parameters: {"query_name"=>"TestingLocation"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_name LIKE '%TestingLocation%')[0m
+  ↳ app/controllers/events_controller.rb:30
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events/TestingFromReact/Sat%20Mar%2027%202021%2015:34:22%20GMT-0700%20(Pacific%20Daylight%20Time)/testing/34.433245610938606/-119.85119998360595" for ::1 at 2021-03-27 15:34:34 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"TestingFromReact", "time"=>"Sat Mar 27 2021 15:34:22 GMT-0700 (Pacific Daylight Time)", "locationName"=>"testing", "latitude"=>"34.433245610938606", "longitude"=>"-119.85119998360595"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:15
+  [1m[36mEvent Create (2.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "TestingFromReact"], ["time", "2021-03-27 22:34:22"], ["created_at", "2021-03-27 22:34:34.147095"], ["updated_at", "2021-03-27 22:34:34.147095"], ["location", "testing"], ["longitude", -119.85119998360595]]
+  ↳ app/controllers/events_controller.rb:15
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:15
+Completed 200 OK in 42ms (Views: 0.8ms | ActiveRecord: 6.6ms)
+
+
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/events/ff/Sat%20Mar%2027%202021%2015:39:48%20GMT-0700%20(Pacific%20Daylight%20Time)/ff/34.43289165063539/-119.85197245980224" for ::1 at 2021-03-27 15:39:53 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ff", "time"=>"Sat Mar 27 2021 15:39:48 GMT-0700 (Pacific Daylight Time)", "locationName"=>"ff", "latitude"=>"34.43289165063539", "longitude"=>"-119.85197245980224"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:15
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "ff"], ["time", "2021-03-27 22:39:48"], ["created_at", "2021-03-27 22:39:53.756703"], ["updated_at", "2021-03-27 22:39:53.756703"], ["location", "ff"], ["longitude", -119.85197245980224]]
+  ↳ app/controllers/events_controller.rb:15
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:15
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/events/ff/Sat%20Mar%2027%202021%2015:40:18%20GMT-0700%20(Pacific%20Daylight%20Time)/ff/34.433316402819365/-119.851028322229" for ::1 at 2021-03-27 15:40:23 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ff", "time"=>"Sat Mar 27 2021 15:40:18 GMT-0700 (Pacific Daylight Time)", "locationName"=>"ff", "latitude"=>"34.433316402819365", "longitude"=>"-119.851028322229"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:15
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "ff"], ["time", "2021-03-27 22:40:18"], ["created_at", "2021-03-27 22:40:23.079877"], ["updated_at", "2021-03-27 22:40:23.079877"], ["location", "ff"], ["longitude", -119.851028322229]]
+  ↳ app/controllers/events_controller.rb:15
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:15
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 16:08:13 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 16:08:29 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-27 16:08:35 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 17ms (Views: 5.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 16:10:21 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-27 16:10:23 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 16:11:36 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-27 16:11:38 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 16:11:55 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-27 16:11:58 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 16:13:06 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 16:13:19 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-27 16:13:23 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-27 16:13:59 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-27 16:14:01 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-30 19:51:52 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-30 19:51:55 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 40ms (Views: 14.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/search/TestingLocation" for ::1 at 2021-03-30 19:52:19 -0700
+Processing by EventsController#search as JSON
+  Parameters: {"query_name"=>"TestingLocation"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_name LIKE '%TestingLocation%')[0m
+  ↳ app/controllers/events_controller.rb:27
+Completed 200 OK in 42ms (Views: 4.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-03-30 19:54:04 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-03-30 19:54:30 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/search/TestingLocation" for ::1 at 2021-03-30 19:58:49 -0700
+Processing by EventsController#search as JSON
+  Parameters: {"query_name"=>"TestingLocation"}
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (event_name LIKE '%TestingLocation%')[0m
+  ↳ app/controllers/events_controller.rb:27
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:02:51 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", 34.39705631765737], ["longitude", 34.467848891369414]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 13ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/events/ShouldBeFound/Wed%20Mar%2031%202021%2020:03:00%20GMT-0700%20(Pacific%20Daylight%20Time)/Asdf/34.43327421066003/-119.84785028675535" for ::1 at 2021-03-30 20:03:45 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"ShouldBeFound", "time"=>"Wed Mar 31 2021 20:03:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"Asdf", "latitude"=>"34.43327421066003", "longitude"=>"-119.84785028675535"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "longitude") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event_name", "ShouldBeFound"], ["time", "2021-04-01 03:03:00"], ["created_at", "2021-03-31 03:03:45.489675"], ["updated_at", "2021-03-31 03:03:45.489675"], ["location", "Asdf"], ["longitude", -119.84785028675535]]
+  ↳ app/controllers/events_controller.rb:12
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 3.4ms)
+
+
+  [1m[36mEvent Load (4.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:03:56 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", 34.39705631765737], ["longitude", 34.467848891369414]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:03:57 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", 34.39705631765737], ["longitude", 34.467848891369414]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:03:57 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", 34.39705631765737], ["longitude", 34.467848891369414]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:03:57 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", 34.39705631765737], ["longitude", 34.467848891369414]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:03:57 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", 34.39705631765737], ["longitude", 34.467848891369414]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/-119.89304014423826/-119.8072094557617/34.39705631765737/34.467848891369414" for ::1 at 2021-03-30 20:05:11 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"-119.89304014423826", "latitude_upper"=>"-119.8072094557617", "longitude_lower"=>"34.39705631765737", "longitude_upper"=>"34.467848891369414"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", -119.89304014423826], ["latitude", -119.8072094557617], ["longitude", -119.89304014423826], ["longitude", -119.8072094557617]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:05:27 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", 34.39705631765737], ["longitude", 34.467848891369414]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:06:08 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", -119.89304014423826], ["longitude", -119.8072094557617]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 12ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/findNearby/-119.89304014423826/-119.8072094557617/34.39705631765737/34.467848891369414" for ::1 at 2021-03-30 20:06:22 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"-119.89304014423826", "latitude_upper"=>"-119.8072094557617", "longitude_lower"=>"34.39705631765737", "longitude_upper"=>"34.467848891369414"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", -119.89304014423826], ["latitude", -119.8072094557617], ["longitude", 34.39705631765737], ["longitude", 34.467848891369414]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/events/SearchingFromReact/Tue%20Mar%2030%202021%2020:09:15%20GMT-0700%20(Pacific%20Daylight%20Time)/asdf/34.432637081252885/-119.84484621265867" for ::1 at 2021-03-30 20:10:14 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"SearchingFromReact", "time"=>"Tue Mar 30 2021 20:09:15 GMT-0700 (Pacific Daylight Time)", "locationName"=>"asdf", "latitude"=>"34.432637081252885", "longitude"=>"-119.84484621265867"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "SearchingFromReact"], ["time", "2021-03-31 03:09:15"], ["created_at", "2021-03-31 03:10:14.392876"], ["updated_at", "2021-03-31 03:10:14.392876"], ["location", "asdf"], ["latitude", 34.432637081252885], ["longitude", -119.84484621265867]]
+  ↳ app/controllers/events_controller.rb:12
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 3.1ms)
+
+
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/events/findNearby/34.39705631765737/34.467848891369414/-119.89304014423826/-119.8072094557617" for ::1 at 2021-03-30 20:10:20 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705631765737", "latitude_upper"=>"34.467848891369414", "longitude_lower"=>"-119.89304014423826", "longitude_upper"=>"-119.8072094557617"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705631765737], ["latitude", 34.467848891369414], ["longitude", -119.89304014423826], ["longitude", -119.8072094557617]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+

@@ -8,7 +8,11 @@ const LoginWindow = ({loginFunc}) => {
   const [userObj, setUserObj] = useState([])
   const [success,setSuccess] = useState(false)
   const [loginFailure,setLoginFailure] = useState(false)
+  const [createAccountSuccess, setCreateAccountSuccess] = useState(false)
 
+  const createAccountSuccessTrue = () => {
+    setCreateAccountSuccess(true)
+  }
   const loginRequest = async () => {
     const res = await fetch("http://localhost:3001/login/" + username + "/<" + password)
     if(res["status"] === 400){
@@ -44,7 +48,7 @@ const LoginWindow = ({loginFunc}) => {
           <input
             type='text'
             value= {username}
-            onChange={(e) => { setUsername(e.target.value); setLoginFailure(false) }}
+            onChange={(e) => { setUsername(e.target.value); setLoginFailure(false);setCreateAccountSuccess(false)}}
           />
         </div>
         <div className='form-control'>
@@ -52,12 +56,13 @@ const LoginWindow = ({loginFunc}) => {
           <input
             type='text'
             value= {password}
-            onChange={(e) => {setPassword(e.target.value); setLoginFailure(false)}}
+            onChange={(e) => {setPassword(e.target.value); setLoginFailure(false); setCreateAccountSuccess(false)}}
           />
         </div>
        <input type='submit' value='Login' className='btn btn-block' />
       </form>
-      <NewUserForm />
+      {createAccountSuccess ? (<h3> Account successfully created! </h3>) : (<></>)}
+      <NewUserForm createAccountSuccessTrue = {createAccountSuccessTrue}/>
     </div>
   )
 }

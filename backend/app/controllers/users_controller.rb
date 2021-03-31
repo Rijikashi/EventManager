@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   include UserHelper
+  # might want to add authentication? but for login it should be ok
+  skip_before_action :verify_authenticity_token
 
   def authentication
     username = params[:username]
@@ -10,6 +12,15 @@ class UsersController < ApplicationController
       render json: {error: "Please try again"},status:400
     else
       render :json => user
+    end
+  end
+
+  def createNewUser
+    user = User.new(name: params[:username], password: params[:password], age: params[:age], credibility: 7)
+    if user.save
+      render :json => user
+    else
+      render json: {error: "Unable to create user"}, status:400
     end
   end
 

@@ -14,9 +14,9 @@ const customStyles = {
 };
 Modal.setAppElement('#root')
 
-const NewEvent = ( ) => {
+const NewEvent = ({center}) => {
   const [newEvent, setNewEvent] = useState(false)
-
+  const [newEventSuccess,setNewEventSuccess] = useState(false)
   const toggleNewEvent = () => {
     setNewEvent(!newEvent)
   }
@@ -32,8 +32,14 @@ const NewEvent = ( ) => {
        style={customStyles}
        contentLabel="Example Modal"
        >
-        <NewEventForm />
+        <NewEventForm center = {center} toggleNewEvent = {toggleNewEvent} setNewEventSuccess = {setNewEventSuccess}/>
        </Modal>
+       {newEventSuccess ? (
+         <div>
+          Event successfully created!
+         </div>
+       ) : (<></>)}
+
     </div>
   )
 }
