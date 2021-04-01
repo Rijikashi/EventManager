@@ -1,13 +1,9 @@
 import { Marker, InfoWindow} from '@react-google-maps/api'
 import { useState, useEffect } from 'react'
+import InfoWindowDetails from './infoWindowDetails.js'
 
-const divStyle = {
-  background: `white`,
-  border: `1px solid #ccc`,
-  padding: 15
-}
 
-const MarkerInfo = ({key, marker}) => {
+const MarkerInfo = ({key, marker, userObj}) => {
   const [showMarker, setShowMarker] = useState(true)
   const position = {
     lat:marker["latitude"],
@@ -21,6 +17,7 @@ const MarkerInfo = ({key, marker}) => {
 }
   const markerOnClick = (e) => {
     console.log("registered marker on click")
+    console.log(marker)
     setShowMarker(false)
   }
   const windowOnCloseClick = (e) => {
@@ -39,9 +36,7 @@ const MarkerInfo = ({key, marker}) => {
       position = {position}
       onCloseClick = {windowOnCloseClick}
       >
-      <div style={divStyle}>
-        <h1>{JSON.stringify(marker)}</h1>
-      </div>
+      <InfoWindowDetails marker = {marker} userObj = {userObj}/>
       </InfoWindow>)
     }
     </div>

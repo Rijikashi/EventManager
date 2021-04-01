@@ -32,7 +32,7 @@ function App() {
       <Header />
       {loggedIn ? (
         <div>
-          <MapComponent apiKey = {apiKey}/>
+          <MapComponent apiKey = {apiKey} userObj = {userObj}/>
           <button onClick ={logout}>
             Log out
           </button>

@@ -8,7 +8,7 @@ const containerStyle = {
   height: '500px'
 };
 
-const MapComponent = ({apiKey}) => {
+const MapComponent = ({apiKey, userObj}) => {
   const [center, setCenter] = useState(
     {
       lat: 0,
@@ -20,10 +20,7 @@ const MapComponent = ({apiKey}) => {
   const [map, setMap] = useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
-    //const bounds = new window.google.maps.LatLngBounds();
-    // map.fitBounds(bounds);
     setMap(map)
-    console.log(map.getCenter())
   }, [])
 
   const testing = () => {
@@ -32,6 +29,7 @@ const MapComponent = ({apiKey}) => {
     console.log("bounds", bounds)
     console.log(items)
   }
+
   useEffect ( () => {
     navigator.geolocation.getCurrentPosition(function(position) {
     const tempCenter = {
@@ -46,12 +44,9 @@ const MapComponent = ({apiKey}) => {
 
   //need to change so it queries surrounding area
   const eventQuery = async () => {
-    //events/findNearby/:latitude/:longitude/:distance
     let bounds = map.getBounds()
-    let lat_lower_bound = bounds.Ra.g
-    // events/findNearby/:latitude_lower/:latitude_upper/:longitude_lower/:longitude_upper
     const res = await fetch("http://localhost:3001/events/findNearby/"
-    + bounds.Ra.g + "/" + bounds.Ra.i + "/" + bounds.La.g + "/" + bounds.La.i
+    + bounds.Ta.g + "/" + bounds.Ta.i + "/" + bounds.La.g + "/" + bounds.La.i
   )
     const data = await res.json()
     setItems(data)
@@ -72,7 +67,7 @@ const MapComponent = ({apiKey}) => {
         onLoad = {onLoad}
       >
       { eventQueried ? (items.map((item) => {
-        return <MarkerInfo key = {item["id"]} marker = {item}/>
+        return <MarkerInfo key = {item["id"]} marker = {item} userObj = {userObj}/>
       })) : (<></>)
       }
  // ADD stuff here
@@ -81,7 +76,7 @@ const MapComponent = ({apiKey}) => {
       <button onClick = {eventQuery}>
         Search nearby events
       </button>
-      <NewEvent center = {center}/>
+      <NewEvent center = {center} userObj = {userObj}/>
     </LoadScript>
   )
 }

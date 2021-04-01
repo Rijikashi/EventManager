@@ -14,7 +14,7 @@ const customStyles = {
 };
 Modal.setAppElement('#root')
 
-const NewEvent = ({center}) => {
+const NewEvent = ({center, userObj}) => {
   const [newEvent, setNewEvent] = useState(false)
   const [newEventSuccess,setNewEventSuccess] = useState(false)
   const toggleNewEvent = () => {
@@ -32,7 +32,7 @@ const NewEvent = ({center}) => {
        style={customStyles}
        contentLabel="Example Modal"
        >
-        <NewEventForm center = {center} toggleNewEvent = {toggleNewEvent} setNewEventSuccess = {setNewEventSuccess}/>
+        <NewEventForm center = {center} toggleNewEvent = {toggleNewEvent} setNewEventSuccess = {setNewEventSuccess} userObj = {userObj}/>
        </Modal>
        {newEventSuccess ? (
          <div>

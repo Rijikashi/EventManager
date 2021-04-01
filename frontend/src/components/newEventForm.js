@@ -7,7 +7,7 @@ const containerStyle = {
   height: '500px'
 };
 
-const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess}) => {
+const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj}) => {
   const [eventName, setEventName] = useState("")
   const [time, setTime] = useState(new Date())
   const [locationName, setLocationName] = useState("")
@@ -19,6 +19,7 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess}) => {
   )
   const [markerMap, setMarkerMap] = useState(true)
   const [markerSet, setMarkerSet] = useState(false)
+  const [newEventObj, setNewEventObj] = useState([])
 
   const postNewEvent = async () => {
     //http://localhost:3001/events/TestingLocationURL/asdf/130willowsprings/30/130
@@ -27,7 +28,23 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess}) => {
       method: 'POST'
     })
     const data = await res.json()
+    setNewEventObj(data)
+    const res2 = await fetch("http://localhost:3001/hosts/" + userObj[0]["id"] + "/" + data.id, {
+      method: 'POST'
+    })
+    const data2 = await res2.json()
+    console.log(data2)
   }
+
+//   useEffect ( () => {
+//     const postNewHost = async () => {
+//       // const res = await fetch("http://localhost:3001/hosts/" + userObj[0]["id"])
+//       // const data = await res.json()
+//       console.log(newEventObj)
+//     }
+//     postNewHost()
+// }, [newEventObj])
+
 
   const testButton = () => {
     console.log(time)
@@ -52,9 +69,8 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess}) => {
       lng: e.latLng.lng()
     }
     setLocation(tempCenter)
-    console.log("map e", e.latLng.lat())
-    console.log(e.latLng.lng())
   }
+
   return (
     <div>
       <form onSubmit = {onSubmit}>

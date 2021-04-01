@@ -1,5 +1,16 @@
 class AttendeesController < ApplicationController
   include AttendeeHelper
+  skip_before_action :verify_authenticity_token
+
+  def createNewAttendee
+    attendee = Attendee.new(event_id: params[:event_id], user_id: params[:user_id])
+    if attendee.save
+      render :json => attendee
+    else
+      render json: {error: "Unable to create attendee"}, status:400
+    end
+  end
+
   def index
     attendees = Attendee.all
     if attendees
@@ -17,7 +28,7 @@ class AttendeesController < ApplicationController
     end
   end
   def create
-    attendee = Attendee.new(attendee_params)
+    attendee = Attendee.new(event_id: params[:event_id], user_id: params[:user_id])
     if attendee.save
       render :json => attendee
     else
