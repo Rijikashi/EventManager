@@ -17,9 +17,6 @@ const InfoWindowDetails = ({marker, userObj}) => {
     { method: 'POST'
   })
     const data = await res.json()
-    console.log(data)
-    console.log("userobj is ",userObj[0]["id"])
-    console.log(marker)
   }
 
   useEffect ( () => {
@@ -29,14 +26,12 @@ const InfoWindowDetails = ({marker, userObj}) => {
       const data = await res.json()
       setAttendees(data)
       setCompletedAttendeeRequest(true)
-      console.log("attendee", data)
     }
     const findHosts = async () => {
       const reshost = await fetch("http://localhost:3001/events/findHosts/" + marker.id)
       const datahost = await reshost.json()
       setHosts(datahost)
       setCompletedHostRequest(true)
-      console.log("host", datahost)
     }
     findAttendees()
     findHosts()

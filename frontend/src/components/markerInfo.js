@@ -9,12 +9,6 @@ const MarkerInfo = ({key, marker, userObj}) => {
     lat:marker["latitude"],
     lng:marker["longitude"]
   }
-  const markerOnLoad = (marker) => {
-    console.log("marker loaded")
-  }
-  const windowOnLoad = (infoWindow) => {
-  console.log('infoWindow: ', infoWindow)
-}
   const markerOnClick = (e) => {
     console.log("registered marker on click")
     console.log(marker)
@@ -26,13 +20,11 @@ const MarkerInfo = ({key, marker, userObj}) => {
   return(
     <div>
     {showMarker ? (<Marker
-      onLoad={markerOnLoad}
       onClick = {markerOnClick}
       position={position}
       />)
       :
       (<InfoWindow
-      onLoad = {windowOnLoad}
       position = {position}
       onCloseClick = {windowOnCloseClick}
       >

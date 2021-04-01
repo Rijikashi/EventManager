@@ -39,7 +39,6 @@ const NewUserForm = ({createAccountSuccessTrue}) => {
     toggleNewUser()
     postNewUser()
     createAccountSuccessTrue()
-    console.log("hello!!!")
   }
   return (
     <div>

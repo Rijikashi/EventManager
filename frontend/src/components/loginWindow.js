@@ -31,7 +31,6 @@ const LoginWindow = ({loginFunc}) => {
   }
 
   useEffect( () => {
-    console.log(userObj)
     if(userObj.length === 0){
     }
     else{

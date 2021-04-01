@@ -15624,3 +15624,44 @@ Processing by EventsController#findHosts as JSON
 Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/getApiKey" for ::1 at 2021-03-31 20:31:19 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-31 20:31:22 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 37ms (Views: 17.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/events/findNearby/34.39706542151046/34.46785798751446/-119.89303264423827/-119.80720195576171" for ::1 at 2021-03-31 20:31:28 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39706542151046", "latitude_upper"=>"34.46785798751446", "longitude_lower"=>"-119.89303264423827", "longitude_upper"=>"-119.80720195576171"}
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39706542151046], ["latitude", 34.46785798751446], ["longitude", -119.89303264423827], ["longitude", -119.80720195576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 37ms (Views: 9.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/events/findAttendees/1" for ::1 at 2021-03-31 20:31:53 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"1"}
+Started GET "/events/findHosts/1" for ::1 at 2021-03-31 20:31:53 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:32
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 34ms (Views: 22.9ms | ActiveRecord: 1.7ms)
+
+

@@ -22,7 +22,6 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj}) => 
   const [newEventObj, setNewEventObj] = useState([])
 
   const postNewEvent = async () => {
-    //http://localhost:3001/events/TestingLocationURL/asdf/130willowsprings/30/130
     const res = await fetch("http://localhost:3001/events/"
       + eventName + "/" + time  +"/" + locationName + "/" + location.lat + "/" + location.lng, {
       method: 'POST'
@@ -33,22 +32,6 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj}) => 
       method: 'POST'
     })
     const data2 = await res2.json()
-    console.log(data2)
-  }
-
-//   useEffect ( () => {
-//     const postNewHost = async () => {
-//       // const res = await fetch("http://localhost:3001/hosts/" + userObj[0]["id"])
-//       // const data = await res.json()
-//       console.log(newEventObj)
-//     }
-//     postNewHost()
-// }, [newEventObj])
-
-
-  const testButton = () => {
-    console.log(time)
-    console.log(location)
   }
 
   const onSubmit = (e) => {
@@ -108,9 +91,6 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj}) => 
           </GoogleMap>
        <input type='submit' value='Create' className='btn btn-block' />
       </form>
-      <button onClick = {testButton}>
-        testButton
-        </button>
     </div>
   )
 }

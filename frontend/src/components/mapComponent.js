@@ -23,13 +23,6 @@ const MapComponent = ({apiKey, userObj}) => {
     setMap(map)
   }, [])
 
-  const testing = () => {
-    let bounds = map.getBounds()
-    console.log("center",map.getCenter())
-    console.log("bounds", bounds)
-    console.log(items)
-  }
-
   useEffect ( () => {
     navigator.geolocation.getCurrentPosition(function(position) {
     const tempCenter = {
@@ -57,9 +50,6 @@ const MapComponent = ({apiKey, userObj}) => {
     <LoadScript
       googleMapsApiKey= {apiKey}
     >
-      <button onClick = {testing}>
-        Test Button
-      </button>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
