@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react'
 import NewUserForm from './newUserForm.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '../App.css'
+import Form from 'react-bootstrap/Form'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Button from 'react-bootstrap/Button'
 
 const LoginWindow = ({loginFunc}) => {
 
@@ -39,27 +44,25 @@ const LoginWindow = ({loginFunc}) => {
   }, [userObj])
 
   return (
-    <div>
+    <div className = 'loginWindow'>
       {loginFailure ? (<h3> Login Failed </h3>) : (<></>)}
-      <form onSubmit = {onSubmit}>
-        <div className='form-control'>
-        <label>Username</label>
-          <input
-            type='text'
-            value= {username}
+      <Jumbotron className = 'jumbotron'>
+        <Form onSubmit = {onSubmit}>
+          <Form.Label>Username: </Form.Label>
+          <Form.Control type='text' value= {username}
             onChange={(e) => { setUsername(e.target.value); setLoginFailure(false);setCreateAccountSuccess(false)}}
           />
-        </div>
-        <div className='form-control'>
-          <label>Password</label>
-          <input
+          <Form.Label>Password: </Form.Label>
+          <Form.Control
             type='password'
             value= {password}
             onChange={(e) => {setPassword(e.target.value); setLoginFailure(false); setCreateAccountSuccess(false)}}
           />
-        </div>
-       <input type='submit' value='Login' className='btn btn-block' />
-      </form>
+          <Button variant="secondary" type="submit">
+            Login
+          </Button>
+        </Form>
+      </Jumbotron>
       {createAccountSuccess ? (<h3> Account successfully created! </h3>) : (<></>)}
       <NewUserForm createAccountSuccessTrue = {createAccountSuccessTrue}/>
     </div>

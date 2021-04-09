@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react'
 import Header from "./components/Header.js"
 import MapComponent from "./components/mapComponent.js"
 import LoginWindow from "./components/loginWindow.js"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   const [apiKey, setApiKey] = useState("")
@@ -29,13 +29,10 @@ function App() {
   }, [])
   return (
     <div>
-      <Header />
+      <Header loggedIn = {loggedIn} logout = {logout}/>
       {loggedIn ? (
-        <div>
+        <div className = 'map-component-container'>
           <MapComponent apiKey = {apiKey} userObj = {userObj}/>
-          <button onClick ={logout}>
-            Log out
-          </button>
         </div>
       ):
         (<LoginWindow loginFunc = {loginFunc}/>)

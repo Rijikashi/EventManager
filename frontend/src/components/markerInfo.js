@@ -1,5 +1,5 @@
 import { Marker, InfoWindow} from '@react-google-maps/api'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import InfoWindowDetails from './infoWindowDetails.js'
 
 

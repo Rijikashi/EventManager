@@ -21,7 +21,6 @@ const InfoWindowDetails = ({marker, userObj}) => {
 
   useEffect ( () => {
     const findAttendees = async () => {
-      //'events/findAttendees/:event_id'
       const res = await fetch("http://localhost:3001/events/findAttendees/" + marker.id)
       const data = await res.json()
       setAttendees(data)

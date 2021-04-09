@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import { GoogleMap, LoadScript, Marker} from '@react-google-maps/api'
+import { GoogleMap, Marker} from '@react-google-maps/api'
 import DateTimePicker from 'react-datetime-picker';
 
 const containerStyle = {
@@ -7,7 +7,7 @@ const containerStyle = {
   height: '500px'
 };
 
-const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj}) => {
+const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj, setNewEventFailure}) => {
   const [eventName, setEventName] = useState("")
   const [time, setTime] = useState(new Date())
   const [locationName, setLocationName] = useState("")
@@ -26,12 +26,17 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj}) => 
       + eventName + "/" + time  +"/" + locationName + "/" + location.lat + "/" + location.lng, {
       method: 'POST'
     })
-    const data = await res.json()
-    setNewEventObj(data)
-    const res2 = await fetch("http://localhost:3001/hosts/" + userObj[0]["id"] + "/" + data.id, {
-      method: 'POST'
-    })
-    const data2 = await res2.json()
+    if(res["status"] === 400){
+      setNewEventFailure(true)
+    }
+    else{
+      const data = await res.json()
+      setNewEventObj(data)
+      const res2 = await fetch("http://localhost:3001/hosts/" + userObj[0]["id"] + "/" + data.id, {
+        method: 'POST'
+      })
+      const data2 = await res2.json()
+    }
   }
 
   const onSubmit = (e) => {

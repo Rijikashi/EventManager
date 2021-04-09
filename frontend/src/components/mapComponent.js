@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import { GoogleMap, LoadScript} from '@react-google-maps/api'
+import Button from 'react-bootstrap/Button'
 import MarkerInfo from "./markerInfo.js"
 import NewEvent from "./newEvent.js"
+import '../App.css'
+
 import React from 'react'
 const containerStyle = {
-  width: '500px',
-  height: '500px'
+  width: '100%',
+  height: '100%'
 };
 
 const MapComponent = ({apiKey, userObj}) => {
@@ -17,10 +20,10 @@ const MapComponent = ({apiKey, userObj}) => {
   )
   const [items, setItems] = useState([])
   const [eventQueried, setEventQueried] = useState(false)
-  const [map, setMap] = useState(null)
+  const [mapObj, setMapObj] = useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
-    setMap(map)
+    setMapObj(map)
   }, [])
 
   useEffect ( () => {
@@ -31,16 +34,14 @@ const MapComponent = ({apiKey, userObj}) => {
     }
     setCenter(tempCenter)
   });
+}, [])
 
-  }, [])
-
-
-  //need to change so it queries surrounding area
   const eventQuery = async () => {
-    let bounds = map.getBounds()
+    let bounds = mapObj.getBounds()
+    console.log("event query", bounds)
     const res = await fetch("http://localhost:3001/events/findNearby/"
     + bounds.Ta.g + "/" + bounds.Ta.i + "/" + bounds.La.g + "/" + bounds.La.i
-  )
+    )
     const data = await res.json()
     setItems(data)
     setEventQueried(true)
@@ -49,6 +50,7 @@ const MapComponent = ({apiKey, userObj}) => {
   return (
     <LoadScript
       googleMapsApiKey= {apiKey}
+      className = 'google-map-container'
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -56,17 +58,17 @@ const MapComponent = ({apiKey, userObj}) => {
         zoom={13}
         onLoad = {onLoad}
       >
-      { eventQueried ? (items.map((item) => {
-        return <MarkerInfo key = {item["id"]} marker = {item} userObj = {userObj}/>
-      })) : (<></>)
-      }
- // ADD stuff here
+        { eventQueried ? (items.map((item) => {
+          return <MarkerInfo key = {item["id"]} marker = {item} userObj = {userObj}/>
+        })) : (<></>)
+        }
       </GoogleMap>
-
-      <button onClick = {eventQuery}>
-        Search nearby events
-      </button>
-      <NewEvent center = {center} userObj = {userObj}/>
+      <div className = 'button-overlay'>
+        <Button variant = 'light' onClick = {eventQuery}>
+          Search nearby events
+        </Button>
+        <NewEvent center = {center} userObj = {userObj}/>
+      </div>
     </LoadScript>
   )
 }

@@ -1,17 +1,8 @@
-import Modal from 'react-modal';
 import {useState, useEffect} from 'react'
-
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
-Modal.setAppElement('#root')
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import Form from 'react-bootstrap/Form'
+import '../App.css'
 
 const NewUserForm = ({createAccountSuccessTrue}) => {
   const [newUser, setNewUser] = useState(false)
@@ -41,44 +32,29 @@ const NewUserForm = ({createAccountSuccessTrue}) => {
     createAccountSuccessTrue()
   }
   return (
-    <div>
-      <button onClick = {toggleNewUser}>
-        Create new account!
-      </button>
-      <Modal
-       isOpen={newUser}
-       onRequestClose={toggleNewUser}
-       style={customStyles}
-       contentLabel="New User Modal"
-       >
-       <form onSubmit = {onSubmit}>
-         <div className='form-control'>
-         <label>Username</label>
-           <input
-             type='text'
-             value= {username}
+    <div className = 'newUserButtonContainer'>
+      <Button onClick = {toggleNewUser} className = 'newUserButton'>
+        Create new Account!
+      </Button>
+      <Modal show = {newUser} onHide = {toggleNewUser}>
+       <Form onSubmit = {onSubmit}>
+         <Form.Label>Username (required)</Form.Label>
+           <Form.Control type='text' value= {username} placeholder = "Username"
              onChange={(e) => { setUsername(e.target.value)}}
            />
-         </div>
-         <div className='form-control'>
-           <label>Password</label>
-           <input
-             type='text'
-             value= {password}
+           <Form.Label>Password (required)</Form.Label>
+           <Form.Control type='password' value= {password} placeholder = "Password"
              onChange={(e) => {setPassword(e.target.value)}}
            />
-         </div>
-         <div className='form-control'>
-           <label>Age</label>
-           <input
-             type='text'
-             value= {age}
+           <Form.Label>Age</Form.Label>
+           <Form.Control type='text' value= {age} placeholder = "Age"
              onChange={(e) => {setAge(e.target.value)}}
            />
-         </div>
-        <input type='submit' value='Create' className='btn btn-block' />
-       </form>
-       </Modal>
+           <Button variant="secondary" type="submit" className = 'signUpButton'>
+             Sign Up
+           </Button>
+        </Form>
+      </Modal>
     </div>
   )
 }

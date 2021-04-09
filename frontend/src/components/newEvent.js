@@ -1,42 +1,33 @@
-import Modal from 'react-modal';
+import Modal from 'react-bootstrap/Modal'
 import NewEventForm from './newEventForm.js'
-import {useState, useEffect} from 'react'
+import Button from 'react-bootstrap/Button'
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
-Modal.setAppElement('#root')
+import {useState, useEffect} from 'react'
 
 const NewEvent = ({center, userObj}) => {
   const [newEvent, setNewEvent] = useState(false)
   const [newEventSuccess,setNewEventSuccess] = useState(false)
+  const [newEventFailure, setNewEventFailure] = useState(false)
   const toggleNewEvent = () => {
     setNewEvent(!newEvent)
   }
 
   return (
     <div>
-      <button onClick = {toggleNewEvent}>
-        Create new Event!
-      </button>
-      <Modal
-       isOpen={newEvent}
-       onRequestClose={toggleNewEvent}
-       style={customStyles}
-       contentLabel="Example Modal"
-       >
-        <NewEventForm center = {center} toggleNewEvent = {toggleNewEvent} setNewEventSuccess = {setNewEventSuccess} userObj = {userObj}/>
+      <Button onClick = {toggleNewEvent} variant = 'light'>
+        Create new Event
+      </Button>
+      <Modal show = {newEvent} onHide = {toggleNewEvent} >
+        <NewEventForm center = {center} toggleNewEvent = {toggleNewEvent} setNewEventSuccess = {setNewEventSuccess} userObj = {userObj} setNewEventFailure = {setNewEventFailure}/>
        </Modal>
        {newEventSuccess ? (
          <div>
           Event successfully created!
+         </div>
+       ) : (<></>)}
+       {newEventFailure ? (
+         <div>
+          Failure to create Event
          </div>
        ) : (<></>)}
 

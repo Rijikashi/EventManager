@@ -15665,3 +15665,2604 @@ Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 1.3ms)
 Completed 200 OK in 34ms (Views: 22.9ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/getApiKey" for ::1 at 2021-03-31 21:38:05 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 24ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-03-31 21:38:25 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 70ms (Views: 41.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/events/findNearby/34.39705971909697/34.467852289929084/-119.89306154423828/-119.80723085576172" for ::1 at 2021-03-31 21:38:36 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39705971909697", "latitude_upper"=>"34.467852289929084", "longitude_lower"=>"-119.89306154423828", "longitude_upper"=>"-119.80723085576172"}
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39705971909697], ["latitude", 34.467852289929084], ["longitude", -119.89306154423828], ["longitude", -119.80723085576172]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 41ms (Views: 13.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events/findAttendees/1" for ::1 at 2021-03-31 21:38:38 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"1"}
+Started GET "/events/findHosts/1" for ::1 at 2021-03-31 21:38:38 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:37
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 70ms (Views: 58.2ms | ActiveRecord: 10.5ms)
+
+
+Completed 200 OK in 101ms (Views: 91.0ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/events/Senior%20Party/Sat%20Apr%2003%202021%2021:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/6515%20El%20Greco%20Rd/34.41538304684862/-119.8540729539978" for ::1 at 2021-03-31 21:39:17 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"Senior Party", "time"=>"Sat Apr 03 2021 21:00:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"6515 El Greco Rd", "latitude"=>"34.41538304684862", "longitude"=>"-119.8540729539978"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+  [1m[36mEvent Create (2.1ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "Senior Party"], ["time", "2021-04-04 04:00:00"], ["created_at", "2021-04-01 04:39:17.488503"], ["updated_at", "2021-04-01 04:39:17.488503"], ["location", "6515 El Greco Rd"], ["latitude", 34.41538304684862], ["longitude", -119.8540729539978]]
+  ↳ app/controllers/events_controller.rb:12
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/hosts/1/2" for ::1 at 2021-03-31 21:39:17 -0700
+Processing by HostsController#createNewHost as JSON
+  Parameters: {"user_id"=>"1", "event_id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hosts" WHERE "hosts"."user_id" = ? AND "hosts"."event_id" = ? LIMIT ?[0m  [["user_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Create (3.1ms)[0m  [1m[32mINSERT INTO "hosts" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 2], ["created_at", "2021-04-01 04:39:17.601557"], ["updated_at", "2021-04-01 04:39:17.601557"]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+Completed 200 OK in 59ms (Views: 2.4ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/events/findNearby/34.412351283417195/34.48313090470165/-119.89306154423828/-119.80723085576172" for ::1 at 2021-03-31 21:39:19 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.412351283417195", "latitude_upper"=>"34.48313090470165", "longitude_lower"=>"-119.89306154423828", "longitude_upper"=>"-119.80723085576172"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.412351283417195], ["latitude", 34.48313090470165], ["longitude", -119.89306154423828], ["longitude", -119.80723085576172]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findAttendees/2" for ::1 at 2021-03-31 21:39:23 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findHosts/2" for ::1 at 2021-03-31 21:39:23 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login/Bob/%3Cpassword1" for ::1 at 2021-03-31 21:39:36 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"Bob", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'Bob' AND password = 'password1') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'Bob' AND password = 'password1')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/findNearby/34.3971010365841/34.46789357243359/-119.89305754423827/-119.80722685576171" for ::1 at 2021-03-31 21:39:45 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.3971010365841", "latitude_upper"=>"34.46789357243359", "longitude_lower"=>"-119.89305754423827", "longitude_upper"=>"-119.80722685576171"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.3971010365841], ["latitude", 34.46789357243359], ["longitude", -119.89305754423827], ["longitude", -119.80722685576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/findAttendees/1" for ::1 at 2021-03-31 21:39:46 -0700
+Started GET "/events/findHosts/1" for ::1 at 2021-03-31 21:39:46 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:32
+Processing by EventsController#findHosts as JSON
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+
+
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findAttendees/2" for ::1 at 2021-03-31 21:39:53 -0700
+Started GET "/events/findHosts/2" for ::1 at 2021-03-31 21:39:53 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+Processing by EventsController#findHosts as JSON
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/attendees/2/2" for ::1 at 2021-03-31 21:39:54 -0700
+Processing by AttendeesController#createNewAttendee as JSON
+  Parameters: {"user_id"=>"2", "event_id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7
+  [1m[36mAttendee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "attendees" WHERE "attendees"."user_id" = ? AND "attendees"."event_id" = ? LIMIT ?[0m  [["user_id", 2], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7
+  [1m[36mAttendee Create (0.6ms)[0m  [1m[32mINSERT INTO "attendees" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["event_id", 2], ["created_at", "2021-04-01 04:39:54.299028"], ["updated_at", "2021-04-01 04:39:54.299028"]]
+  ↳ app/controllers/attendees_controller.rb:7
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/events/findAttendees/2" for ::1 at 2021-03-31 21:39:57 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/findHosts/2" for ::1 at 2021-03-31 21:39:57 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-04 07:34:05 -0700
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/asdlfksaj/%3Cfsfasdf" for ::1 at 2021-04-04 07:34:16 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"asdlfksaj", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'asdlfksaj' AND password = 'fsfasdf') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+Completed 400 Bad Request in 17ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-04 07:34:24 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/events/Hello!/Sun%20Apr%2004%202021%2008:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/1515%20Chapala%20St./34.42563979319398/-119.7096233465576" for ::1 at 2021-04-04 07:35:18 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/events/Hello!/Sun%20Apr%2004%202021%2008:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/1515%20Chapala%20St./34.42563979319398/-119.7096233465576"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/findNearby/34.38424791588364/34.455051332418876/-119.75090790771483/-119.66507721923827" for ::1 at 2021-04-04 07:35:21 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.38424791588364", "latitude_upper"=>"34.455051332418876", "longitude_lower"=>"-119.75090790771483", "longitude_upper"=>"-119.66507721923827"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.38424791588364], ["latitude", 34.455051332418876], ["longitude", -119.75090790771483], ["longitude", -119.66507721923827]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 18ms (Views: 1.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/findNearby/34.38424791588364/34.455051332418876/-119.75090790771483/-119.66507721923827" for ::1 at 2021-04-04 07:35:23 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.38424791588364", "latitude_upper"=>"34.455051332418876", "longitude_lower"=>"-119.75090790771483", "longitude_upper"=>"-119.66507721923827"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.38424791588364], ["latitude", 34.455051332418876], ["longitude", -119.75090790771483], ["longitude", -119.66507721923827]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/findNearby/34.38424791588364/34.455051332418876/-119.75090790771483/-119.66507721923827" for ::1 at 2021-04-04 07:35:25 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.38424791588364", "latitude_upper"=>"34.455051332418876", "longitude_lower"=>"-119.75090790771483", "longitude_upper"=>"-119.66507721923827"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.38424791588364], ["latitude", 34.455051332418876], ["longitude", -119.75090790771483], ["longitude", -119.66507721923827]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.38424791588364/34.455051332418876/-119.75090790771483/-119.66507721923827" for ::1 at 2021-04-04 07:35:25 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.38424791588364", "latitude_upper"=>"34.455051332418876", "longitude_lower"=>"-119.75090790771483", "longitude_upper"=>"-119.66507721923827"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.38424791588364], ["latitude", 34.455051332418876], ["longitude", -119.75090790771483], ["longitude", -119.66507721923827]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.38424791588364/34.455051332418876/-119.75090790771483/-119.66507721923827" for ::1 at 2021-04-04 07:35:29 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.38424791588364", "latitude_upper"=>"34.455051332418876", "longitude_lower"=>"-119.75090790771483", "longitude_upper"=>"-119.66507721923827"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.38424791588364], ["latitude", 34.455051332418876], ["longitude", -119.75090790771483], ["longitude", -119.66507721923827]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.39562839208992/34.46642217477295/-119.89577119608903/-119.80994050761247" for ::1 at 2021-04-04 07:35:34 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39562839208992", "latitude_upper"=>"34.46642217477295", "longitude_lower"=>"-119.89577119608903", "longitude_upper"=>"-119.80994050761247"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39562839208992], ["latitude", 34.46642217477295], ["longitude", -119.89577119608903], ["longitude", -119.80994050761247]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/findNearby/34.389551247788475/34.46035017527027/-119.7712310389641/-119.68540035048754" for ::1 at 2021-04-04 07:35:38 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.389551247788475", "latitude_upper"=>"34.46035017527027", "longitude_lower"=>"-119.7712310389641", "longitude_upper"=>"-119.68540035048754"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.389551247788475], ["latitude", 34.46035017527027], ["longitude", -119.7712310389641], ["longitude", -119.68540035048754]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.38867145253928/34.459471124773685/-119.89885255138503/-119.81302186290847" for ::1 at 2021-04-04 07:35:42 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.38867145253928", "latitude_upper"=>"34.459471124773685", "longitude_lower"=>"-119.89885255138503", "longitude_upper"=>"-119.81302186290847"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.38867145253928], ["latitude", 34.459471124773685], ["longitude", -119.89885255138503], ["longitude", -119.81302186290847]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findHosts/1" for ::1 at 2021-04-04 07:35:43 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/findAttendees/1" for ::1 at 2021-04-04 07:35:43 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login/Bob/%3Cpassword1" for ::1 at 2021-04-04 07:35:52 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"Bob", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'Bob' AND password = 'password1') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'Bob' AND password = 'password1')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findNearby/34.38992820104265/34.46072680942589/-119.75298754423828/-119.66715685576172" for ::1 at 2021-04-04 07:36:02 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.38992820104265", "latitude_upper"=>"34.46072680942589", "longitude_lower"=>"-119.75298754423828", "longitude_upper"=>"-119.66715685576172"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.38992820104265], ["latitude", 34.46072680942589], ["longitude", -119.75298754423828], ["longitude", -119.66715685576172]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findNearby/34.39628710112393/34.467080326108174/-119.88741229455628/-119.80158160607972" for ::1 at 2021-04-04 07:36:07 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.39628710112393", "latitude_upper"=>"34.467080326108174", "longitude_lower"=>"-119.88741229455628", "longitude_upper"=>"-119.80158160607972"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.39628710112393], ["latitude", 34.467080326108174], ["longitude", -119.88741229455628], ["longitude", -119.80158160607972]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findHosts/2" for ::1 at 2021-04-04 07:36:08 -0700
+Started GET "/events/findAttendees/2" for ::1 at 2021-04-04 07:36:08 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+Processing by EventsController#findAttendees as JSON
+  ↳ app/controllers/events_controller.rb:37
+  Parameters: {"event_id"=>"2"}
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findHosts/1" for ::1 at 2021-04-04 07:36:11 -0700
+Started GET "/events/findAttendees/1" for ::1 at 2021-04-04 07:36:11 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+Processing by EventsController#findAttendees as JSON
+  ↳ app/controllers/events_controller.rb:37
+  Parameters: {"event_id"=>"1"}
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/events/Hello/Sun%20Apr%2004%202021%2008:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/1515%20Chapala%20St/34.4256535931414/-119.70955721586914" for ::1 at 2021-04-04 07:43:27 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"Hello", "time"=>"Sun Apr 04 2021 08:00:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"1515 Chapala St", "latitude"=>"34.4256535931414", "longitude"=>"-119.70955721586914"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "Hello"], ["time", "2021-04-04 15:00:00"], ["created_at", "2021-04-04 14:43:27.837681"], ["updated_at", "2021-04-04 14:43:27.837681"], ["location", "1515 Chapala St"], ["latitude", 34.4256535931414], ["longitude", -119.70955721586914]]
+  ↳ app/controllers/events_controller.rb:12
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/hosts/2/3" for ::1 at 2021-04-04 07:43:27 -0700
+Processing by HostsController#createNewHost as JSON
+  Parameters: {"user_id"=>"2", "event_id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hosts" WHERE "hosts"."user_id" = ? AND "hosts"."event_id" = ? LIMIT ?[0m  [["user_id", 2], ["event_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Create (0.5ms)[0m  [1m[32mINSERT INTO "hosts" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["event_id", 3], ["created_at", "2021-04-04 14:43:27.881356"], ["updated_at", "2021-04-04 14:43:27.881356"]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:43:29 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/events/FFF!!!!/Sun%20Apr%2004%202021%2007:47:14%20GMT-0700%20(Pacific%20Daylight%20Time)/ffdf/34.42809610022137/-119.70784060209961" for ::1 at 2021-04-04 07:47:20 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"FFF!!!!", "time"=>"Sun Apr 04 2021 07:47:14 GMT-0700 (Pacific Daylight Time)", "locationName"=>"ffdf", "latitude"=>"34.42809610022137", "longitude"=>"-119.70784060209961"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+  [1m[36mEvent Create (1.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "FFF!!!!"], ["time", "2021-04-04 14:47:14"], ["created_at", "2021-04-04 14:47:20.298383"], ["updated_at", "2021-04-04 14:47:20.298383"], ["location", "ffdf"], ["latitude", 34.42809610022137], ["longitude", -119.70784060209961]]
+  ↳ app/controllers/events_controller.rb:12
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/hosts/2/4" for ::1 at 2021-04-04 07:47:20 -0700
+Processing by HostsController#createNewHost as JSON
+  Parameters: {"user_id"=>"2", "event_id"=>"4"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hosts" WHERE "hosts"."user_id" = ? AND "hosts"."event_id" = ? LIMIT ?[0m  [["user_id", 2], ["event_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Create (0.9ms)[0m  [1m[32mINSERT INTO "hosts" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["event_id", 4], ["created_at", "2021-04-04 14:47:20.316416"], ["updated_at", "2021-04-04 14:47:20.316416"]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:47:36 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/events/Hello!/Sun%20Apr%2004%202021%2007:47:37%20GMT-0700%20(Pacific%20Daylight%20Time)/1515%20Chapala%20St./34.42059135850515/-119.70711104124756" for ::1 at 2021-04-04 07:47:51 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/events/Hello!/Sun%20Apr%2004%202021%2007:47:37%20GMT-0700%20(Pacific%20Daylight%20Time)/1515%20Chapala%20St./34.42059135850515/-119.70711104124756"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:47:53 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:48:04 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:48:05 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:48:05 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:48:05 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:48:05 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.388527164049094/34.459326958423055/-119.74742019955765/-119.66158951108109" for ::1 at 2021-04-04 07:48:06 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.388527164049094", "latitude_upper"=>"34.459326958423055", "longitude_lower"=>"-119.74742019955765", "longitude_upper"=>"-119.66158951108109"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.388527164049094], ["latitude", 34.459326958423055], ["longitude", -119.74742019955765], ["longitude", -119.66158951108109]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 14:22:15 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/Annette/thewhip1/40" for ::1 at 2021-04-08 14:22:30 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"Annette", "password"=>"[FILTERED]", "age"=>"40"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Annette"], ["created_at", "2021-04-08 21:22:30.373448"], ["updated_at", "2021-04-08 21:22:30.373448"], ["age", 40], ["credibility", 7], ["password", "thewhip1"]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+Completed 200 OK in 43ms (Views: 1.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/login/Annetteeee/%3Cthehwip1" for ::1 at 2021-04-08 14:22:35 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"Annetteeee", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'Annetteeee' AND password = 'thehwip1') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login/Annette/%3Cthewhip1" for ::1 at 2021-04-08 14:22:40 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"Annette", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'Annette' AND password = 'thewhip1') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'Annette' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events/Isaac%20Birthday%20Picnic/Sat%20Apr%2010%202021%2014:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/3757%20Torrey%20View%20Ct./32.92036327268727/-117.2332322465576" for ::1 at 2021-04-08 14:23:52 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/events/Isaac%20Birthday%20Picnic/Sat%20Apr%2010%202021%2014:00:00%20GMT-0700%20(Pacific%20Daylight%20Time)/3757%20Torrey%20View%20Ct./32.92036327268727/-117.2332322465576"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/findNearby/32.88452085762584/32.95656927796967/-117.27657674423827/-117.19074605576171" for ::1 at 2021-04-08 14:23:54 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.88452085762584", "latitude_upper"=>"32.95656927796967", "longitude_lower"=>"-117.27657674423827", "longitude_upper"=>"-117.19074605576171"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.88452085762584], ["latitude", 32.95656927796967], ["longitude", -117.27657674423827], ["longitude", -117.19074605576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/findNearby/32.88452085762584/32.95656927796967/-117.27657674423827/-117.19074605576171" for ::1 at 2021-04-08 14:23:56 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.88452085762584", "latitude_upper"=>"32.95656927796967", "longitude_lower"=>"-117.27657674423827", "longitude_upper"=>"-117.19074605576171"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.88452085762584], ["latitude", 32.95656927796967], ["longitude", -117.27657674423827], ["longitude", -117.19074605576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.895620134935925/32.96765952122354/-117.27657674423827/-117.19074605576171" for ::1 at 2021-04-08 14:23:58 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.895620134935925", "latitude_upper"=>"32.96765952122354", "longitude_lower"=>"-117.27657674423827", "longitude_upper"=>"-117.19074605576171"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.895620134935925], ["latitude", 32.96765952122354], ["longitude", -117.27657674423827], ["longitude", -117.19074605576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.895620134935925/32.96765952122354/-117.27657674423827/-117.19074605576171" for ::1 at 2021-04-08 14:24:14 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.895620134935925", "latitude_upper"=>"32.96765952122354", "longitude_lower"=>"-117.27657674423827", "longitude_upper"=>"-117.19074605576171"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.895620134935925], ["latitude", 32.96765952122354], ["longitude", -117.27657674423827], ["longitude", -117.19074605576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.895620134935925/32.96765952122354/-117.27657674423827/-117.19074605576171" for ::1 at 2021-04-08 14:24:15 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.895620134935925", "latitude_upper"=>"32.96765952122354", "longitude_lower"=>"-117.27657674423827", "longitude_upper"=>"-117.19074605576171"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.895620134935925], ["latitude", 32.96765952122354], ["longitude", -117.27657674423827], ["longitude", -117.19074605576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.895620134935925/32.96765952122354/-117.27657674423827/-117.19074605576171" for ::1 at 2021-04-08 14:24:15 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.895620134935925", "latitude_upper"=>"32.96765952122354", "longitude_lower"=>"-117.27657674423827", "longitude_upper"=>"-117.19074605576171"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.895620134935925], ["latitude", 32.96765952122354], ["longitude", -117.27657674423827], ["longitude", -117.19074605576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.895620134935925/32.96765952122354/-117.27657674423827/-117.19074605576171" for ::1 at 2021-04-08 14:24:15 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.895620134935925", "latitude_upper"=>"32.96765952122354", "longitude_lower"=>"-117.27657674423827", "longitude_upper"=>"-117.19074605576171"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.895620134935925], ["latitude", 32.96765952122354], ["longitude", -117.27657674423827], ["longitude", -117.19074605576171]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 14:24:18 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/findNearby/32.884515955631755/32.95656437996488/-117.27654784423831/-117.19071715576175" for ::1 at 2021-04-08 14:24:27 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.884515955631755", "latitude_upper"=>"32.95656437996488", "longitude_lower"=>"-117.27654784423831", "longitude_upper"=>"-117.19071715576175"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.884515955631755], ["latitude", 32.95656437996488], ["longitude", -117.27654784423831], ["longitude", -117.19071715576175]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.884515955631755/32.95656437996488/-117.27654784423831/-117.19071715576175" for ::1 at 2021-04-08 14:24:28 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.884515955631755", "latitude_upper"=>"32.95656437996488", "longitude_lower"=>"-117.27654784423831", "longitude_upper"=>"-117.19071715576175"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.884515955631755], ["latitude", 32.95656437996488], ["longitude", -117.27654784423831], ["longitude", -117.19071715576175]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.884515955631755/32.95656437996488/-117.27654784423831/-117.19071715576175" for ::1 at 2021-04-08 14:24:28 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.884515955631755", "latitude_upper"=>"32.95656437996488", "longitude_lower"=>"-117.27654784423831", "longitude_upper"=>"-117.19071715576175"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.884515955631755], ["latitude", 32.95656437996488], ["longitude", -117.27654784423831], ["longitude", -117.19071715576175]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.884515955631755/32.95656437996488/-117.27654784423831/-117.19071715576175" for ::1 at 2021-04-08 14:24:28 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.884515955631755", "latitude_upper"=>"32.95656437996488", "longitude_lower"=>"-117.27654784423831", "longitude_upper"=>"-117.19071715576175"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.884515955631755], ["latitude", 32.95656437996488], ["longitude", -117.27654784423831], ["longitude", -117.19071715576175]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.884515955631755/32.95656437996488/-117.27654784423831/-117.19071715576175" for ::1 at 2021-04-08 14:24:28 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.884515955631755", "latitude_upper"=>"32.95656437996488", "longitude_lower"=>"-117.27654784423831", "longitude_upper"=>"-117.19071715576175"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.884515955631755], ["latitude", 32.95656437996488], ["longitude", -117.27654784423831], ["longitude", -117.19071715576175]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.884515955631755/32.95656437996488/-117.27654784423831/-117.19071715576175" for ::1 at 2021-04-08 14:24:28 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.884515955631755", "latitude_upper"=>"32.95656437996488", "longitude_lower"=>"-117.27654784423831", "longitude_upper"=>"-117.19071715576175"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.884515955631755], ["latitude", 32.95656437996488], ["longitude", -117.27654784423831], ["longitude", -117.19071715576175]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/32.884515955631755/32.95656437996488/-117.27654784423831/-117.19071715576175" for ::1 at 2021-04-08 14:24:28 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.884515955631755", "latitude_upper"=>"32.95656437996488", "longitude_lower"=>"-117.27654784423831", "longitude_upper"=>"-117.19071715576175"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.884515955631755], ["latitude", 32.95656437996488], ["longitude", -117.27654784423831], ["longitude", -117.19071715576175]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/findNearby/34.38765018841633/34.45845072513675/-119.87588323998584/-119.79005255150928" for ::1 at 2021-04-08 14:25:23 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"34.38765018841633", "latitude_upper"=>"34.45845072513675", "longitude_lower"=>"-119.87588323998584", "longitude_upper"=>"-119.79005255150928"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 34.38765018841633], ["latitude", 34.45845072513675], ["longitude", -119.87588323998584], ["longitude", -119.79005255150928]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/findAttendees/1" for ::1 at 2021-04-08 14:25:25 -0700
+Started GET "/events/findHosts/1" for ::1 at 2021-04-08 14:25:25 -0700
+Processing by EventsController#findAttendees as JSON
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"1"}
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:32
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/findAttendees/1" for ::1 at 2021-04-08 14:25:36 -0700
+Processing by EventsController#findAttendees as JSON
+Started GET "/events/findHosts/1" for ::1 at 2021-04-08 14:25:36 -0700
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:32
+Processing by EventsController#findHosts as JSON
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findAttendees/2" for ::1 at 2021-04-08 14:25:38 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findHosts/2" for ::1 at 2021-04-08 14:25:38 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:15:54 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:18:22 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:18:52 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:21:18 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:31:54 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:31:58 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:33:25 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:33:43 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:34:57 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:35:05 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:35:45 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:35:52 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:36:09 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:36:12 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:37:13 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:37:57 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:38:28 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:38:43 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:42:16 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:42:22 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:42:26 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:43:56 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:44:06 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 19:46:28 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 20:31:21 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 82ms (Views: 30.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:31:30 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:33:58 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:43:57 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/isaacfu/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:47:55 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:48:56 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:52:05 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/testing/testing/10" for ::1 at 2021-04-08 20:55:49 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"testing", "password"=>"[FILTERED]", "age"=>"10"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "testing"], ["created_at", "2021-04-09 03:55:49.610874"], ["updated_at", "2021-04-09 03:55:49.610874"], ["age", 10], ["credibility", 7], ["password", "testing"]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+Completed 200 OK in 50ms (Views: 2.2ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:57:01 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:58:00 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:58:04 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:58:09 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:58:38 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:59:00 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:59:13 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:59:43 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 20:59:52 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:00:14 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:00:28 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:02:32 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:05:03 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:05:11 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:05:14 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:05:27 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:05:49 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:06:17 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:12:20 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:14:24 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 36ms (Views: 23.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:15:21 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:18:32 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:18:35 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:19:08 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:21:27 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:28:38 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:31:28 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:31:34 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 9ms (Views: 3.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:35:37 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:35:41 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:37:11 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3CPassword" for ::1 at 2021-04-08 21:37:15 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'Password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:37:19 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:37:48 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:37:53 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:39:03 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:39:06 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:41:30 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 11ms (Views: 2.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:41:48 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:43:41 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:43:45 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:43:51 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:44:07 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:44:23 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:46:00 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:47:59 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:48:10 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 40ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:49:04 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:49:08 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:50:29 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:50:32 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:52:05 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:52:07 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:54:20 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:54:25 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:55:54 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:55:57 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:57:56 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:57:58 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 21:58:08 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 21:58:53 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events//Thu%20Apr%2008%202021%2021:58:57%20GMT-0700%20(Pacific%20Daylight%20Time)//0/0" for ::1 at 2021-04-08 21:59:01 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/events/Thu%20Apr%2008%202021%2021:58:57%20GMT-0700%20(Pacific%20Daylight%20Time)/0/0"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/getApiKey" for ::1 at 2021-04-08 22:00:28 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:44:11 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 20ms (Views: 7.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:52:08 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:52:13 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:55:17 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:55:22 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:56:10 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:56:25 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:57:11 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:57:19 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:57:27 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:57:30 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:57:46 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:57:47 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:57:50 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/findNearby/32.87016616867839/32.970745853136314/-117.29550002639161/-117.1717321736084" for ::1 at 2021-04-08 23:57:56 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.87016616867839", "latitude_upper"=>"32.970745853136314", "longitude_lower"=>"-117.29550002639161", "longitude_upper"=>"-117.1717321736084"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.87016616867839], ["latitude", 32.970745853136314], ["longitude", -117.29550002639161], ["longitude", -117.1717321736084]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 47ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:58:45 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:58:50 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:58:52 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-08 23:59:55 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-08 23:59:58 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findNearby/32.87017927611979/32.970758945689084/-117.2954970263916/-117.1717291736084" for ::1 at 2021-04-09 00:00:06 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.87017927611979", "latitude_upper"=>"32.970758945689084", "longitude_lower"=>"-117.2954970263916", "longitude_upper"=>"-117.1717291736084"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.87017927611979], ["latitude", 32.970758945689084], ["longitude", -117.2954970263916], ["longitude", -117.1717291736084]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:03:37 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:03:49 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:03:51 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:04:07 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:04:11 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:06:12 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:08:14 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:08:30 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:08:34 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:09:28 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:10:04 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:10:07 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:11:08 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:11:16 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:12:16 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:12:17 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:12:20 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:12:35 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:12:43 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:13:06 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:13:39 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:14:11 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:14:13 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:15:29 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:15:32 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:16:46 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:16:49 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:30:48 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:30:50 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:31:12 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:31:15 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:36:47 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:38:40 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:38:44 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:39:52 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:39:56 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:41:35 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:41:49 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:41:52 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:42:06 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:42:30 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:42:33 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:42:39 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:42:42 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:43:03 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:43:07 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:45:48 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:45:51 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:46:07 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:46:09 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:46:33 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:46:36 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:47:32 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:47:35 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:47:53 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:47:58 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:49:04 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:49:06 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:50:32 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:50:35 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:50:49 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:50:54 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:51:04 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:51:07 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findNearby/32.87018087702866/32.970760544779466/-117.29550782639159/-117.17173997360838" for ::1 at 2021-04-09 00:51:33 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.87018087702866", "latitude_upper"=>"32.970760544779466", "longitude_lower"=>"-117.29550782639159", "longitude_upper"=>"-117.17173997360838"}
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.87018087702866], ["latitude", 32.970760544779466], ["longitude", -117.29550782639159], ["longitude", -117.17173997360838]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:52:01 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:52:04 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:54:29 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:54:33 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:55:07 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:55:08 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:55:11 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:56:40 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:56:42 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:57:03 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:57:06 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:57:19 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:57:23 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 00:58:52 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 00:58:54 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:01:24 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:01:55 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:02:05 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:02:50 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:02:53 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:06:07 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:06:13 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:06:25 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:06:28 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:06:59 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:07:02 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:07:26 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:07:31 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:11:37 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:11:40 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:11:57 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:12:03 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:13:14 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:13:17 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:13:36 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:13:40 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:13:51 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:13:53 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findNearby/32.87016846998491/32.97074815182878/-117.34350468125/-117.12377811875" for ::1 at 2021-04-09 01:15:12 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.87016846998491", "latitude_upper"=>"32.97074815182878", "longitude_lower"=>"-117.34350468125", "longitude_upper"=>"-117.12377811875"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.87016846998491], ["latitude", 32.97074815182878], ["longitude", -117.34350468125], ["longitude", -117.12377811875]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:18:01 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:21:04 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:21:06 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:22:09 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:22:13 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:25:32 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:25:34 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:26:10 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/createNewUser/a/b/2" for ::1 at 2021-04-09 01:26:20 -0700
+Processing by UsersController#createNewUser as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]", "age"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "age", "credibility", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["created_at", "2021-04-09 08:26:20.596555"], ["updated_at", "2021-04-09 08:26:20.596555"], ["age", 2], ["credibility", 7], ["password", "b"]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/login/a/%3Cb" for ::1 at 2021-04-09 01:26:23 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'a' AND password = 'b') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a' AND password = 'b')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:32:12 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:32:14 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getApiKey" for ::1 at 2021-04-09 01:32:19 -0700
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/John/%3Cpassword" for ::1 at 2021-04-09 01:35:09 -0700
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"John", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE (name = 'John' AND password = 'password') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'John' AND password = 'password')[0m
+  ↳ app/controllers/users_controller.rb:14
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events/Birthday%20Party/Sat%20Apr%2017%202021%2011:59:00%20GMT-0700%20(Pacific%20Daylight%20Time)/Torrey%20view%20Ct/32.9204702/-117.23367279999998" for ::1 at 2021-04-09 01:35:43 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"Birthday Party", "time"=>"Sat Apr 17 2021 11:59:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"Torrey view Ct", "latitude"=>"32.9204702", "longitude"=>"-117.23367279999998"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "Birthday Party"], ["time", "2021-04-17 18:59:00"], ["created_at", "2021-04-09 08:35:43.537777"], ["updated_at", "2021-04-09 08:35:43.537777"], ["location", "Torrey view Ct"], ["latitude", 32.9204702], ["longitude", -117.23367279999998]]
+  ↳ app/controllers/events_controller.rb:12
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/hosts/1/5" for ::1 at 2021-04-09 01:35:43 -0700
+Processing by HostsController#createNewHost as JSON
+  Parameters: {"user_id"=>"1", "event_id"=>"5"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hosts" WHERE "hosts"."user_id" = ? AND "hosts"."event_id" = ? LIMIT ?[0m  [["user_id", 1], ["event_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Create (1.0ms)[0m  [1m[32mINSERT INTO "hosts" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 5], ["created_at", "2021-04-09 08:35:43.754939"], ["updated_at", "2021-04-09 08:35:43.754939"]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+Completed 200 OK in 95ms (Views: 0.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/events/findNearby/32.87519866820234/32.96571858438751/-117.34353608124998/-117.12380951874998" for ::1 at 2021-04-09 01:35:45 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.87519866820234", "latitude_upper"=>"32.96571858438751", "longitude_lower"=>"-117.34353608124998", "longitude_upper"=>"-117.12380951874998"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.87519866820234], ["latitude", 32.96571858438751], ["longitude", -117.34353608124998], ["longitude", -117.12380951874998]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events/testing/Fri%20Apr%2009%202021%2001:35:47%20GMT-0700%20(Pacific%20Daylight%20Time)/3757%20Torrey%20View%20Ct./32.92299186122259/-117.22852295869139" for ::1 at 2021-04-09 01:35:58 -0700
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"testing", "time"=>"Fri Apr 09 2021 01:35:47 GMT-0700 (Pacific Daylight Time)", "locationName"=>"3757 Torrey View Ct.", "latitude"=>"32.92299186122259", "longitude"=>"-117.22852295869139"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "testing"], ["time", "2021-04-09 08:35:47"], ["created_at", "2021-04-09 08:35:58.434338"], ["updated_at", "2021-04-09 08:35:58.434338"], ["location", "3757 Torrey View Ct."], ["latitude", 32.92299186122259], ["longitude", -117.22852295869139]]
+  ↳ app/controllers/events_controller.rb:12
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 10ms (Views: 1.2ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/hosts/1/6" for ::1 at 2021-04-09 01:35:58 -0700
+Processing by HostsController#createNewHost as JSON
+  Parameters: {"user_id"=>"1", "event_id"=>"6"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "hosts" WHERE "hosts"."user_id" = ? AND "hosts"."event_id" = ? LIMIT ?[0m  [["user_id", 1], ["event_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[36mHost Create (1.9ms)[0m  [1m[32mINSERT INTO "hosts" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 6], ["created_at", "2021-04-09 08:35:58.467573"], ["updated_at", "2021-04-09 08:35:58.467573"]]
+  ↳ app/controllers/hosts_controller.rb:7
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/hosts_controller.rb:7
+Completed 200 OK in 20ms (Views: 1.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/events/findNearby/32.87519866820234/32.96571858438751/-117.34353608124998/-117.12380951874998" for ::1 at 2021-04-09 01:35:59 -0700
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.87519866820234", "latitude_upper"=>"32.96571858438751", "longitude_lower"=>"-117.34353608124998", "longitude_upper"=>"-117.12380951874998"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN ? AND ? AND "events"."longitude" BETWEEN ? AND ?[0m  [["latitude", 32.87519866820234], ["latitude", 32.96571858438751], ["longitude", -117.34353608124998], ["longitude", -117.12380951874998]]
+  ↳ app/controllers/events_controller.rb:7
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findAttendees/5" for ::1 at 2021-04-09 01:36:00 -0700
+Started GET "/events/findHosts/5" for ::1 at 2021-04-09 01:36:00 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"5"}
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '5')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '5')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findAttendees/6" for ::1 at 2021-04-09 01:36:03 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"6"}
+Started GET "/events/findHosts/6" for ::1 at 2021-04-09 01:36:03 -0700
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findAttendees/6" for ::1 at 2021-04-09 01:36:09 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findHosts/6" for ::1 at 2021-04-09 01:36:09 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findAttendees/6" for ::1 at 2021-04-09 01:36:16 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"6"}
+Started GET "/events/findHosts/6" for ::1 at 2021-04-09 01:36:16 -0700
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/findAttendees/6" for ::1 at 2021-04-09 01:36:21 -0700
+Started GET "/events/findHosts/6" for ::1 at 2021-04-09 01:36:21 -0700
+Processing by EventsController#findAttendees as JSON
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"6"}
+  Parameters: {"event_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:37
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/findAttendees/5" for ::1 at 2021-04-09 01:36:24 -0700
+Processing by EventsController#findAttendees as JSON
+Started GET "/events/findHosts/5" for ::1 at 2021-04-09 01:36:24 -0700
+  Parameters: {"event_id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '5')[0m
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '5')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findAttendees/5" for ::1 at 2021-04-09 01:36:37 -0700
+Started GET "/events/findHosts/5" for ::1 at 2021-04-09 01:36:37 -0700
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"5"}
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '5')[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '5')[0m
+  ↳ app/controllers/events_controller.rb:37
+  ↳ app/controllers/events_controller.rb:32
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+
+
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/findAttendees/6" for ::1 at 2021-04-09 01:36:40 -0700
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT users.id, users.name,attendees.event_id FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:32
+Started GET "/events/findHosts/6" for ::1 at 2021-04-09 01:36:40 -0700
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT users.id, users.name,hosts.event_id FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '6')[0m
+  ↳ app/controllers/events_controller.rb:37
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+

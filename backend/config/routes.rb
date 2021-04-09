@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'getApiKey', to: 'events#getKey', defaults: {format: 'json'}, as: :getKey
   get 'login/:username/:password', to: 'users#authentication', defaults: {format: 'json'}, as: :authentication
   post 'users/createNewUser/:username/:password/:age', to: 'users#createNewUser', defaults: {format: 'json'}, as: :createNewUser
-  post 'events/:eventName/:time/:locationName/:latitude/:longitude', to: 'events#createNewEvent', defaults: {format: 'json'}, latitude: /[^\/]+/, longitude: /[^\/]+/, as: :createNewEvent
+  post 'events/:eventName/:time/:locationName/:latitude/:longitude', to: 'events#createNewEvent', defaults: {format: 'json'}, latitude: /[^\/]+/, longitude: /[^\/]+/, locationName: /[^\/]+/, eventName: /[^\/]+/, as: :createNewEvent
   post 'attendees/:user_id/:event_id', to: 'attendees#createNewAttendee', defaults: {format: 'json'}, as: :createNewAttendee
   post 'hosts/:user_id/:event_id', to: 'hosts#createNewHost', defaults: {format: 'json'}, as: :createNewHost
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

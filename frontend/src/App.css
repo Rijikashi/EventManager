@@ -1,0 +1,57 @@
+h1 {
+  color : green;
+  text-align: center;
+  background-color: lightblue;
+}
+
+.google-map-container{
+  position: relative;
+  z-index:1;
+}
+.button-overlay{
+  position:absolute;
+  top:80%;
+  left:2%;
+  z-index:2;
+}
+.logout-button{
+  position:absolute;
+  padding: 10px 0;
+  right:0px;
+}
+.loginWindow{
+
+}
+.newUserButtonContainer{
+
+}
+.map-component-container{
+  height:90vh
+}
+.map-component{
+
+}
+
+.newUserButton{
+  width:15%;
+  margin-left: 42.5%;
+  margin-right: 50%;
+  position: relative;
+  color: red;
+  background-color: tomato;
+}
+.jumbotron{
+  color: black;
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: tomato;
+}
+
+.signUpButton{
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+}
