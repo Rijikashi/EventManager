@@ -19,6 +19,8 @@ Run `gem install drip` in the backend directory to install dependencies, and run
 to create the database. Run `rails s` to start the backend server. It will be hosted on \
 [http://localhost:3001](http://localhost:3001)
 
+You will also need to obtain a google-maps API key. Create a file called `application.yml` in \
+`backend/config` folder and add `GOOGLE_MAPS_API_KEY: <your_api_key>`.
 ## Motivations
 
 The main motivations in creating this app was to learn new technology stacks, mainly \
@@ -27,4 +29,4 @@ Throughout the process of the backend development, I became really ingrained wit
 implementation, more comfortable with setting up SQL databases, routing, and juggling between \
 prod/development/test environments.
 Throughout the process of the frontend development, I became very comfortable with React and \
-the entire component framework(props and hooks), and using async calls. 
+the entire component framework(props and hooks), and using async calls.
