@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-
+const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
 
 const divStyle = {
   background: `white`,
@@ -13,7 +13,7 @@ const InfoWindowDetails = ({marker, userObj}) => {
   const [completedHostRequest, setCompletedHostRequest] = useState(false)
 
   const buttonOnClick = async () =>  {
-    const res = await fetch("http://localhost:3001/attendees/" + userObj[0]["id"] + "/" + marker["id"],
+    const res = await fetch(backendURL + "attendees/" + userObj[0]["id"] + "/" + marker["id"],
     { method: 'POST'
   })
     const data = await res.json()
@@ -21,13 +21,13 @@ const InfoWindowDetails = ({marker, userObj}) => {
 
   useEffect ( () => {
     const findAttendees = async () => {
-      const res = await fetch("http://localhost:3001/events/findAttendees/" + marker.id)
+      const res = await fetch(backendURL+"events/findAttendees/" + marker.id)
       const data = await res.json()
       setAttendees(data)
       setCompletedAttendeeRequest(true)
     }
     const findHosts = async () => {
-      const reshost = await fetch("http://localhost:3001/events/findHosts/" + marker.id)
+      const reshost = await fetch(backendURL+"events/findHosts/" + marker.id)
       const datahost = await reshost.json()
       setHosts(datahost)
       setCompletedHostRequest(true)

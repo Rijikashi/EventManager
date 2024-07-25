@@ -6,6 +6,9 @@ import NewEvent from "./newEvent.js"
 import '../App.css'
 
 import React from 'react'
+
+const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
+
 const containerStyle = {
   width: '100%',
   height: '100%'
@@ -39,7 +42,7 @@ const MapComponent = ({apiKey, userObj}) => {
   const eventQuery = async () => {
     let bounds = mapObj.getBounds()
     console.log("event query", bounds)
-    const res = await fetch("http://localhost:3001/events/findNearby/"
+    const res = await fetch(backendURL+"events/findNearby/"
     + bounds.Ta.g + "/" + bounds.Ta.i + "/" + bounds.La.g + "/" + bounds.La.i
     )
     const data = await res.json()

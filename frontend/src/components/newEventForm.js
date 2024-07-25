@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import { GoogleMap, Marker} from '@react-google-maps/api'
 import DateTimePicker from 'react-datetime-picker';
 
+const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
+
 const containerStyle = {
   width: '500px',
   height: '500px'
@@ -22,7 +24,7 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj, setN
   const [newEventObj, setNewEventObj] = useState([])
 
   const postNewEvent = async () => {
-    const res = await fetch("http://localhost:3001/events/"
+    const res = await fetch(backendURL+"events/"
       + eventName + "/" + time  +"/" + locationName + "/" + location.lat + "/" + location.lng, {
       method: 'POST'
     })
@@ -32,7 +34,7 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj, setN
     else{
       const data = await res.json()
       setNewEventObj(data)
-      const res2 = await fetch("http://localhost:3001/hosts/" + userObj[0]["id"] + "/" + data.id, {
+      const res2 = await fetch(backendURL+"hosts/" + userObj[0]["id"] + "/" + data.id, {
         method: 'POST'
       })
       const data2 = await res2.json()

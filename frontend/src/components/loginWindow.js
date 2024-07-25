@@ -6,6 +6,8 @@ import Form from 'react-bootstrap/Form'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
 
+const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
+
 const LoginWindow = ({loginFunc}) => {
 
   const [username, setUsername] = useState("")
@@ -19,7 +21,7 @@ const LoginWindow = ({loginFunc}) => {
     setCreateAccountSuccess(true)
   }
   const loginRequest = async () => {
-    const res = await fetch("http://localhost:3001/login/" + username + "/<" + password)
+    const res = await fetch(backendURL+"login/" + username + "/<" + password)
     if(res["status"] === 400){
       setLoginFailure(true)
     }

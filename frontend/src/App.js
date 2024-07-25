@@ -5,6 +5,8 @@ import MapComponent from "./components/mapComponent.js"
 import LoginWindow from "./components/loginWindow.js"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
+
 function App() {
   const [apiKey, setApiKey] = useState("")
   const [userObj, setUserObj] = useState([])
@@ -21,7 +23,7 @@ function App() {
   }
   useEffect( () => {
     const keyRequest = async () => {
-      const res = await fetch("http://localhost:3001/getApiKey")
+      const res = await fetch(backendURL+"getApiKey")
       const data = await res.json()
       setApiKey(data["key"])
     }

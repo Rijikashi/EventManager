@@ -4,6 +4,8 @@ import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import '../App.css'
 
+const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
+
 const NewUserForm = ({createAccountSuccessTrue}) => {
   const [newUser, setNewUser] = useState(false)
 
@@ -16,7 +18,7 @@ const NewUserForm = ({createAccountSuccessTrue}) => {
   }
 
   const postNewUser = async () => {
-    const res = await fetch("http://localhost:3001/users/createNewUser/"
+    const res = await fetch(backendURL+"users/createNewUser/"
     + username + "/" +password + "/"+age, {
       method: 'POST'
     })
