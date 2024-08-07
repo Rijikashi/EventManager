@@ -15,17 +15,19 @@ services:
       - 3000:3000
     networks:
       - dev
+    depends_on:
+      - db
     environment:
-      DATABASE_USERNAME: root
+      DATABASE_USERNAME: ${DB_HOST}
       DATABASE_PASSWORD: ${DB_PASSWORD}
       DATABASE_HOST: db
       GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
     command:  >
       sh -c "
         rm -f tmp/pids/server.pid &&
-        until mysql -h db -u $DATABASE_USERNAME -p$DATABASE_PASSWORD -e 'select 1' &> /dev/null; do
+        until mysql -h db -u ${DB_HOST} -p ${DB_PASSWORD} -e 'select 1' &> /dev/null; do
           echo 'Waiting for MySQL...';
-          sleep 2;
+          sleep 5;
         done &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
@@ -41,6 +43,8 @@ services:
     networks:
       - dev
     environment:
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_HOST}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: eventmanager_development
 
