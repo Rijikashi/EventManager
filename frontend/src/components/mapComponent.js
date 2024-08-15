@@ -41,10 +41,10 @@ const MapComponent = ({apiKey, userObj}) => {
 
   const eventQuery = async () => {
     let bounds = mapObj.getBounds()
-    upper_lat = bounds.getNorthEast().lat()
-    upper_lng = bounds.getNorthEast().lng()
-    lower_lat = bounds.getSouthWest().lat()
-    lower_lng = bounds.getSouthWest().lng()
+    let upper_lat = bounds.getNorthEast().lat()
+    let upper_lng = bounds.getNorthEast().lng()
+    let lower_lat = bounds.getSouthWest().lat()
+    let lower_lng = bounds.getSouthWest().lng()
     console.log("event query", bounds)
     const res = await fetch(backendURL+"events/findNearby/"
     + lower_lat + "/" + upper_lat + "/" + lower_lng + "/" + upper_lng

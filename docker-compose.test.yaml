@@ -1,54 +1,47 @@
 services:
 
-  frontend:
-    build: ./frontend
+  test_db:
+    image: mysql:8.0
     ports:
-      - 3001:3001
+      - 3307:3307
     networks:
-      - dev
+      - test
     environment:
-      REACT_APP_BACKEND_DEV_URL: ${BACKEND_DEV_URL}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_HOST}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: eventmanager_test
+    command: --port=3307
 
-  backend:
+  test_backend:
     build: ./backend
     ports:
       - 3000:3000
+    volumes:
+      - ./backend:/app
     networks:
-      - dev
+      - test
     depends_on:
-      - db
+      - test_db
     environment:
       DATABASE_USERNAME: ${DB_HOST}
       DATABASE_PASSWORD: ${DB_PASSWORD}
       DATABASE_HOST: db
+      TEST_DATABASE_HOST: test_db
       GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
+      RAILS_ENV: test
     command:  >
       sh -c "
         rm -f tmp/pids/server.pid &&
         until mysql -h db -u ${DB_HOST} -p ${DB_PASSWORD} -e 'select 1' &> /dev/null; do
           echo 'Waiting for MySQL...';
-          sleep 5;
+          sleep 2;
         done &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
         bundle exec rails server -b 0.0.0.0
       "
 
-  db:
-    image: mysql:8.0
-    volumes:
-      - event_db:/var/lib/mysql
-    ports:
-      - 3306:3306
-    networks:
-      - dev
-    environment:
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_USER: ${DB_HOST}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: eventmanager_development
 
-volumes:
-  event_db:
 networks:
-  dev:
+  test:
