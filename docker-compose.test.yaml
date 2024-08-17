@@ -3,15 +3,17 @@ services:
   test_db:
     image: mysql:8.0
     ports:
-      - 3307:3307
+      - 3306:3306
     networks:
       - test
+    volumes:
+      - event_test_db:/var/lib/mysql_test
     environment:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_HOST}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: eventmanager_test
-    command: --port=3307
+    command: --port=3306
 
   test_backend:
     build: ./backend
@@ -26,10 +28,11 @@ services:
     environment:
       DATABASE_USERNAME: ${DB_HOST}
       DATABASE_PASSWORD: ${DB_PASSWORD}
-      DATABASE_HOST: db
-      TEST_DATABASE_HOST: test_db
+      DATABASE_HOST: test_db
+      SQL_DATABASE: eventmanager_test
       GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
-      RAILS_ENV: test
+      RAILS_ENV: test      
+      RACK_ENV: test
     command:  >
       sh -c "
         rm -f tmp/pids/server.pid &&
@@ -39,9 +42,10 @@ services:
         done &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
-        bundle exec rails server -b 0.0.0.0
+        bundle exec rails test
       "
 
-
+volumes:
+  event_test_db:
 networks:
   test:

@@ -11395,3 +11395,76 @@ Processing by EventsController#show as JSON
   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `test_db` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `test_db` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (100.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (100.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20210129013238)
+  [1m[35m (65.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210129013238')[0m
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20210129013316)
+  [1m[35m (96.1ms)[0m  [1m[35mCREATE TABLE `events` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `event_name` varchar(255), `time` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210129013316')[0m
+  [1m[36mTRANSACTION (16.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAgeToUsers (20210204014829)
+  [1m[35m (63.2ms)[0m  [1m[35mALTER TABLE `users` ADD `age` int[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204014829')[0m
+  [1m[36mTRANSACTION (15.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCredibilityToUsers (20210204021228)
+  [1m[35m (57.8ms)[0m  [1m[35mALTER TABLE `users` ADD `credibility` int[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021228')[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLocationToEvents (20210204021301)
+  [1m[35m (188.8ms)[0m  [1m[35mALTER TABLE `events` ADD `location` varchar(255)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021301')[0m
+  [1m[36mTRANSACTION (82.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescriptionToEvents (20210204021327)
+  [1m[35m (131.9ms)[0m  [1m[35mALTER TABLE `events` ADD `description` text[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021327')[0m
+  [1m[36mTRANSACTION (24.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRestrictionAgeToEvents (20210204021404)
+  [1m[35m (123.7ms)[0m  [1m[35mALTER TABLE `events` ADD `restrictionAge` int[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021404')[0m
+  [1m[36mTRANSACTION (16.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAttendees (20210207193341)
+  [1m[35m (152.0ms)[0m  [1m[35mCREATE TABLE `attendees` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `event_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, INDEX `index_attendees_on_user_id` (`user_id`), INDEX `index_attendees_on_event_id` (`event_id`))[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210207193341')[0m
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHosts (20210207202138)
+  [1m[35m (143.2ms)[0m  [1m[35mCREATE TABLE `hosts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `event_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, INDEX `index_hosts_on_user_id` (`user_id`), INDEX `index_hosts_on_event_id` (`event_id`))[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210207202138')[0m
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLatitudeToEvents (20210212032546)
+  [1m[35m (80.6ms)[0m  [1m[35mALTER TABLE `events` ADD `latitude` float(24)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210212032546')[0m
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLongitudeToEvents (20210212032558)
+  [1m[35m (59.8ms)[0m  [1m[35mALTER TABLE `events` ADD `longitude` float(24)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210212032558')[0m
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordToUser (20210323214420)
+  [1m[35m (59.8ms)[0m  [1m[35mALTER TABLE `users` ADD `password` varchar(255)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210323214420')[0m
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2024-08-17 00:01:22.123003', '2024-08-17 00:01:22.123003')[0m
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m

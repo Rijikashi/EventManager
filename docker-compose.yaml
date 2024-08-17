@@ -9,6 +9,8 @@ services:
       - /app/node_modules
     networks:
       - dev
+    env_file:
+      - .env
     environment:
       REACT_APP_BACKEND_DEV_URL: ${BACKEND_DEV_URL}
 
@@ -22,11 +24,16 @@ services:
       - dev
     depends_on:
       - db
+    env_file:
+      - .env
     environment:
       DATABASE_USERNAME: ${DB_HOST}
       DATABASE_PASSWORD: ${DB_PASSWORD}
       DATABASE_HOST: db
+      SQL_DATABASE: eventmanager_dev
       GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
+      RAILS_ENV: development
+      RACK_ENV: development
     command:  >
       sh -c "
         rm -f tmp/pids/server.pid &&
@@ -36,21 +43,24 @@ services:
         done &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
-        bundle exec rails server -b 0.0.0.0
+        bundle exec rails s -e development
       "
 
   db:
     image: mysql:8.0
     volumes:
       - event_db:/var/lib/mysql
+    env_file:
+      - .env
     ports:
       - 3306:3306
     networks:
       - dev
     environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: eventmanager_dev
       MYSQL_USER: ${DB_HOST}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
 
 
 

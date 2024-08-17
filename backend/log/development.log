@@ -18570,3 +18570,258 @@ getter and setter.
 
 Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
  (called from load at /usr/local/bundle/bin/rake:25)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE `db` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `db` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('7853400853573209480', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('7853400853573209480')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /usr/local/bundle/gems/actionpack-7.0.8.4/lib/action_controller/railtie.rb:80)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /usr/local/bundle/gems/activerecord-7.0.8.4/lib/active_record/railtie.rb:264)
+Started GET "/getApiKey" for 172.21.0.1 at 2024-08-15 23:14:42 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/login/rijikashi/%3Cthewhip1" for 172.21.0.1 at 2024-08-15 23:14:42 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+Completed 200 OK in 124ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2118)
+
+
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 229ms (Views: 17.8ms | ActiveRecord: 9.9ms | Allocations: 11537)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `db` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `db` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE DATABASE `db` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `db` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (114.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (92.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('5159330110759729275', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20210129013238)
+  [1m[35m (106.8ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210129013238')[0m
+  [1m[36mTRANSACTION (17.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20210129013316)
+  [1m[35m (113.5ms)[0m  [1m[35mCREATE TABLE `events` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `event_name` varchar(255), `time` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210129013316')[0m
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAgeToUsers (20210204014829)
+  [1m[35m (171.9ms)[0m  [1m[35mALTER TABLE `users` ADD `age` int[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204014829')[0m
+  [1m[36mTRANSACTION (23.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCredibilityToUsers (20210204021228)
+  [1m[35m (115.5ms)[0m  [1m[35mALTER TABLE `users` ADD `credibility` int[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021228')[0m
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLocationToEvents (20210204021301)
+  [1m[35m (70.8ms)[0m  [1m[35mALTER TABLE `events` ADD `location` varchar(255)[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021301')[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescriptionToEvents (20210204021327)
+  [1m[35m (67.5ms)[0m  [1m[35mALTER TABLE `events` ADD `description` text[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021327')[0m
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRestrictionAgeToEvents (20210204021404)
+  [1m[35m (68.0ms)[0m  [1m[35mALTER TABLE `events` ADD `restrictionAge` int[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021404')[0m
+  [1m[36mTRANSACTION (24.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAttendees (20210207193341)
+  [1m[35m (171.9ms)[0m  [1m[35mCREATE TABLE `attendees` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `event_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, INDEX `index_attendees_on_user_id` (`user_id`), INDEX `index_attendees_on_event_id` (`event_id`))[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210207193341')[0m
+  [1m[36mTRANSACTION (14.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHosts (20210207202138)
+  [1m[35m (159.8ms)[0m  [1m[35mCREATE TABLE `hosts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `event_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, INDEX `index_hosts_on_user_id` (`user_id`), INDEX `index_hosts_on_event_id` (`event_id`))[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210207202138')[0m
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLatitudeToEvents (20210212032546)
+  [1m[35m (85.4ms)[0m  [1m[35mALTER TABLE `events` ADD `latitude` float(24)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210212032546')[0m
+  [1m[36mTRANSACTION (19.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLongitudeToEvents (20210212032558)
+  [1m[35m (75.6ms)[0m  [1m[35mALTER TABLE `events` ADD `longitude` float(24)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210212032558')[0m
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordToUser (20210323214420)
+  [1m[35m (72.9ms)[0m  [1m[35mALTER TABLE `users` ADD `password` varchar(255)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210323214420')[0m
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2024-08-16 21:59:00.313294', '2024-08-16 21:59:00.313294')[0m
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('5159330110759729275')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `eventmanager_dev` DEFAULT CHARACTER SET `utf8`[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /usr/local/bundle/bin/rake:25)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5159330110759729275', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (13.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('5159330110759729275')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
