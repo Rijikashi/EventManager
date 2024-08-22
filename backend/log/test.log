@@ -11468,3 +11468,878 @@ Migrating to AddPasswordToUser (20210323214420)
   [1m[36mTRANSACTION (13.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (8.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '-4712-01-01 00:00:00', '2024-08-21 22:54:01', '2024-08-21 22:54:01', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '-4712-01-01 00:00:00', '2024-08-21 22:57:03', '2024-08-21 22:57:03', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '-4712-01-01 00:00:00', '2024-08-21 23:07:33', '2024-08-21 23:07:33', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (3.6ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('bob', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 15, 8)[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('b', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'b_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('c', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'c_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 1 AND `attendees`.`event_id` = 1 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 1, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 1 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 3, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (16.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Bob', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 15, 10)[0m
+  [1m[36mTRANSACTION (23.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Fred', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 16, 9)[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Joe', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 17, 8)[0m
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Tom', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 18, 7)[0m
+  [1m[36mTRANSACTION (18.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 2, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (16.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mHost Create (0.3ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 3, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (7.1ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mHost Create (0.5ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 4, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mHost Create (0.5ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 5, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 6 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 6, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 2, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 3, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 4, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 5, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 6 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 6, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 2, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 3, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 4, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 5, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (18.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 2, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 3, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 4, '2024-08-21 23:20:35', '2024-08-21 23:20:35')[0m
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('test', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'test_place', 200.0, 200.0)[0m
+  [1m[36mTRANSACTION (20.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (25.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('aaaa', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (34.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('bbbb', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'b_place', 65.0, 65.0)[0m
+  [1m[36mTRANSACTION (24.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('cccc', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'c_place', 0.0, 45.0)[0m
+  [1m[36mTRANSACTION (18.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('dddd', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'd_place', 45.0, 0.0)[0m
+  [1m[36mTRANSACTION (16.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '2012-01-01 00:00:00', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (16.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('bob', '2024-08-21 23:20:35', '2024-08-21 23:20:35', 15, 8)[0m
+  [1m[36mTRANSACTION (15.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('b', '2012-01-01 00:00:00', '2024-08-21 23:20:36', '2024-08-21 23:20:36', 'b_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('c', '2012-01-01 00:00:00', '2024-08-21 23:20:36', '2024-08-21 23:20:36', 'c_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (18.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 1 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 1, '2024-08-21 23:20:36', '2024-08-21 23:20:36')[0m
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (106.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (215.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20210129013238)
+  [1m[35m (90.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210129013238')[0m
+  [1m[36mTRANSACTION (16.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20210129013316)
+  [1m[35m (100.2ms)[0m  [1m[35mCREATE TABLE `events` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `event_name` varchar(255), `time` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210129013316')[0m
+  [1m[36mTRANSACTION (12.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAgeToUsers (20210204014829)
+  [1m[35m (61.1ms)[0m  [1m[35mALTER TABLE `users` ADD `age` int[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204014829')[0m
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCredibilityToUsers (20210204021228)
+  [1m[35m (59.8ms)[0m  [1m[35mALTER TABLE `users` ADD `credibility` int[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021228')[0m
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLocationToEvents (20210204021301)
+  [1m[35m (57.5ms)[0m  [1m[35mALTER TABLE `events` ADD `location` varchar(255)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021301')[0m
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescriptionToEvents (20210204021327)
+  [1m[35m (62.8ms)[0m  [1m[35mALTER TABLE `events` ADD `description` text[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021327')[0m
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRestrictionAgeToEvents (20210204021404)
+  [1m[35m (72.3ms)[0m  [1m[35mALTER TABLE `events` ADD `restrictionAge` int[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210204021404')[0m
+  [1m[36mTRANSACTION (16.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAttendees (20210207193341)
+  [1m[35m (103.9ms)[0m  [1m[35mCREATE TABLE `attendees` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `event_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, INDEX `index_attendees_on_user_id` (`user_id`), INDEX `index_attendees_on_event_id` (`event_id`))[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210207193341')[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHosts (20210207202138)
+  [1m[35m (147.8ms)[0m  [1m[35mCREATE TABLE `hosts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint, `event_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, INDEX `index_hosts_on_user_id` (`user_id`), INDEX `index_hosts_on_event_id` (`event_id`))[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210207202138')[0m
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLatitudeToEvents (20210212032546)
+  [1m[35m (67.8ms)[0m  [1m[35mALTER TABLE `events` ADD `latitude` float(24)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210212032546')[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLongitudeToEvents (20210212032558)
+  [1m[35m (58.9ms)[0m  [1m[35mALTER TABLE `events` ADD `longitude` float(24)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210212032558')[0m
+  [1m[36mTRANSACTION (16.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordToUser (20210323214420)
+  [1m[35m (60.3ms)[0m  [1m[35mALTER TABLE `users` ADD `password` varchar(255)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210323214420')[0m
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2024-08-21 23:26:31.120726', '2024-08-21 23:26:31.120726')[0m
+  [1m[36mTRANSACTION (16.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '2012-01-01 00:00:00', '2024-08-21 23:26:49', '2024-08-21 23:26:49', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (23.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('bob', '2024-08-21 23:26:49', '2024-08-21 23:26:49', 15, 8)[0m
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('b', '2012-01-01 00:00:00', '2024-08-21 23:26:49', '2024-08-21 23:26:49', 'b_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('c', '2012-01-01 00:00:00', '2024-08-21 23:26:49', '2024-08-21 23:26:49', 'c_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (16.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 1 AND `attendees`.`event_id` = 1 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 1, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 1 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 3, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Bob', '2024-08-21 23:26:49', '2024-08-21 23:26:49', 15, 10)[0m
+  [1m[36mTRANSACTION (15.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Fred', '2024-08-21 23:26:49', '2024-08-21 23:26:49', 16, 9)[0m
+  [1m[36mTRANSACTION (15.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Joe', '2024-08-21 23:26:49', '2024-08-21 23:26:49', 17, 8)[0m
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Tom', '2024-08-21 23:26:49', '2024-08-21 23:26:49', 18, 7)[0m
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mHost Create (0.3ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 2, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 3, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mHost Create (0.6ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 4, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 5, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 6 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 6, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 2, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.5ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 3, '2024-08-21 23:26:49', '2024-08-21 23:26:49')[0m
+  [1m[36mTRANSACTION (26.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 4, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mAttendee Create (0.7ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 5, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 6 LIMIT 1[0m
+  [1m[36mAttendee Create (0.5ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 6, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.5ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 2, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 3, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (12.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 4, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 5, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 2, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 3, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 4, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('test', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'test_place', 200.0, 200.0)[0m
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('aaaa', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('bbbb', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'b_place', 65.0, 65.0)[0m
+  [1m[36mTRANSACTION (22.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('cccc', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'c_place', 0.0, 45.0)[0m
+  [1m[36mTRANSACTION (22.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('dddd', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'd_place', 45.0, 0.0)[0m
+  [1m[36mTRANSACTION (27.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (26.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('bob', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 15, 8)[0m
+  [1m[36mTRANSACTION (30.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('b', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'b_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('c', '2012-01-01 00:00:00', '2024-08-21 23:26:50', '2024-08-21 23:26:50', 'c_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (24.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 1 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 1, '2024-08-21 23:26:50', '2024-08-21 23:26:50')[0m
+  [1m[36mTRANSACTION (30.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('bob', '2024-08-22 00:47:56', '2024-08-22 00:47:56', 15, 8)[0m
+  [1m[36mTRANSACTION (20.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Bob', '2024-08-22 00:47:56', '2024-08-22 00:47:56', 15, 10)[0m
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Fred', '2024-08-22 00:47:56', '2024-08-22 00:47:56', 16, 9)[0m
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Joe', '2024-08-22 00:47:56', '2024-08-22 00:47:56', 17, 8)[0m
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Tom', '2024-08-22 00:47:56', '2024-08-22 00:47:56', 18, 7)[0m
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('tom', '2024-08-22 00:47:56', '2024-08-22 00:47:56', 17, 9)[0m
+  [1m[36mTRANSACTION (15.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE `eventmanager_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('1490391133278237855', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (15.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1490391133278237855')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[36mTRANSACTION (16.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[36mTRANSACTION (25.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (2.0ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[36mTRANSACTION (16.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 8[0m
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (2.5ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 9[0m
+  [1m[36mTRANSACTION (23.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 10[0m
+  [1m[36mTRANSACTION (15.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 11[0m
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (2.7ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 12[0m
+  [1m[36mTRANSACTION (22.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHost Load (1.7ms)[0m  [1m[34mSELECT `hosts`.* FROM `hosts`[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Destroy (0.7ms)[0m  [1m[31mDELETE FROM `hosts` WHERE `hosts`.`id` = 1[0m
+  [1m[36mTRANSACTION (21.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Destroy (7.3ms)[0m  [1m[31mDELETE FROM `hosts` WHERE `hosts`.`id` = 2[0m
+  [1m[36mTRANSACTION (25.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Destroy (0.8ms)[0m  [1m[31mDELETE FROM `hosts` WHERE `hosts`.`id` = 3[0m
+  [1m[36mTRANSACTION (48.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Destroy (0.6ms)[0m  [1m[31mDELETE FROM `hosts` WHERE `hosts`.`id` = 4[0m
+  [1m[36mTRANSACTION (31.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Destroy (42.0ms)[0m  [1m[31mDELETE FROM `hosts` WHERE `hosts`.`id` = 5[0m
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Destroy (0.8ms)[0m  [1m[31mDELETE FROM `hosts` WHERE `hosts`.`id` = 6[0m
+  [1m[36mTRANSACTION (47.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendee Load (2.3ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees`[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (2.8ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 1[0m
+  [1m[36mTRANSACTION (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (1.3ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 2[0m
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.5ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 3[0m
+  [1m[36mTRANSACTION (24.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.6ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 4[0m
+  [1m[36mTRANSACTION (20.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (1.4ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 5[0m
+  [1m[36mTRANSACTION (22.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.6ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 6[0m
+  [1m[36mTRANSACTION (21.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.5ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 7[0m
+  [1m[36mTRANSACTION (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.7ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 8[0m
+  [1m[36mTRANSACTION (22.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.4ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 9[0m
+  [1m[36mTRANSACTION (24.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.9ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 10[0m
+  [1m[36mTRANSACTION (16.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.7ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 11[0m
+  [1m[36mTRANSACTION (19.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.5ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 12[0m
+  [1m[36mTRANSACTION (15.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.6ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 13[0m
+  [1m[36mTRANSACTION (18.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Destroy (0.9ms)[0m  [1m[31mDELETE FROM `attendees` WHERE `attendees`.`id` = 14[0m
+  [1m[36mTRANSACTION (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 1[0m
+  [1m[36mEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 1[0m
+  [1m[36mTRANSACTION (15.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.5ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 2[0m
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 2[0m
+  [1m[36mTRANSACTION (20.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.6ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 3[0m
+  [1m[36mEvent Destroy (2.3ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 3[0m
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 4[0m
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 4[0m
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 5[0m
+  [1m[36mEvent Destroy (0.3ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 5[0m
+  [1m[36mTRANSACTION (16.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.5ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 6[0m
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 6[0m
+  [1m[36mTRANSACTION (22.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 7[0m
+  [1m[36mEvent Destroy (0.3ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 7[0m
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 8[0m
+  [1m[36mEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 8[0m
+  [1m[36mTRANSACTION (23.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (3.0ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 9[0m
+  [1m[36mEvent Destroy (0.7ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 9[0m
+  [1m[36mTRANSACTION (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 10[0m
+  [1m[36mEvent Destroy (0.8ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 10[0m
+  [1m[36mTRANSACTION (19.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 11[0m
+  [1m[36mEvent Destroy (0.3ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 11[0m
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (1.3ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 12[0m
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM `events` WHERE `events`.`id` = 12[0m
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('bob', '2024-08-22 00:51:52', '2024-08-22 00:51:52', 15, 8)[0m
+  [1m[36mTRANSACTION (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Bob', '2024-08-22 00:51:52', '2024-08-22 00:51:52', 15, 10)[0m
+  [1m[36mTRANSACTION (16.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Fred', '2024-08-22 00:51:52', '2024-08-22 00:51:52', 16, 9)[0m
+  [1m[36mTRANSACTION (19.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Joe', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 17, 8)[0m
+  [1m[36mTRANSACTION (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('Tom', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 18, 7)[0m
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('tom', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 17, 9)[0m
+  [1m[36mTRANSACTION (17.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mHost Create (1.8ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 2, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (15.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 3, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mHost Create (1.6ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 4, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (22.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mHost Create (0.5ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 5, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 2 AND `hosts`.`event_id` = 6 LIMIT 1[0m
+  [1m[36mHost Create (0.9ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 6, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `hosts` WHERE `hosts`.`user_id` = 1 AND `hosts`.`event_id` = 1 LIMIT 1[0m
+  [1m[36mHost Create (0.4ms)[0m  [1m[32mINSERT INTO `hosts` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 1, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (16.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 1 AND `attendees`.`event_id` = 1 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 1, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (16.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 1 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (1.2ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (1, 3, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 2, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.5ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 3, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (16.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.8ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 4, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 5, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 4 AND `attendees`.`event_id` = 6 LIMIT 1[0m
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (4, 6, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.6ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 2, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (16.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 3, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.8ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 4, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (18.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 3 AND `attendees`.`event_id` = 5 LIMIT 1[0m
+  [1m[36mAttendee Create (2.3ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (3, 5, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 2 LIMIT 1[0m
+  [1m[36mAttendee Create (0.4ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 2, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (16.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 3 LIMIT 1[0m
+  [1m[36mAttendee Create (0.6ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 3, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (15.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM `attendees` WHERE `attendees`.`user_id` = 2 AND `attendees`.`event_id` = 4 LIMIT 1[0m
+  [1m[36mAttendee Create (0.6ms)[0m  [1m[32mINSERT INTO `attendees` (`user_id`, `event_id`, `created_at`, `updated_at`) VALUES (2, 4, '2024-08-22 00:51:53', '2024-08-22 00:51:53')[0m
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('test', '2012-01-01 00:00:00', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 'test_place', 200.0, 200.0)[0m
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('a', '2012-01-01 00:00:00', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (15.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('b', '2012-01-01 00:00:00', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 'b_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (22.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('c', '2012-01-01 00:00:00', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 'c_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (1.9ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('aaaa', '2012-01-01 00:00:00', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 'a_place', 45.0, 45.0)[0m
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('bbbb', '2012-01-01 00:00:00', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 'b_place', 65.0, 65.0)[0m
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (1.2ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('cccc', '2012-01-01 00:00:00', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 'c_place', 0.0, 45.0)[0m
+  [1m[36mTRANSACTION (17.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`, `latitude`, `longitude`) VALUES ('dddd', '2012-01-01 00:00:00', '2024-08-22 00:51:53', '2024-08-22 00:51:53', 'd_place', 45.0, 0.0)[0m
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('bob', '2024-08-22 00:51:56', '2024-08-22 00:51:56', 15, 8)[0m
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `age`, `credibility`) VALUES ('tom', '2024-08-22 00:51:57', '2024-08-22 00:51:57', 17, 9)[0m
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[35mCOMMIT[0m
+----------------------------------------------
+AttendeeControllerTest: test_destroy_attendee_
+----------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+------------------------------------------------
+AttendeeControllerTest: test_show_returns_object
+------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mAttendee Load (0.9ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` ORDER BY `attendees`.`id` ASC LIMIT 1[0m
+----------------------------------
+AttendeeControllerTest: test_index
+----------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees`[0m
+--------------------------------------------------
+AttendeeControllerTest: test_creating_new_attendee
+--------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` ORDER BY `attendees`.`id` DESC LIMIT 1[0m
+------------------------------------------
+UserControllerTest: test_destroy_attendee_
+------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+--------------------------------------------
+UserControllerTest: test_show_returns_object
+--------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+------------------------------
+UserControllerTest: test_index
+------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+----------------------------------------------
+UserControllerTest: test_creating_new_attendee
+----------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+---------------------------------------------
+EventsControllerTest: test__findHosts_event_2
+---------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mHost Load (0.8ms)[0m  [1m[34mSELECT `hosts`.* FROM `hosts` WHERE `hosts`.`id` = 1 LIMIT 1[0m
+-------------------------------------------
+EventsControllerTest: test_create_new_event
+-------------------------------------------
+--------------------------------------------------
+EventsControllerTest: test__findAttendees_event_3_
+--------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mAttendee Load (2.3ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`id` = 2 LIMIT 1[0m
+--------------------------------------------------------------------
+EventsControllerTest: test_findNearby(50,50,50)_with_3_nearby_events
+--------------------------------------------------------------------
+---------------------------------------------------
+EventsControllerTest: test_index_calls_successfully
+---------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+--------------------------------------------------------
+EventsControllerTest: test_findNearby_calls_successfully
+--------------------------------------------------------
+---------------------------------------------
+EventsControllerTest: test__findHosts_event_3
+---------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mHost Load (1.2ms)[0m  [1m[34mSELECT `hosts`.* FROM `hosts` WHERE `hosts`.`id` = 2 LIMIT 1[0m
+----------------------------------------------------
+EventsControllerTest: test_search_calls_successfully
+----------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+-----------------------------------------------
+EventsControllerTest: test_delete_'test'_event_
+-----------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+------------------------------------------
+EventsControllerTest: test_searching_'aa'_
+------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT `events`.* FROM `events` WHERE `events`.`id` = 3 LIMIT 1[0m
+-------------------------------------------------------------------
+EventsControllerTest: test_findNearby(50,50,0)_with_0_nearby_events
+-------------------------------------------------------------------
+--------------------------------------------------
+EventsControllerTest: test__findAttendees_event_4_
+--------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mAttendee Load (0.8ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`id` = 3 LIMIT 1[0m
+--------------------------------------------------
+EventsControllerTest: test__findAttendees_event_5_
+--------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`id` = 4 LIMIT 1[0m
+---------------------------------------------
+EventsControllerTest: test__findHosts_event_4
+---------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mHost Load (1.3ms)[0m  [1m[34mSELECT `hosts`.* FROM `hosts` WHERE `hosts`.`id` = 3 LIMIT 1[0m
+--------------------------------------------------
+EventsControllerTest: test__findAttendees_event_2_
+--------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`id` = 1 LIMIT 1[0m
+----------------------------------------------
+EventsControllerTest: test_show_returns_object
+----------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+--------------------------------------------------
+EventsControllerTest: test__findAttendees_event_6_
+--------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`id` = 5 LIMIT 1[0m
+------------------------------------------------
+EventsControllerTest: test_index_returns_objects
+------------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+-----------------------------------------
+EventsControllerTest: test_searching_'a'_
+-----------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+----------------------------------------------
+EventTest: test_saving_an_event_without_a_name
+----------------------------------------------
+--------------------------------------------
+EventTest: test_saving_an_event_without_time
+--------------------------------------------
+------------------------------------------------
+EventTest: test_saving_an_event_without_location
+------------------------------------------------
+--------------------------------------------
+EventTest: test_saving_an_event_successfully
+--------------------------------------------
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO `events` (`event_name`, `time`, `created_at`, `updated_at`, `location`) VALUES ('hello', '-4712-01-01 00:00:00', '2024-08-22 00:52:00', '2024-08-22 00:52:00', 'test')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+-------------------------------------------
+UserTest: test_saving_a_user_without_a_name
+-------------------------------------------
+------------------------------------------------
+UserTest: test_saving_a_user_without_credibility
+------------------------------------------------
+------------------------------------------------------
+UserTest: test_saving_a_user_with_name_and_credibility
+------------------------------------------------------
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `credibility`) VALUES ('bob', '2024-08-22 00:52:00', '2024-08-22 00:52:00', 5)[0m
+  [1m[36mTRANSACTION (15.5ms)[0m  [1m[35mCOMMIT[0m
+--------------------------------------
+HostControllerTest: test_destroy_host_
+--------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+--------------------------------------------
+HostControllerTest: test_show_returns_object
+--------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mHost Load (1.1ms)[0m  [1m[34mSELECT `hosts`.* FROM `hosts` ORDER BY `hosts`.`id` ASC LIMIT 1[0m
+------------------------------
+HostControllerTest: test_index
+------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mHost Load (1.0ms)[0m  [1m[34mSELECT `hosts`.* FROM `hosts`[0m
+------------------------------------------
+HostControllerTest: test_creating_new_host
+------------------------------------------
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+  [1m[36mHost Load (0.8ms)[0m  [1m[34mSELECT `hosts`.* FROM `hosts` ORDER BY `hosts`.`id` DESC LIMIT 1[0m

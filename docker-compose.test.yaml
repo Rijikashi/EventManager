@@ -6,8 +6,6 @@ services:
       - 3306:3306
     networks:
       - test
-    volumes:
-      - event_test_db:/var/lib/mysql_test
     environment:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_HOST}
@@ -42,10 +40,9 @@ services:
         done &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
+        bundle exec rails db:seed &&
         bundle exec rails test
       "
 
-volumes:
-  event_test_db:
 networks:
   test:

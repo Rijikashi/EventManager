@@ -4,35 +4,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
-  timeObj = DateTime.new
-  User.create!(name:"Bob", age:15, credibility:10)
-  User.create!(name:"Fred", age:16, credibility:9)
-  User.create!(name:"Joe", age:17, credibility:8)
-  User.create!(name:"Tom", age:18, credibility:7)
-  Host.create!(user_id:1, event_id: 2)
-  Host.create!(user_id:1, event_id: 3)
-  Host.create!(user_id:2, event_id: 4)
-  Host.create!(user_id:2, event_id: 5)
-  Host.create!(user_id:2, event_id: 6)
-  Attendee.create!(user_id: 4, event_id: 2)
-  Attendee.create!(user_id: 4, event_id: 3)
-  Attendee.create!(user_id: 4, event_id: 4)
-  Attendee.create!(user_id: 4, event_id: 5)
-  Attendee.create!(user_id: 4, event_id: 6)
-  Attendee.create!(user_id: 3, event_id: 2)
-  Attendee.create!(user_id: 3, event_id: 3)
-  Attendee.create!(user_id: 3, event_id: 4)
-  Attendee.create!(user_id: 3, event_id: 5)
-  Attendee.create!(user_id: 2, event_id: 2)
-  Attendee.create!(user_id: 2, event_id: 3)
-  Attendee.create!(user_id: 2, event_id: 4)
-  Event.create!( event_name: "test", location: "test_place", time: timeObj.getgm(), latitude: 200, longitude: 200)
-  Event.create!( event_name: "a", location: "a_place", time: timeObj.getgm(), latitude: 45, longitude: 45)
-  Event.create!( event_name: "aaaa", location: "a_place", time: timeObj.getgm(), latitude: 45, longitude: 45)
-  Event.create!( event_name: "bbbb", location: "b_place", time: timeObj.getgm(), latitude: 65, longitude: 65)
-  Event.create!( event_name: "cccc", location: "c_place", time: timeObj.getgm(), latitude: 0, longitude: 45)
-  Event.create!( event_name: "dddd", location: "d_place", time: timeObj.getgm(), latitude: 45, longitude: 0)
-  #event = Event.create!( event_name: "a", location: "a_place", time: timeObj.getgm(), latitude: 45, longitude: 45)
+
   test " findAttendees event 2 " do
     get findAttendees_url(2), as: :json
     expected = "[" + Attendee.find(1).to_json + "," + Attendee.find(6).to_json + "," + Attendee.find(10).to_json + "]"

@@ -4,6 +4,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
   Rails.application.configure do
+    config.spring = false
     config.hosts << "backend"
   end
   # Eager load code on boot. This eager loads most of Rails and
