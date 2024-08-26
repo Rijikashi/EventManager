@@ -7,16 +7,21 @@ on:
     branches: [ "main" ]
 
 jobs:
-  
+
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - bane: Checkout code
+    - name: Checkout code
     - uses: actions/checkout@v4
 
     - name: Docker compose build
     - run: docker compose build --no-cache
-      
 
+    - name: Deploy to Heroku
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: |
+        git remote add heroku https://git.heroku.com/event-manager-ruby.git
+        git push heroku main

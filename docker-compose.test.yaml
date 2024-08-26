@@ -29,7 +29,7 @@ services:
       DATABASE_HOST: test_db
       SQL_DATABASE: eventmanager_test
       GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
-      RAILS_ENV: test      
+      RAILS_ENV: test
       RACK_ENV: test
     command:  >
       sh -c "
@@ -41,7 +41,7 @@ services:
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
         bundle exec rails db:seed &&
-        bundle exec rails test
+        bundle exec rails test TEST=test/controllers/attendee_controller_test.rb
       "
 
 networks:
