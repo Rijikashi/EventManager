@@ -23,7 +23,8 @@ services:
     networks:
       - dev
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     env_file:
       - .env
     environment:
@@ -36,11 +37,7 @@ services:
       RACK_ENV: development
     command:  >
       sh -c "
-        rm -f tmp/pids/server.pid &&
-        until mysql -h db -u ${DB_HOST} -p ${DB_PASSWORD} -e 'select 1' &> /dev/null; do
-          echo 'Waiting for MySQL...';
-          sleep 2;
-        done &&
+        echo 'in docker-compose yaml file' &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
         bundle exec rails s -e development -b 0.0.0.0
@@ -61,6 +58,11 @@ services:
       MYSQL_DATABASE: eventmanager_dev
       MYSQL_USER: ${DB_HOST}
       MYSQL_PASSWORD: ${DB_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 
 

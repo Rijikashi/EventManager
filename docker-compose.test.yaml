@@ -11,6 +11,11 @@ services:
       MYSQL_USER: ${DB_HOST}
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: eventmanager_test
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     command: --port=3306
 
   test_backend:
@@ -22,7 +27,8 @@ services:
     networks:
       - test
     depends_on:
-      - test_db
+      test_db:
+        condition: service_healthy
     environment:
       DATABASE_USERNAME: ${DB_HOST}
       DATABASE_PASSWORD: ${DB_PASSWORD}
@@ -33,11 +39,7 @@ services:
       RACK_ENV: test
     command:  >
       sh -c "
-        rm -f tmp/pids/server.pid &&
-        until mysql -h db -u ${DB_HOST} -p ${DB_PASSWORD} -e 'select 1' &> /dev/null; do
-          echo 'Waiting for MySQL...';
-          sleep 2;
-        done &&
+        echo 'in docker-compose test yaml file' &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
         bundle exec rails db:seed &&
