@@ -32,7 +32,7 @@ class AttendeesController < ApplicationController
     end
   end
   def create
-    @attendee = Attendee.new(event_id: params[:event_id], user_id: params[:user_id])
+    @attendee = Attendee.new(user_id: params[:user_id], event_id: params[:event_id])
     if @attendee.save
       respond_to do |format|
         format.json {render :json => @attendee}
