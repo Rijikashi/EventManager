@@ -28,12 +28,12 @@ class EventsController < ApplicationController
   end
 
   def findAttendees
-    searchResults = User.joins(:attendees).select('users.id, users.name,attendees.event_id').where("event_id = ?",params[:event_id])
+    searchResults = User.joins(:attendees).select('users.id, users.name').where("event_id = ?",params[:event_id])
     render :json => searchResults
   end
 
   def findHosts
-    searchResults = User.joins(:hosts).select('users.id, users.name,hosts.event_id').where("event_id = ?",params[:event_id])
+    searchResults = User.joins(:hosts).select('users.id, users.name').where("event_id = ?",params[:event_id])
     render :json => searchResults
   end
 

@@ -14,7 +14,7 @@ if User.count.zero?
     {name: "Bob", age: 16, credibility: 10},
     {name: "Fred", age: 17, credibility: 9},
     {name: "Joe", age: 18, credibility: 8},
-    {name: "ToBeDeleted", age: 20, credibility: 9}
+    {name: "Wario", age: 20, credibility: 9}
   ])
 else
   puts "User Table already seeded"
@@ -30,7 +30,7 @@ if Event.count.zero?
     {event_name: "e", location: "e_place", time: staticTime, latitude: 65, longitude: 65},
     {event_name: "f", location: "f_place", time: staticTime, latitude: 0, longitude: 45},
     {event_name: "g", location: "g_place", time: staticTime, latitude: 45, longitude: 0},
-    {event_name: "ToBeDeleted", location: "limbo", time: staticTime, latitude: -100, longitude: -100}
+    {event_name: "aa", location: "aa_place", time: staticTime, latitude: -100, longitude: -100}
     ])
   else
     puts "Event Table already seeded"

@@ -28,11 +28,11 @@ class HostsController < ApplicationController
     end
   end
   def create
-    host = Host.new(host_params)
+    host = Host.new(user_id: params[:user_id], event_id: params[:event_id])
     if host.save
       render :json => host
     else
-      render json: {error: "Unable to create host"}, status:400
+      render json: {error: "Host save failed: #{host.errors.full_messages.join(', ')}"}, status:400
     end
   end
   def destroy
