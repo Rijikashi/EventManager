@@ -7,21 +7,69 @@ on:
     branches: [ "main" ]
 
 jobs:
-
-  build:
-
+  test:
+    name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-    - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Docker compose build
-    - run: docker compose build --no-cache
+      - name: Setting up docker images
+        run: docker compose -f docker-compose.test.yaml build --no-cache
 
-    - name: Deploy to Heroku
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: |
-        git remote add heroku https://git.heroku.com/event-manager-ruby.git
-        git push heroku main
+      - name: Running tests
+        run: docker compose -f docker-compose.test.yaml up
+
+  deploy-backend:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Heroku container registry
+        run: |
+          echo "$HEROKU_API_KEY" | docker login --username="$HEROKU_USERNAME" --password-stdin registry.heroku.com
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_USERNAME: ${{ secrets.HEROKU_USERNAME }}
+
+      - name: Build and push Docker images to registry
+        run: |
+          docker build -t registry.heroku.com/event-manager-ruby/web ./backend
+          docker push registry.heroku.com/event-manager-ruby/web
+
+      - name: Release backend image
+        run: |
+          heroku container:release web --app event-manager-ruby
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+  deploy-frontend:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Heroku container registry
+        run: |
+          echo "$HEROKU_API_KEY" | docker login --username="$HEROKU_USERNAME" --password-stdin registry.heroku.com
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_USERNAME: ${{ secrets.HEROKU_USERNAME }}
+
+      - name: Build and push Docker images to registry
+        run: |
+          docker build -t registry.heroku.com/event-manager-frontend/web ./frontend
+          docker push registry.heroku.com/event-manager-frontend/web
+      - name: Release frontend image
+        run: |
+          heroku container:release web --app event-manager_frontend
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY}}
