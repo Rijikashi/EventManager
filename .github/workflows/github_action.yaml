@@ -75,6 +75,6 @@ jobs:
       - name: Release frontend image
         run: |
           heroku stack:set container --app event-manager-frontend
-          heroku container:release web --app event-manager_frontend
+          heroku container:release web --app event-manager-frontend
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY}}
