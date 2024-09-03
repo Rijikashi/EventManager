@@ -48,10 +48,11 @@ jobs:
 
       - name: Set environment variable in Heroku
         run: |
-          heroku config:set RAILS_ENV=production SECRET_KEY_BASE=$SECRET_KEY_BASE --app event-manager-ruby
+          heroku config:set RAILS_ENV=production SECRET_KEY_BASE=$SECRET_KEY_BASE GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY --app event-manager-ruby
         env:
             HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
             SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
+            GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY}}
 
       - name: Build and push Docker images to registry
         run: |
