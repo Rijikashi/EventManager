@@ -50,6 +50,7 @@ jobs:
           heroku container:release web --app event-manager-ruby
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          RAILS_ENV: production
 
   deploy-frontend:
     name: Deploy frontend
