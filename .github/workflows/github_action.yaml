@@ -38,7 +38,6 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_USERNAME: ${{ secrets.HEROKU_USERNAME }}
-
       - name: Install Heroku CLI
         run: curl https://cli-assets.heroku.com/install.sh | sh
 
@@ -49,9 +48,10 @@ jobs:
 
       - name: Set environment variable in Heroku
         run: |
-          heroku config:set RAILS_ENV=production --app event-manager-ruby
+          heroku config:set RAILS_ENV=production SECRET_KEY_BASE=$SECRET_KEY_BASE --app event-manager-ruby
         env:
             HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+            SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
 
       - name: Build and push Docker images to registry
         run: |

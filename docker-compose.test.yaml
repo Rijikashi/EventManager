@@ -40,6 +40,7 @@ services:
     command:  >
       sh -c "
         echo 'in docker-compose test yaml file' &&
+        rails secret &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
         bundle exec rails db:seed &&
