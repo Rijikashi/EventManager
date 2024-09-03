@@ -13,4 +13,4 @@ RUN gem install bundler
 RUN bundle install
 RUN bundle update
 
-CMD ["rails", "s"]
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
