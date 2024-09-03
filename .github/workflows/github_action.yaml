@@ -46,12 +46,13 @@ jobs:
         run: echo "$HEROKU_API_KEY" | heroku auth:token
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          
+
       - name: Set environment variable in Heroku
         run: |
-          heroku config:set RAILS_ENV=production
+          heroku config:set RAILS_ENV=production --app event-manager-ruby
         env:
             HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
       - name: Build and push Docker images to registry
         run: |
           docker build -t registry.heroku.com/event-manager-ruby/web ./backend
