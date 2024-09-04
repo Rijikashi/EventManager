@@ -6,8 +6,6 @@ WORKDIR /app
 
 COPY . .
 RUN npm ci
-
 RUN npm install -g serve
 
-# Serve the React app
-CMD ["serve", "-s", "build", "-l", "$PORT"]
+CMD ["npm","run", "start_file"]
