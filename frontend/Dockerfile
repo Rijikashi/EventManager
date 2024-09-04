@@ -8,4 +8,4 @@ COPY . .
 RUN npm ci
 RUN npm install -g serve
 
-CMD ["npm","run", "start_file"]
+CMD ["npm", "run", "start_file"]

@@ -1,22 +1,19 @@
 services:
-
-  test_db:
-    image: mysql:8.0
+  db:
+    image: postgres:13
     ports:
-      - 3306:3306
+      - 5432:5432
     networks:
       - test
     environment:
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_USER: ${DB_HOST}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      MYSQL_DATABASE: eventmanager_test
+      POSTGRES_DB: eventmanager_test
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p ${MYSQL_ROOT_PASSWORD}"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d eventmanager_test"]
       interval: 10s
       timeout: 5s
       retries: 5
-    command: --port=3306
 
   test_backend:
     build: ./backend
@@ -27,20 +24,19 @@ services:
     networks:
       - test
     depends_on:
-      test_db:
+      db:
         condition: service_healthy
     environment:
-      DATABASE_USERNAME: ${DB_HOST}
+      DATABASE_URL: postgres://${DB_USER}:${DB_PASSWORD}@db:5432/eventmanager_test
+      DATABASE_HOST: db
+      DATABASE_USERNAME: ${DB_USER}
       DATABASE_PASSWORD: ${DB_PASSWORD}
-      DATABASE_HOST: test_db
       SQL_DATABASE: eventmanager_test
       GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
       RAILS_ENV: test
-      RACK_ENV: test
     command:  >
       sh -c "
         echo 'in docker-compose test yaml file' &&
-        rails secret &&
         bundle exec rake db:create &&
         bundle exec rake db:migrate &&
         bundle exec rails db:seed &&

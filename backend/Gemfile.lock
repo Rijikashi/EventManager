@@ -146,6 +146,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.6-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.7)
     public_suffix (6.0.0)
     puma (3.12.6)
     racc (1.8.0)
@@ -260,6 +261,7 @@ DEPENDENCIES
   listen (~> 3.5)
   mutex_m (~> 0.2.0)
   mysql2 (~> 0.5.2)
+  pg
   puma (~> 3.11)
   rack-cors
   rails (~> 7.0.0)

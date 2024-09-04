@@ -40,7 +40,6 @@ function App() {
         (<LoginWindow loginFunc = {loginFunc}/>)
       }
       <h1>{backendURL}</h1>
-      <h2> H E L  L O</h2>
 
     </div>
   );
