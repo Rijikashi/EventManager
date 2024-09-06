@@ -49,7 +49,6 @@ jobs:
 
       - name: Set environment variables in Heroku
         run: |
-          heroku config:get DATABASE_URL -a event-manager-ruby | xargs -I {} heroku config:set DATABASE_URL={} -a event-manager-ruby
           heroku config:set RAILS_ENV=production SECRET_KEY_BASE=$SECRET_KEY_BASE GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY --app event-manager-ruby
         env:
             HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
@@ -61,11 +60,6 @@ jobs:
           docker build -t registry.heroku.com/event-manager-ruby/web ./backend
           docker push registry.heroku.com/event-manager-ruby/web
 
-      - name: Run Database Migrations
-        run: |
-          heroku run "rails db:create" --app event-manager-ruby
-          heroku run "rails db:migrate" --app event-manager-ruby
-
       - name: Release backend image
         run: |
           heroku stack:set container --app event-manager-ruby
@@ -74,6 +68,10 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           RAILS_ENV: production
 
+      - name: Run Database Migrations
+        run: |
+          heroku run "rails db:create" --app event-manager-ruby
+          heroku run "rails db:migrate" --app event-manager-ruby
   deploy-frontend:
     name: Deploy frontend
     runs-on: ubuntu-latest
@@ -103,7 +101,7 @@ jobs:
           heroku config:set REACT_ENV=production REACT_APP_BACKEND_DEV_URL=$BACKEND_DEV_URL --app event-manager-frontend
         env:
           BACKEND_DEV_URL: ${{ secrets.BACKEND_DEV_URL }}
-          
+
       - name: Build and push Docker images to registry
         run: |
           docker build -t registry.heroku.com/event-manager-frontend/web ./frontend
