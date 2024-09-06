@@ -72,7 +72,7 @@ jobs:
         run: |
           heroku run "rails db:create" --app event-manager-ruby
           heroku run "rails db:migrate" --app event-manager-ruby
-          
+
   deploy-frontend:
     name: Deploy frontend
     runs-on: ubuntu-latest
@@ -105,9 +105,10 @@ jobs:
 
       - name: Build and push Docker images to registry
         run: |
-          docker build -t registry.heroku.com/event-manager-frontend/web ./frontend
+          docker build --build-arg REACT_APP_BACKEND_DEV_URL=$BACKEND_DEV_URL -t registry.heroku.com/event-manager-frontend/web ./frontend
           docker push registry.heroku.com/event-manager-frontend/web
-
+        env:
+          BACKEND_DEV_URL: ${{ secrets.BACKEND_DEV_URL }}
       - name: Release frontend image
         run: |
           heroku stack:set container --app event-manager-frontend

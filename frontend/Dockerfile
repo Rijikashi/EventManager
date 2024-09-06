@@ -8,4 +8,7 @@ COPY . .
 RUN npm ci
 RUN npm install -g serve
 
+ARG REACT_APP_BACKEND_DEV_URL
+ENV REACT_APP_BACKEND_DEV_URL=${REACT_APP_BACKEND_DEV_URL}
+
 CMD ["npm", "run", "start_file"]
