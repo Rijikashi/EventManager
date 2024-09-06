@@ -72,6 +72,7 @@ jobs:
         run: |
           heroku run "rails db:create" --app event-manager-ruby
           heroku run "rails db:migrate" --app event-manager-ruby
+          
   deploy-frontend:
     name: Deploy frontend
     runs-on: ubuntu-latest

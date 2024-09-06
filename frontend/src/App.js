@@ -27,6 +27,8 @@ function App() {
       const data = await res.json()
       setApiKey(data["key"])
     }
+    console.log(backendURL)
+    console.log(apiKey)
     keyRequest()
   }, [])
   return (
@@ -40,7 +42,7 @@ function App() {
         (<LoginWindow loginFunc = {loginFunc}/>)
       }
       <h1>{backendURL}</h1>
-
+      <h2>{apiKey}</h2>
     </div>
   );
 }
