@@ -38,6 +38,7 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_USERNAME: ${{ secrets.HEROKU_USERNAME }}
+
       - name: Install Heroku CLI
         run: curl https://cli-assets.heroku.com/install.sh | sh
 
@@ -59,11 +60,12 @@ jobs:
         run: |
           docker build -t registry.heroku.com/event-manager-ruby/web ./backend
           docker push registry.heroku.com/event-manager-ruby/web
-          
+
       - name: Run Database Migrations
         run: |
           heroku run "rails db:create" --app event-manager-ruby
           heroku run "rails db:migrate" --app event-manager-ruby
+
       - name: Release backend image
         run: |
           heroku stack:set container --app event-manager-ruby
@@ -95,11 +97,13 @@ jobs:
         run: echo "$HEROKU_API_KEY" | heroku auth:token
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
       - name: Set environment variable in Heroku
         run: |
           heroku config:set REACT_ENV=production REACT_APP_BACKEND_DEV_URL=$BACKEND_DEV_URL --app event-manager-frontend
         env:
           BACKEND_DEV_URL: ${{ secrets.BACKEND_DEV_URL }}
+          
       - name: Build and push Docker images to registry
         run: |
           docker build -t registry.heroku.com/event-manager-frontend/web ./frontend

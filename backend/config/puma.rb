@@ -14,7 +14,10 @@ port ENV['PORT']||  3001
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV['RAILS_ENV'] || 'development'
-
+e = ENV['RAILS_ENV'] || 'development'
+f = ENV['DATABASE_URL'] || 'does not exist'
+puts e
+puts f
 # Specifies the `pidfile` that Puma will use.
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
