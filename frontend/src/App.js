@@ -26,9 +26,9 @@ function App() {
       const res = await fetch(backendURL+"getApiKey")
       const data = await res.json()
       setApiKey(data["key"])
+      console.log(backendURL)
+      console.log(apiKey)
     }
-    console.log(backendURL)
-    console.log(apiKey)
     keyRequest()
   }, [])
   return (
