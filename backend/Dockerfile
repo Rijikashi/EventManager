@@ -12,5 +12,5 @@ COPY . .
 RUN gem install bundler
 RUN bundle install
 RUN bundle update
-
+RUN bundle exec rake db:migrate
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
