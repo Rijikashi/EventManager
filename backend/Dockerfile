@@ -13,4 +13,4 @@ RUN gem install bundler
 RUN bundle install
 RUN bundle update
 
-CMD bash -c "rails db:migrate && bundle exec puma -C config/puma.rb"
+CMD bash -c "bundle exec puma -C config/puma.rb"
