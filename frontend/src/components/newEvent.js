@@ -14,7 +14,7 @@ const NewEvent = ({center, userObj}) => {
 
   return (
     <div>
-      <Button onClick = {toggleNewEvent} variant = 'light'>
+      <Button className = 'rounded' onClick = {toggleNewEvent} variant = 'light'>
         Create new Event
       </Button>
       <Modal show = {newEvent} onHide = {toggleNewEvent} >

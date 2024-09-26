@@ -20325,3 +20325,869 @@ Processing by UsersController#authentication as JSON
 Completed 200 OK in 11ms (Views: 3.1ms | ActiveRecord: 2.3ms | Allocations: 1376)
 
 
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 19:39:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 19:39:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 70ms (Views: 3.7ms | ActiveRecord: 17.3ms | Allocations: 4296)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 19:40:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 19:40:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 2.2ms | Allocations: 1388)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 19:45:22 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 19:45:23 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 19:45:26 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 11ms (Views: 3.1ms | ActiveRecord: 1.9ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.8980339493945/32.942632031796144/-117.269046540625/-117.159183259375" for 192.168.65.1 at 2024-09-26 19:45:33 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.8980339493945", "latitude_upper"=>"32.942632031796144", "longitude_lower"=>"-117.269046540625", "longitude_upper"=>"-117.159183259375"}
+  [1m[36mEvent Load (8.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.8980339493945], ["latitude", 32.942632031796144], ["longitude", -117.269046540625], ["longitude", -117.159183259375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 113ms (Views: 17.3ms | ActiveRecord: 13.6ms | Allocations: 6470)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:01:03 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:01:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:01:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (4.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 219ms (Views: 16.7ms | ActiveRecord: 123.9ms | Allocations: 4261)
+
+
+Started GET "/events/findNearby/32.89802864805927/32.94262673313184/-117.26903494062499/-117.15917165937499" for 192.168.65.1 at 2024-09-26 20:01:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802864805927", "latitude_upper"=>"32.94262673313184", "longitude_lower"=>"-117.26903494062499", "longitude_upper"=>"-117.15917165937499"}
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802864805927], ["latitude", 32.94262673313184], ["longitude", -117.26903494062499], ["longitude", -117.15917165937499]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 1.8ms | Allocations: 959)
+
+
+Started POST "/events/testing/Thu%20Sep%2026%202024%2013:30:00%20GMT-0700%20(Pacific%20Daylight%20Time)/asdf/32.92027733968585/-117.21297915169413" for 192.168.65.1 at 2024-09-26 20:01:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"testing", "time"=>"Thu Sep 26 2024 13:30:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"asdf", "latitude"=>"32.92027733968585", "longitude"=>"-117.21297915169413"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:12:in `createNewEvent'
+  [1m[36mEvent Create (20.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["event_name", "testing"], ["time", "2024-09-26 20:30:00"], ["created_at", "2024-09-26 20:01:32.638408"], ["updated_at", "2024-09-26 20:01:32.638408"], ["location", "asdf"], ["latitude", 32.92027733968585], ["longitude", -117.21297915169413]]
+  ↳ app/controllers/events_controller.rb:12:in `createNewEvent'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:12:in `createNewEvent'
+Completed 200 OK in 293ms (Views: 6.0ms | ActiveRecord: 45.1ms | Allocations: 6603)
+
+
+Started POST "/hosts/1/1" for 192.168.65.1 at 2024-09-26 20:01:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HostsController#createNewHost as JSON
+  Parameters: {"user_id"=>"1", "event_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/hosts_controller.rb:7:in `createNewHost'
+  [1m[36mHost Exists? (6.4ms)[0m  [1m[34mSELECT 1 AS one FROM "hosts" WHERE "hosts"."user_id" = $1 AND "hosts"."event_id" = $2 LIMIT $3[0m  [["user_id", 1], ["event_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hosts_controller.rb:7:in `createNewHost'
+  [1m[36mHost Create (2.4ms)[0m  [1m[32mINSERT INTO "hosts" ("user_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["event_id", 1], ["created_at", "2024-09-26 20:01:32.950178"], ["updated_at", "2024-09-26 20:01:32.950178"]]
+  ↳ app/controllers/hosts_controller.rb:7:in `createNewHost'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/hosts_controller.rb:7:in `createNewHost'
+Completed 200 OK in 193ms (Views: 1.2ms | ActiveRecord: 27.4ms | Allocations: 6993)
+
+
+Started POST "/events/testing_two/Thu%20Sep%2026%202024%2013:31:00%20GMT-0700%20(Pacific%20Daylight%20Time)/asdf_two/32.920150378307305/-117.21491869154052" for 192.168.65.1 at 2024-09-26 20:01:44 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#createNewEvent as JSON
+  Parameters: {"eventName"=>"testing_two", "time"=>"Thu Sep 26 2024 13:31:00 GMT-0700 (Pacific Daylight Time)", "locationName"=>"asdf_two", "latitude"=>"32.920150378307305", "longitude"=>"-117.21491869154052"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:12:in `createNewEvent'
+  [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "time", "created_at", "updated_at", "location", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["event_name", "testing_two"], ["time", "2024-09-26 20:31:00"], ["created_at", "2024-09-26 20:01:44.640025"], ["updated_at", "2024-09-26 20:01:44.640025"], ["location", "asdf_two"], ["latitude", 32.920150378307305], ["longitude", -117.21491869154052]]
+  ↳ app/controllers/events_controller.rb:12:in `createNewEvent'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:12:in `createNewEvent'
+Completed 200 OK in 61ms (Views: 0.5ms | ActiveRecord: 4.8ms | Allocations: 2180)
+
+
+Started POST "/hosts/1/2" for 192.168.65.1 at 2024-09-26 20:01:44 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HostsController#createNewHost as JSON
+  Parameters: {"user_id"=>"1", "event_id"=>"2"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/hosts_controller.rb:7:in `createNewHost'
+  [1m[36mHost Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "hosts" WHERE "hosts"."user_id" = $1 AND "hosts"."event_id" = $2 LIMIT $3[0m  [["user_id", 1], ["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/hosts_controller.rb:7:in `createNewHost'
+  [1m[36mHost Create (0.7ms)[0m  [1m[32mINSERT INTO "hosts" ("user_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["event_id", 2], ["created_at", "2024-09-26 20:01:44.752867"], ["updated_at", "2024-09-26 20:01:44.752867"]]
+  ↳ app/controllers/hosts_controller.rb:7:in `createNewHost'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/hosts_controller.rb:7:in `createNewHost'
+Completed 200 OK in 154ms (Views: 8.5ms | ActiveRecord: 4.5ms | Allocations: 2817)
+
+
+Started GET "/events/findNearby/32.89802864805927/32.94262673313184/-117.26903494062499/-117.15917165937499" for 192.168.65.1 at 2024-09-26 20:01:45 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802864805927", "latitude_upper"=>"32.94262673313184", "longitude_lower"=>"-117.26903494062499", "longitude_upper"=>"-117.15917165937499"}
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802864805927], ["latitude", 32.94262673313184], ["longitude", -117.26903494062499], ["longitude", -117.15917165937499]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 24ms (Views: 13.3ms | ActiveRecord: 2.5ms | Allocations: 1163)
+
+
+Started GET "/events/findNearby/32.89802864805927/32.94262673313184/-117.26903494062499/-117.15917165937499" for 192.168.65.1 at 2024-09-26 20:01:50 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802864805927", "latitude_upper"=>"32.94262673313184", "longitude_lower"=>"-117.26903494062499", "longitude_upper"=>"-117.15917165937499"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802864805927], ["latitude", 32.94262673313184], ["longitude", -117.26903494062499], ["longitude", -117.15917165937499]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.8ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89802864805927/32.94262673313184/-117.26903494062499/-117.15917165937499" for 192.168.65.1 at 2024-09-26 20:01:50 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802864805927", "latitude_upper"=>"32.94262673313184", "longitude_lower"=>"-117.26903494062499", "longitude_upper"=>"-117.15917165937499"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802864805927], ["latitude", 32.94262673313184], ["longitude", -117.26903494062499], ["longitude", -117.15917165937499]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89802864805927/32.94262673313184/-117.26903494062499/-117.15917165937499" for 192.168.65.1 at 2024-09-26 20:01:50 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802864805927", "latitude_upper"=>"32.94262673313184", "longitude_lower"=>"-117.26903494062499", "longitude_upper"=>"-117.15917165937499"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802864805927], ["latitude", 32.94262673313184], ["longitude", -117.26903494062499], ["longitude", -117.15917165937499]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.7ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89802864805927/32.94262673313184/-117.26903494062499/-117.15917165937499" for 192.168.65.1 at 2024-09-26 20:01:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802864805927", "latitude_upper"=>"32.94262673313184", "longitude_lower"=>"-117.26903494062499", "longitude_upper"=>"-117.15917165937499"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802864805927], ["latitude", 32.94262673313184], ["longitude", -117.26903494062499], ["longitude", -117.15917165937499]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.8ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89802864805927/32.94262673313184/-117.26903494062499/-117.15917165937499" for 192.168.65.1 at 2024-09-26 20:01:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802864805927", "latitude_upper"=>"32.94262673313184", "longitude_lower"=>"-117.26903494062499", "longitude_upper"=>"-117.15917165937499"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802864805927], ["latitude", 32.94262673313184], ["longitude", -117.26903494062499], ["longitude", -117.15917165937499]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:03:24 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:03:25 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:03:25 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:03:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.7ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:03:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:03:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.7ms | Allocations: 1151)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:03:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 1151)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:03:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 1.0ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89696736356145/32.94156598332669/-117.26407285118847/-117.15420956993847" for 192.168.65.1 at 2024-09-26 20:04:41 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89696736356145", "latitude_upper"=>"32.94156598332669", "longitude_lower"=>"-117.26407285118847", "longitude_upper"=>"-117.15420956993847"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89696736356145], ["latitude", 32.94156598332669], ["longitude", -117.26407285118847], ["longitude", -117.15420956993847]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.9ms | Allocations: 1150)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:05:10 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:05:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 107ms (Views: 3.8ms | ActiveRecord: 1.9ms | Allocations: 1379)
+
+
+Started GET "/events/findNearby/32.89802724770656/32.942625333484656/-117.269035740625/-117.159172459375" for 192.168.65.1 at 2024-09-26 20:05:18 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802724770656", "latitude_upper"=>"32.942625333484656", "longitude_lower"=>"-117.269035740625", "longitude_upper"=>"-117.159172459375"}
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802724770656], ["latitude", 32.942625333484656], ["longitude", -117.269035740625], ["longitude", -117.159172459375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 1.3ms | Allocations: 1150)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:05:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:05:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 1.0ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.89802724770656/32.942625333484656/-117.24809305263672/-117.18011514736328" for 192.168.65.1 at 2024-09-26 20:06:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802724770656", "latitude_upper"=>"32.942625333484656", "longitude_lower"=>"-117.24809305263672", "longitude_upper"=>"-117.18011514736328"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802724770656], ["latitude", 32.942625333484656], ["longitude", -117.24809305263672], ["longitude", -117.18011514736328]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89802724770656/32.942625333484656/-117.24809305263672/-117.18011514736328" for 192.168.65.1 at 2024-09-26 20:06:24 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802724770656", "latitude_upper"=>"32.942625333484656", "longitude_lower"=>"-117.24809305263672", "longitude_upper"=>"-117.18011514736328"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802724770656], ["latitude", 32.942625333484656], ["longitude", -117.24809305263672], ["longitude", -117.18011514736328]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 1151)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:11:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:12:00 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (5.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 66ms (Views: 3.4ms | ActiveRecord: 24.9ms | Allocations: 4279)
+
+
+Started GET "/events/findNearby/32.89803594989836/32.942634031292094/-117.26903444062502/-117.15917115937502" for 192.168.65.1 at 2024-09-26 20:12:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89803594989836", "latitude_upper"=>"32.942634031292094", "longitude_lower"=>"-117.26903444062502", "longitude_upper"=>"-117.15917115937502"}
+  [1m[36mEvent Load (3.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89803594989836], ["latitude", 32.942634031292094], ["longitude", -117.26903444062502], ["longitude", -117.15917115937502]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 3.9ms | Allocations: 1232)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:14:58 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:15:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 1.2ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.89802064604383/32.942618735147995/-117.269028040625/-117.159164759375" for 192.168.65.1 at 2024-09-26 20:15:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802064604383", "latitude_upper"=>"32.942618735147995", "longitude_lower"=>"-117.269028040625", "longitude_upper"=>"-117.159164759375"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802064604383], ["latitude", 32.942618735147995], ["longitude", -117.269028040625], ["longitude", -117.159164759375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.8ms | Allocations: 1150)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:18:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:18:33 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 16ms (Views: 4.9ms | ActiveRecord: 1.9ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.89803534974721/32.942633431443305/-117.269032140625/-117.159168859375" for 192.168.65.1 at 2024-09-26 20:18:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89803534974721", "latitude_upper"=>"32.942633431443305", "longitude_lower"=>"-117.269032140625", "longitude_upper"=>"-117.159168859375"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89803534974721], ["latitude", 32.942633431443305], ["longitude", -117.269032140625], ["longitude", -117.159168859375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 1150)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:19:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:19:15 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 1.1ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.89803534974721/32.942633431443305/-117.269032140625/-117.159168859375" for 192.168.65.1 at 2024-09-26 20:19:20 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89803534974721", "latitude_upper"=>"32.942633431443305", "longitude_lower"=>"-117.269032140625", "longitude_upper"=>"-117.159168859375"}
+  [1m[36mEvent Load (3.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89803534974721], ["latitude", 32.942633431443305], ["longitude", -117.269032140625], ["longitude", -117.159168859375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 3.5ms | Allocations: 1150)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:21:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewihp1" for 192.168.65.1 at 2024-09-26 20:21:03 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewihp1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+Completed 400 Bad Request in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 688)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:21:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 1.1ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.89802874808446/32.942626833106644/-117.269028740625/-117.159165459375" for 192.168.65.1 at 2024-09-26 20:21:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802874808446", "latitude_upper"=>"32.942626833106644", "longitude_lower"=>"-117.269028740625", "longitude_upper"=>"-117.159165459375"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802874808446], ["latitude", 32.942626833106644], ["longitude", -117.269028740625], ["longitude", -117.159165459375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 1150)
+
+
+Started GET "/events/findNearby/32.89802874808446/32.942626833106644/-117.269028740625/-117.159165459375" for 192.168.65.1 at 2024-09-26 20:22:14 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802874808446", "latitude_upper"=>"32.942626833106644", "longitude_lower"=>"-117.269028740625", "longitude_upper"=>"-117.159165459375"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802874808446], ["latitude", 32.942626833106644], ["longitude", -117.269028740625], ["longitude", -117.159165459375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.8ms | Allocations: 1150)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:24:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:24:56 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 1.3ms | Allocations: 1377)
+
+
+Started GET "/events/findNearby/32.89802874808446/32.942626833106644/-117.269028740625/-117.159165459375" for 192.168.65.1 at 2024-09-26 20:27:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89802874808446", "latitude_upper"=>"32.942626833106644", "longitude_lower"=>"-117.269028740625", "longitude_upper"=>"-117.159165459375"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89802874808446], ["latitude", 32.942626833106644], ["longitude", -117.269028740625], ["longitude", -117.159165459375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 1.1ms | Allocations: 1151)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:29:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 19ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:29:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 1.8ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:31:59 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:32:02 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 1.1ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:33:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:33:31 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 1.5ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:35:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:35:19 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 1.1ms | Allocations: 1377)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:45:49 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 149)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:45:52 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 140ms (Views: 3.5ms | ActiveRecord: 28.5ms | Allocations: 4258)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:49:22 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:49:36 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 21ms (Views: 3.1ms | ActiveRecord: 1.7ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:54:38 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:54:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 1.4ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:57:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:57:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 1.2ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 20:58:02 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 20:58:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 13ms (Views: 3.0ms | ActiveRecord: 1.1ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.898034449520466/32.94263253167011/-117.269043140625/-117.159179859375" for 192.168.65.1 at 2024-09-26 20:58:25 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.898034449520466", "latitude_upper"=>"32.94263253167011", "longitude_lower"=>"-117.269043140625", "longitude_upper"=>"-117.159179859375"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.898034449520466], ["latitude", 32.94263253167011], ["longitude", -117.269043140625], ["longitude", -117.159179859375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 26ms (Views: 14.8ms | ActiveRecord: 1.3ms | Allocations: 1232)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 21:03:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 21:03:11 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 54ms (Views: 35.4ms | ActiveRecord: 2.7ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 21:04:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 21:04:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 28ms (Views: 4.4ms | ActiveRecord: 2.7ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.898034449520466/32.94263253167011/-117.269043140625/-117.159179859375" for 192.168.65.1 at 2024-09-26 21:08:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.898034449520466", "latitude_upper"=>"32.94263253167011", "longitude_lower"=>"-117.269043140625", "longitude_upper"=>"-117.159179859375"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.898034449520466], ["latitude", 32.94263253167011], ["longitude", -117.269043140625], ["longitude", -117.159179859375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 1.1ms | Allocations: 1150)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 21:12:13 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 21:12:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 21:13:45 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 18ms (Views: 6.5ms | ActiveRecord: 1.7ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 21:25:02 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 21:25:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 46ms (Views: 3.0ms | ActiveRecord: 16.3ms | Allocations: 4260)
+
+
+Started GET "/events/findNearby/32.907007934510865/32.93179291432512/-117.24147800992324/-117.18654636929824" for 192.168.65.1 at 2024-09-26 21:26:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.907007934510865", "latitude_upper"=>"32.93179291432512", "longitude_lower"=>"-117.24147800992324", "longitude_upper"=>"-117.18654636929824"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.907007934510865], ["latitude", 32.93179291432512], ["longitude", -117.24147800992324], ["longitude", -117.18654636929824]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 2.7ms | Allocations: 1232)
+
+
+Started GET "/events/findHosts/2" for 192.168.65.1 at 2024-09-26 21:26:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/events/findAttendees/2" for 192.168.65.1 at 2024-09-26 21:26:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"2"}
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (67.9ms)[0m  [1m[34mSELECT users.id, users.name FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:37:in `findHosts'
+Completed 200 OK in 752ms (Views: 667.3ms | ActiveRecord: 67.9ms | Allocations: 11262)
+
+
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT users.id, users.name FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:32:in `findAttendees'
+Completed 200 OK in 730ms (Views: 682.6ms | ActiveRecord: 26.4ms | Allocations: 11844)
+
+
+Started GET "/events/findAttendees/2" for 192.168.65.1 at 2024-09-26 21:26:37 +0000
+Started GET "/events/findHosts/2" for 192.168.65.1 at 2024-09-26 21:26:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findAttendees as JSON
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"2"}
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT users.id, users.name FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:37:in `findHosts'
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 1.0ms | Allocations: 1272)
+
+
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT users.id, users.name FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:32:in `findAttendees'
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 2.4ms | Allocations: 1730)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 21:30:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 21:30:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 1.3ms | Allocations: 1377)
+
+
+Started GET "/events/findNearby/32.89553990944184/32.94510934927408/-117.24806805263673/-117.18009014736329" for 192.168.65.1 at 2024-09-26 21:30:13 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89553990944184", "latitude_upper"=>"32.94510934927408", "longitude_lower"=>"-117.24806805263673", "longitude_upper"=>"-117.18009014736329"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89553990944184], ["latitude", 32.94510934927408], ["longitude", -117.24806805263673], ["longitude", -117.18009014736329]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms | Allocations: 1153)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-26 21:31:38 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-26 21:31:41 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 1.2ms | Allocations: 1376)
+
+
+Started GET "/events/findNearby/32.89553990944184/32.94510934927408/-117.269010740625/-117.159147459375" for 192.168.65.1 at 2024-09-26 21:31:44 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findNearby as JSON
+  Parameters: {"latitude_lower"=>"32.89553990944184", "latitude_upper"=>"32.94510934927408", "longitude_lower"=>"-117.269010740625", "longitude_upper"=>"-117.159147459375"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."latitude" BETWEEN $1 AND $2 AND "events"."longitude" BETWEEN $3 AND $4[0m  [["latitude", 32.89553990944184], ["latitude", 32.94510934927408], ["longitude", -117.269010740625], ["longitude", -117.159147459375]]
+  ↳ app/controllers/events_controller.rb:7:in `findNearby'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 1150)
+
+

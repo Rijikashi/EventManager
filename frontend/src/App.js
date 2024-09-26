@@ -31,7 +31,7 @@ function App() {
     keyRequest()
   }, [])
   return (
-    <div>
+    <div className = 'home'>
       <Header loggedIn = {loggedIn} logout = {logout}/>
       {loggedIn ? (
         <Main apikey = {apiKey} userObj = {userObj} />

@@ -14,15 +14,13 @@ const containerStyle = {
   height: '100%'
 };
 
-const MapComponent = ({apiKey, userObj}) => {
+const MapComponent = ({apiKey, userObj,items, setItems, eventQueried,setEventQueried}) => {
   const [center, setCenter] = useState(
     {
       lat: 37.7749,
       lng: 122.4194
     }
   )
-  const [items, setItems] = useState([])
-  const [eventQueried, setEventQueried] = useState(false)
   const [mapObj, setMapObj] = useState(null)
   const [zoomLevel, setZoomLevel] = useState(14);
   const [searchLocation, setSearchLocation] = useState("")
@@ -88,41 +86,46 @@ const MapComponent = ({apiKey, userObj}) => {
   };
 
   return (
-    <LoadScript
-      googleMapsApiKey= {apiKey}
-      className = 'google-map-container'
-    >
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={zoomLevel}
-        onLoad = {onLoad}
-        onZoomChanged={() => {
-          if (mapObj) {
-            setZoomLevel(mapObj.getZoom());
-          }
-        }}
+      <LoadScript
+        googleMapsApiKey= {apiKey}
+        className = 'google-map-container'
       >
-        <Circle center = {center} options = {circleOptions} />
-        { eventQueried ? (items.map((item) => {
-          return <MarkerInfo key = {item["id"]} marker = {item} userObj = {userObj}/>
-        })) : (<></>)
-        }
-      </GoogleMap>
-      <div className = 'button-overlay'>
-        <Button variant = 'light' onClick = {eventQuery}>
-          Search nearby events
-        </Button>
-        <NewEvent center = {center} userObj = {userObj}/>
-        <input
-          type="text"
-          value={searchLocation}
-          onChange={(e) => setSearchLocation(e.target.value)}
-          placeholder="Search for a location"
-        />
-        <button onClick={handleSearch}>Search</button>
-      </div>
-    </LoadScript>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={zoomLevel}
+          onLoad = {onLoad}
+          onZoomChanged={() => {
+            if (mapObj) {
+              setZoomLevel(mapObj.getZoom());
+            }
+          }}
+        >
+          <Circle center = {center} options = {circleOptions} />
+          { eventQueried ? (items.map((item) => {
+            return <MarkerInfo key = {item["id"]} marker = {item} userObj = {userObj}/>
+          })) : (<></>)
+          }
+        </GoogleMap>
+        <div className = 'overlay-container'>
+          <div className = 'button-overlay'>
+            <Button className = 'rounded' variant = 'light' onClick = {eventQuery}>
+              Search nearby events
+            </Button>
+            <NewEvent center = {center} userObj = {userObj}/>
+          </div>
+          <div className = "search-container">
+            <input
+              type="text"
+              class = "search-bar"
+              value={searchLocation}
+              onChange={(e) => setSearchLocation(e.target.value)}
+              placeholder="Search for a location"
+            />
+            <button class = 'searchbutton' onClick={handleSearch}>🔍</button>
+          </div>
+        </div>
+      </LoadScript>
   )
 }
 export default MapComponent
