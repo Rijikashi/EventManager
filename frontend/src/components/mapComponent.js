@@ -17,8 +17,8 @@ const containerStyle = {
 const MapComponent = ({apiKey, userObj}) => {
   const [center, setCenter] = useState(
     {
-      lat: 0,
-      lng: 0
+      lat: 37.7749,
+      lng: 122.4194
     }
   )
   const [items, setItems] = useState([])
@@ -69,6 +69,7 @@ const MapComponent = ({apiKey, userObj}) => {
     const data = await res.json()
     setItems(data)
     setEventQueried(true)
+
   }
 
   const handleSearch = () => {

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Header from "./components/Header.js"
 import MapComponent from "./components/mapComponent.js"
 import LoginWindow from "./components/loginWindow.js"
+import Main from "./components/main.js"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
@@ -33,9 +34,7 @@ function App() {
     <div>
       <Header loggedIn = {loggedIn} logout = {logout}/>
       {loggedIn ? (
-        <div className = 'map-component-container'>
-          <MapComponent apiKey = {apiKey} userObj = {userObj}/>
-        </div>
+        <Main apikey = {apiKey} userObj = {userObj} />
       ):
         (<LoginWindow loginFunc = {loginFunc}/>)
       }

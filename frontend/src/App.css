@@ -1,9 +1,16 @@
+
+.body{
+  background-color: --gray-29;
+}
+
 h1 {
   color : green;
   text-align: center;
   background-color: lightblue;
 }
+.header{
 
+}
 .google-map-container{
   position: relative;
   z-index:1;
@@ -19,19 +26,22 @@ h1 {
   padding: 10px 0;
   right:0px;
 }
-.loginWindow{
-
-}
-.newUserButtonContainer{
-
-}
 .map-component-container{
   height:90vh
 }
 .map-component{
 
 }
-
+.main{
+  width:100%;
+  height:100%;
+}
+.sidebar{
+  width:20%;
+  height:100%;
+  background-color: lightblue;
+  z-index:2;
+}
 .newUserButton{
   width:15%;
   margin-left: 42.5%;
