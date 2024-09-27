@@ -14,7 +14,8 @@ const containerStyle = {
   height: '100%'
 };
 
-const MapComponent = ({apiKey, userObj,items, setItems, eventQueried,setEventQueried}) => {
+const MapComponent = ({apiKey, userObj, items, setItems, eventQueried,setEventQueried,
+  keyPressed, setKeyPressed}) => {
   const [center, setCenter] = useState(
     {
       lat: 37.7749,
@@ -24,6 +25,7 @@ const MapComponent = ({apiKey, userObj,items, setItems, eventQueried,setEventQue
   const [mapObj, setMapObj] = useState(null)
   const [zoomLevel, setZoomLevel] = useState(14);
   const [searchLocation, setSearchLocation] = useState("")
+
   const onLoad = React.useCallback(function callback(map) {
     setMapObj(map)
   }, [])
@@ -56,6 +58,7 @@ const MapComponent = ({apiKey, userObj,items, setItems, eventQueried,setEventQue
   };
 
   const eventQuery = async () => {
+    console.log("in EVENTQUERY")
     let bounds = mapObj.getBounds()
     let upper_lat = bounds.getNorthEast().lat()
     let upper_lng = bounds.getNorthEast().lng()
@@ -65,11 +68,27 @@ const MapComponent = ({apiKey, userObj,items, setItems, eventQueried,setEventQue
     + lower_lat + "/" + upper_lat + "/" + lower_lng + "/" + upper_lng
     )
     const data = await res.json()
+    changeDate(data)
     setItems(data)
+    console.log(data)
     setEventQueried(true)
-
   }
-
+  const changeDate = (data) => {
+    for (let i = 0;i<data.length;i++){
+      let date = new Date(data[i]['time'])
+      let readableDate = date.toLocaleString('en-US', {
+        weekday: 'long',
+        year: 'numeric',  
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+      });
+      data[i]['time'] = readableDate
+    }
+  }
   const handleSearch = () => {
     const geocoder = new window.google.maps.Geocoder();
     geocoder.geocode({ address: searchLocation }, (results, status) => {
@@ -103,7 +122,8 @@ const MapComponent = ({apiKey, userObj,items, setItems, eventQueried,setEventQue
         >
           <Circle center = {center} options = {circleOptions} />
           { eventQueried ? (items.map((item) => {
-            return <MarkerInfo key = {item["id"]} marker = {item} userObj = {userObj}/>
+            return <MarkerInfo key = {item.id} marker = {item} userObj = {userObj}
+            keyPressed = {keyPressed} setKeyPressed = {setKeyPressed}/>
           })) : (<></>)
           }
         </GoogleMap>
@@ -117,12 +137,12 @@ const MapComponent = ({apiKey, userObj,items, setItems, eventQueried,setEventQue
           <div className = "search-container">
             <input
               type="text"
-              class = "search-bar"
+              className = "search-bar"
               value={searchLocation}
               onChange={(e) => setSearchLocation(e.target.value)}
               placeholder="Search for a location"
             />
-            <button class = 'searchbutton' onClick={handleSearch}>🔍</button>
+            <button className = 'searchbutton' onClick={handleSearch}>🔍</button>
           </div>
         </div>
       </LoadScript>
