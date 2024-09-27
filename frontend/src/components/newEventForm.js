@@ -118,6 +118,7 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj, setN
           <DateTimePicker
             onChange={setTime}
             value={time}
+            mode = 'date'
           />
         </div>
         <div className='form-control'>

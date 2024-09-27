@@ -22262,3 +22262,126 @@ Processing by EventsController#findNearby as JSON
 Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 1151)
 
 
+Started GET "/events/findHosts/2" for 192.168.65.1 at 2024-09-27 20:29:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT users.id, users.name FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:37:in `findHosts'
+Completed 200 OK in 29ms (Views: 13.8ms | ActiveRecord: 9.0ms | Allocations: 1205)
+
+
+Started GET "/events/findAttendees/2" for 192.168.65.1 at 2024-09-27 20:29:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT users.id, users.name FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '2')[0m
+  ↳ app/controllers/events_controller.rb:32:in `findAttendees'
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 2.0ms | Allocations: 880)
+
+
+Started GET "/events/findHosts/1" for 192.168.65.1 at 2024-09-27 20:30:03 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/events/findAttendees/1" for 192.168.65.1 at 2024-09-27 20:30:03 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#findHosts as JSON
+  Parameters: {"event_id"=>"1"}
+Processing by EventsController#findAttendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT users.id, users.name FROM "users" INNER JOIN "hosts" ON "hosts"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:37:in `findHosts'
+Completed 200 OK in 15ms (Views: 9.4ms | ActiveRecord: 4.4ms | Allocations: 2091)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT users.id, users.name FROM "users" INNER JOIN "attendees" ON "attendees"."user_id" = "users"."id" WHERE (event_id = '1')[0m
+  ↳ app/controllers/events_controller.rb:32:in `findAttendees'
+Completed 200 OK in 52ms (Views: 2.7ms | ActiveRecord: 16.9ms | Allocations: 4588)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-27 20:41:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-27 20:41:20 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 85ms (Views: 6.3ms | ActiveRecord: 29.1ms | Allocations: 4237)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-27 21:35:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-27 21:35:08 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (4.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 90ms (Views: 4.5ms | ActiveRecord: 20.7ms | Allocations: 4238)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-27 21:40:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-27 21:40:08 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 1.6ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-27 21:42:58 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/login/rijikashi/%3Cthewhip1" for 192.168.65.1 at 2024-09-27 21:43:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#authentication as JSON
+  Parameters: {"username"=>"rijikashi", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (10.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `authentication'
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'rijikashi' AND password = 'thewhip1')[0m
+  ↳ app/controllers/users_controller.rb:14:in `authentication'
+Completed 200 OK in 40ms (Views: 4.5ms | ActiveRecord: 21.7ms | Allocations: 1376)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-27 21:44:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/getApiKey" for 192.168.65.1 at 2024-09-27 21:44:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#getKey as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE DATABASE "eventmanager_dev" ENCODING = 'unicode'[0m
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5159330110759729275)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5159330110759729275)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /usr/local/bundle/gems/actionpack-7.0.8.4/lib/action_controller/railtie.rb:80)

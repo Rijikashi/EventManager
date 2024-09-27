@@ -58,7 +58,6 @@ const MapComponent = ({apiKey, userObj, items, setItems, eventQueried,setEventQu
   };
 
   const eventQuery = async () => {
-    console.log("in EVENTQUERY")
     let bounds = mapObj.getBounds()
     let upper_lat = bounds.getNorthEast().lat()
     let upper_lng = bounds.getNorthEast().lng()
@@ -70,7 +69,6 @@ const MapComponent = ({apiKey, userObj, items, setItems, eventQueried,setEventQu
     const data = await res.json()
     changeDate(data)
     setItems(data)
-    console.log(data)
     setEventQueried(true)
   }
   const changeDate = (data) => {
@@ -78,7 +76,7 @@ const MapComponent = ({apiKey, userObj, items, setItems, eventQueried,setEventQu
       let date = new Date(data[i]['time'])
       let readableDate = date.toLocaleString('en-US', {
         weekday: 'long',
-        year: 'numeric',  
+        year: 'numeric',
         month: 'long',
         day: 'numeric',
         hour: 'numeric',
