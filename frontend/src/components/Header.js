@@ -6,11 +6,9 @@ const Header = ( {loggedIn, logout} ) => {
     <h1 className = "header">
       <span> Event Finder </span>
       {loggedIn ? (
-        <span>
-          <Button onClick ={logout} className = 'logout-button'>
+          <span onClick ={logout} className = 'logout-button'>
             Logout
-          </Button>
-        </span>
+          </span>
       )
         : (<></>)
       }

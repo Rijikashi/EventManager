@@ -35,20 +35,20 @@ const NewUserForm = ({createAccountSuccessTrue}) => {
   }
   return (
     <div className = 'newUserButtonContainer'>
-      <Button onClick = {toggleNewUser} className = 'newUserButton'>
+      <Button onClick = {toggleNewUser} className = 'newUserButton' variant="secondary">
         Create new Account!
       </Button>
       <Modal show = {newUser} onHide = {toggleNewUser}>
        <Form onSubmit = {onSubmit}>
-         <Form.Label>Username (required)</Form.Label>
+         <Form.Label className="centered-text-user">Username (required)</Form.Label>
            <Form.Control type='text' value= {username} placeholder = "Username"
              onChange={(e) => { setUsername(e.target.value)}}
            />
-           <Form.Label>Password (required)</Form.Label>
+           <Form.Label className="centered-text-user">Password (required)</Form.Label>
            <Form.Control type='password' value= {password} placeholder = "Password"
              onChange={(e) => {setPassword(e.target.value)}}
            />
-           <Form.Label>Age</Form.Label>
+           <Form.Label className="centered-text-user">Age</Form.Label>
            <Form.Control type='text' value= {age} placeholder = "Age"
              onChange={(e) => {setAge(e.target.value)}}
            />

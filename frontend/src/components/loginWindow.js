@@ -50,17 +50,17 @@ const LoginWindow = ({loginFunc}) => {
       {loginFailure ? (<h3> Login Failed </h3>) : (<></>)}
       <Jumbotron className = 'jumbotron'>
         <Form onSubmit = {onSubmit}>
-          <Form.Label>Username: </Form.Label>
+          <Form.Label className="text-center">Username: </Form.Label>
           <Form.Control type='text' value= {username}
             onChange={(e) => { setUsername(e.target.value); setLoginFailure(false);setCreateAccountSuccess(false)}}
           />
-          <Form.Label>Password: </Form.Label>
+          <Form.Label className="text-center">Password: </Form.Label>
           <Form.Control
             type='password'
             value= {password}
             onChange={(e) => {setPassword(e.target.value); setLoginFailure(false); setCreateAccountSuccess(false)}}
           />
-          <Button variant="secondary" type="submit">
+          <Button style={{ margin: '10px' }} variant="secondary" type="submit">
             Login
           </Button>
         </Form>

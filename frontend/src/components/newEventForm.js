@@ -106,28 +106,29 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj, setN
 
   return (
     <div>
-        <div className='form-control'>
-        <label>Event Name</label>
+        <div className='centered-text-container'>
           <input
             type='text'
             value= {eventName}
             onChange={(e) => { setEventName(e.target.value)}}
+            className = "centered-text"
+            placeholder = "Event name"
           />
         </div>
-        <div className='form-control'>
+        <div className='centered-text-container'>
           <DateTimePicker
             onChange={setTime}
             value={time}
             mode = 'date'
           />
         </div>
-        <div className='form-control'>
-          <label>Location</label>
+        <div className='centered-text-container'>
           <input
             type='text'
             value= {locationName}
             onChange={(e) => {setLocationName(e.target.value)}}
             placeholder="Search for a location"
+            className = "centered-text"
           />
           <button onClick={handleSearch}> Search </button>
         </div>
@@ -153,7 +154,9 @@ const NewEventForm = ({center, toggleNewEvent, setNewEventSuccess, userObj, setN
             position={location}
             />) : (<></>)}
         </GoogleMap>
-        <button onClick = {onSubmit}> Create new event </button>
+        <div className = 'centered-text-container'>
+          <button onClick = {onSubmit}> Create new event </button>
+        </div>
     </div>
   )
 }

@@ -1,13 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import '../App.css'
-import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import {useState, useEffect} from 'react';
+
 const Sidebar = ({items,setClose,setKeyPressed}) => {
-
-
   const handleClick = () => {
     setClose(false)
-    console.log(items)
   }
 
   const handleCardClick = (id) => {
@@ -16,11 +15,24 @@ const Sidebar = ({items,setClose,setKeyPressed}) => {
     setKeyPressed(id)
   }
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Escape') {
+      handleClick();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className = "sidebar">
-      <Button onClick ={handleClick}> X </Button>
+      <span className = "sidebar-close" onClick ={handleClick}> Close </span>
       {items.map(item => (
-          <Card onClick = {() => handleCardClick(item.id)} style={{ cursor: 'pointer' }}>
+          <Card onClick = {() => handleCardClick(item.id)} style={{ cursor: 'pointer', backgroundColor: '#e3e3e1', position: 'relative' }}>
             <Card.Body>
               <Card.Title> {item.event_name || "Event Name could not be loaded"} </Card.Title>
               <Card.Text>
