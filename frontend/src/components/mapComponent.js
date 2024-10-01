@@ -18,8 +18,8 @@ const MapComponent = ({apiKey, userObj, items, setItems, eventQueried,setEventQu
   keyPressed, setKeyPressed}) => {
   const [center, setCenter] = useState(
     {
-      lat: 37.7749,
-      lng: 122.4194
+      lat: 37.773972,
+      lng: -122.431297
     }
   )
   const [mapObj, setMapObj] = useState(null)
