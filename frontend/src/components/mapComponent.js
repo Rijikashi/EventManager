@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { GoogleMap, LoadScript, Circle} from '@react-google-maps/api'
 import Button from 'react-bootstrap/Button'
 import MarkerInfo from "./markerInfo.js"
@@ -8,13 +8,13 @@ import '../App.css'
 import React from 'react'
 
 const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
-
+const maps_api = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 const containerStyle = {
   width: '100%',
   height: '100%'
 };
 
-const MapComponent = ({apiKey, userObj, items, setItems, eventQueried,setEventQueried,
+const MapComponent = ({userObj, items, setItems, eventQueried,setEventQueried,
   keyPressed, setKeyPressed}) => {
   const [center, setCenter] = useState(
     {
@@ -104,7 +104,7 @@ const MapComponent = ({apiKey, userObj, items, setItems, eventQueried,setEventQu
 
   return (
       <LoadScript
-        googleMapsApiKey= {apiKey}
+        googleMapsApiKey= {maps_api}
         className = 'google-map-container'
       >
         <GoogleMap

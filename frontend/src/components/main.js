@@ -1,11 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../App.css'
-import Button from 'react-bootstrap/Button'
 import MapComponent from './mapComponent.js'
 import Sidebar from './sideBar.js'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
-const Main = ( {apiKey, userObj} ) => {
+const Main = ( {userObj} ) => {
   const [items, setItems] = useState([])
   const [eventQueried, setEventQueried] = useState(false)
   const [keyPressed, setKeyPressed] = useState(0)
@@ -17,7 +16,7 @@ const Main = ( {apiKey, userObj} ) => {
       ) : (<></>)
     }
       <div className = 'map-component-container'>
-        <MapComponent apiKey = {apiKey} userObj = {userObj} items = {items}
+        <MapComponent userObj = {userObj} items = {items}
         setItems = {setItems} eventQueried = {eventQueried} setEventQueried = {setEventQueried}
         keyPressed = {keyPressed} setKeyPressed = {setKeyPressed}/>
       </div>

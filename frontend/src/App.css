@@ -62,7 +62,7 @@ h1 {
 .overlay-container{
   position:absolute;
   top:90%;
-  left:50%;
+  left:42.5%;
   z-index:2;
 }
 .button-overlay{

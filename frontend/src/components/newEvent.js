@@ -2,7 +2,7 @@ import Modal from 'react-bootstrap/Modal'
 import NewEventForm from './newEventForm.js'
 import Button from 'react-bootstrap/Button'
 
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
 const NewEvent = ({center, userObj}) => {
   const [newEvent, setNewEvent] = useState(false)

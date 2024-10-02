@@ -1,8 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import {useState, useEffect} from 'react';
+import {useEffect} from 'react';
 
 const Sidebar = ({items,setClose,setKeyPressed}) => {
   const handleClick = () => {
