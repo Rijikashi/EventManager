@@ -31,7 +31,7 @@ function App() {
       ):
         (<LoginWindow loginFunc = {loginFunc}/>)
       }
-      <span>{apiKey}</span>
+      <span>api key is : {apiKey}</span>
     </div>
   );
 }
