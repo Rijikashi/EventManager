@@ -24,11 +24,13 @@ function App() {
   }
   useEffect( () => {
     const keyRequest = async () => {
+      console.log("backend URL is: " + backendURL)
       const res = await fetch(backendURL+"getApiKey")
       const data = await res.json()
       setApiKey(data["key"])
     }
     keyRequest()
+    console.log(apiKey)
   }, [])
   return (
     <div className = 'home'>
