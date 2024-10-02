@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const backendURL = process.env.REACT_APP_BACKEND_DEV_URL;
 
 function App() {
-  const [apiKey, setApiKey] = useState("")
+  const [apiKey, setApiKey] = useState(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
   const [userObj, setUserObj] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
 
@@ -22,16 +22,7 @@ function App() {
     setLoggedIn(false)
     setUserObj([])
   }
-  useEffect( () => {
-    const keyRequest = async () => {
-      console.log("backend URL is: " + backendURL)
-      const res = await fetch(backendURL+"getApiKey")
-      const data = await res.json()
-      setApiKey(data["key"])
-    }
-    keyRequest()
-    console.log(apiKey)
-  }, [])
+
   return (
     <div className = 'home'>
       <Header loggedIn = {loggedIn} logout = {logout}/>

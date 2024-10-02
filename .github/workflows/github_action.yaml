@@ -99,7 +99,7 @@ jobs:
 
       - name: Set environment variable in Heroku
         run: |
-          heroku config:set REACT_ENV=production REACT_APP_BACKEND_DEV_URL=$BACKEND_DEV_URL --app event-manager-frontend
+          heroku config:set REACT_ENV=production REACT_APP_BACKEND_DEV_URL=$BACKEND_DEV_URL REACT_APP_GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY --app event-manager-frontend
         env:
           BACKEND_DEV_URL: ${{ secrets.BACKEND_DEV_URL }}
 

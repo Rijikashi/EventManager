@@ -6,6 +6,7 @@ Rails.application.configure do
   Rails.application.configure do
     config.spring = false
     config.hosts << "backend"
+    config.hosts << "frontend"
     config.hosts << ".herokuapp.com"
   end
   # Eager load code on boot. This eager loads most of Rails and
